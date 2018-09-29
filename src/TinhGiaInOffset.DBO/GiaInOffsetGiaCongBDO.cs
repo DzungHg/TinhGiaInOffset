@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TinhGiaInOffset.DBO
+namespace TinhGiaInOffset.BDO
 {
     public class GiaInOffsetGiaCongBDO
     {
         public int Id { get; set; }
         public string TenGia { get; set; }
-
+        public string DienGiai { get; set; }
         public int IdNhaIn { get; set; }
         public int IdMayIn { get; set; }
         public string DoiMayIn { get; set; }

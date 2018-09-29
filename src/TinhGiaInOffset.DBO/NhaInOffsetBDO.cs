@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TinhGiaInOffset.DBO
+namespace TinhGiaInOffset.BDO
 {
     public class NhaInOffsetBDO
     {
