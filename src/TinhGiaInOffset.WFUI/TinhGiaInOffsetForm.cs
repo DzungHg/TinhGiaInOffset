@@ -45,7 +45,7 @@ namespace TinhGiaInOffset.WFUI
         private bool ThemSuaVilidation()
         {
             bool valid = true;
-            if (tieuDeRTextBox.Text.Trim().Length == 0)
+            if (tieuDeTinhGiaRTextBox.Text.Trim().Length == 0)
             {
                 valid = false;
             }
@@ -294,7 +294,12 @@ namespace TinhGiaInOffset.WFUI
         }
         private void tinhToanGiaRButton_Click(object sender, EventArgs e)
         {
-            //var line01 = this.TinhGiaInOffset.
+            //Gắn trước một số dữ liệu
+            this.TinhGiaInOffset.TieuDe = tieuDeTinhGiaRTextBox.Text;
+            this.TinhGiaInOffset.NgayTinhGia = ngayTinhGiaDateTime.Value;
+            ketQuaTinhGiaBoxCtrl.Clear();
+           
+            ketQuaTinhGiaBoxCtrl.Text = this.TinhGiaInOffset.TomTatTinhToan();
         }
 
         private void TinhGiaInOffsetForm_Load(object sender, EventArgs e)

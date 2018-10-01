@@ -31,7 +31,7 @@
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.yeuCauRTextCtrl = new Telerik.WinControls.UI.RadTextBoxControl();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
-            this.tieuDeRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.tieuDeTinhGiaRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.tieuDeFormLabel = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.ngayTinhGiaDateTime = new Telerik.WinControls.UI.RadDateTimePicker();
@@ -58,7 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yeuCauRTextCtrl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tieuDeRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tieuDeTinhGiaRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tieuDeFormLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngayTinhGiaDateTime)).BeginInit();
@@ -100,7 +100,7 @@
             this.yeuCauRTextCtrl.Location = new System.Drawing.Point(100, 108);
             this.yeuCauRTextCtrl.Multiline = true;
             this.yeuCauRTextCtrl.Name = "yeuCauRTextCtrl";
-            this.yeuCauRTextCtrl.Size = new System.Drawing.Size(415, 99);
+            this.yeuCauRTextCtrl.Size = new System.Drawing.Size(415, 125);
             this.yeuCauRTextCtrl.TabIndex = 3;
             // 
             // radLabel3
@@ -111,12 +111,12 @@
             this.radLabel3.TabIndex = 6;
             this.radLabel3.Text = "Tiêu đề";
             // 
-            // tieuDeRTextBox
+            // tieuDeTinhGiaRTextBox
             // 
-            this.tieuDeRTextBox.Location = new System.Drawing.Point(100, 82);
-            this.tieuDeRTextBox.Name = "tieuDeRTextBox";
-            this.tieuDeRTextBox.Size = new System.Drawing.Size(415, 20);
-            this.tieuDeRTextBox.TabIndex = 2;
+            this.tieuDeTinhGiaRTextBox.Location = new System.Drawing.Point(100, 82);
+            this.tieuDeTinhGiaRTextBox.Name = "tieuDeTinhGiaRTextBox";
+            this.tieuDeTinhGiaRTextBox.Size = new System.Drawing.Size(415, 20);
+            this.tieuDeTinhGiaRTextBox.TabIndex = 2;
             // 
             // tieuDeFormLabel
             // 
@@ -155,7 +155,8 @@
             // 
             // huyRButton
             // 
-            this.huyRButton.Location = new System.Drawing.Point(275, 544);
+            this.huyRButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.huyRButton.Location = new System.Drawing.Point(275, 553);
             this.huyRButton.Name = "huyRButton";
             this.huyRButton.Size = new System.Drawing.Size(110, 24);
             this.huyRButton.TabIndex = 51;
@@ -163,7 +164,7 @@
             // 
             // luuTinhGiaRButton
             // 
-            this.luuTinhGiaRButton.Location = new System.Drawing.Point(420, 544);
+            this.luuTinhGiaRButton.Location = new System.Drawing.Point(420, 553);
             this.luuTinhGiaRButton.Name = "luuTinhGiaRButton";
             this.luuTinhGiaRButton.Size = new System.Drawing.Size(110, 24);
             this.luuTinhGiaRButton.TabIndex = 50;
@@ -171,7 +172,7 @@
             // 
             // themRButton
             // 
-            this.themRButton.Location = new System.Drawing.Point(103, 216);
+            this.themRButton.Location = new System.Drawing.Point(29, 239);
             this.themRButton.Name = "themRButton";
             this.themRButton.Size = new System.Drawing.Size(80, 24);
             this.themRButton.TabIndex = 4;
@@ -180,7 +181,7 @@
             // 
             // suaRButton
             // 
-            this.suaRButton.Location = new System.Drawing.Point(189, 216);
+            this.suaRButton.Location = new System.Drawing.Point(115, 239);
             this.suaRButton.Name = "suaRButton";
             this.suaRButton.Size = new System.Drawing.Size(80, 24);
             this.suaRButton.TabIndex = 20;
@@ -189,7 +190,7 @@
             // 
             // xoaRButton
             // 
-            this.xoaRButton.Location = new System.Drawing.Point(275, 216);
+            this.xoaRButton.Location = new System.Drawing.Point(201, 239);
             this.xoaRButton.Name = "xoaRButton";
             this.xoaRButton.Size = new System.Drawing.Size(80, 24);
             this.xoaRButton.TabIndex = 21;
@@ -232,12 +233,12 @@
             this.ketQuaTinhGiaBoxCtrl.Location = new System.Drawing.Point(532, 82);
             this.ketQuaTinhGiaBoxCtrl.Multiline = true;
             this.ketQuaTinhGiaBoxCtrl.Name = "ketQuaTinhGiaBoxCtrl";
-            this.ketQuaTinhGiaBoxCtrl.Size = new System.Drawing.Size(254, 158);
+            this.ketQuaTinhGiaBoxCtrl.Size = new System.Drawing.Size(254, 181);
             this.ketQuaTinhGiaBoxCtrl.TabIndex = 9;
             // 
             // tinhToanGiaRButton
             // 
-            this.tinhToanGiaRButton.Location = new System.Drawing.Point(435, 216);
+            this.tinhToanGiaRButton.Location = new System.Drawing.Point(450, 239);
             this.tinhToanGiaRButton.Name = "tinhToanGiaRButton";
             this.tinhToanGiaRButton.Size = new System.Drawing.Size(80, 24);
             this.tinhToanGiaRButton.TabIndex = 8;
@@ -249,7 +250,7 @@
             this.tabPageView.Controls.Add(this.tabInVaGiayPageView);
             this.tabPageView.Controls.Add(this.tabCanPhuPageView);
             this.tabPageView.Controls.Add(this.tabThanhPhamPageView);
-            this.tabPageView.Location = new System.Drawing.Point(19, 246);
+            this.tabPageView.Location = new System.Drawing.Point(19, 269);
             this.tabPageView.Name = "tabPageView";
             this.tabPageView.SelectedPage = this.tabInVaGiayPageView;
             this.tabPageView.Size = new System.Drawing.Size(778, 278);
@@ -332,7 +333,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 580);
+            this.ClientSize = new System.Drawing.Size(814, 586);
             this.Controls.Add(this.ketQuaTinhGiaBoxCtrl);
             this.Controls.Add(this.tabPageView);
             this.Controls.Add(this.tinhToanGiaRButton);
@@ -348,7 +349,7 @@
             this.Controls.Add(this.radLabel5);
             this.Controls.Add(this.yeuCauRTextCtrl);
             this.Controls.Add(this.radLabel3);
-            this.Controls.Add(this.tieuDeRTextBox);
+            this.Controls.Add(this.tieuDeTinhGiaRTextBox);
             this.Name = "TinhGiaInOffsetForm";
             // 
             // 
@@ -359,7 +360,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yeuCauRTextCtrl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tieuDeRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tieuDeTinhGiaRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tieuDeFormLabel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngayTinhGiaDateTime)).EndInit();
@@ -397,7 +398,7 @@
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private Telerik.WinControls.UI.RadTextBoxControl yeuCauRTextCtrl;
         private Telerik.WinControls.UI.RadLabel radLabel3;
-        private Telerik.WinControls.UI.RadTextBox tieuDeRTextBox;
+        private Telerik.WinControls.UI.RadTextBox tieuDeTinhGiaRTextBox;
         private Telerik.WinControls.UI.RadLabel tieuDeFormLabel;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadDateTimePicker ngayTinhGiaDateTime;

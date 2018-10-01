@@ -68,7 +68,7 @@
             // 
             // tenRTextBox
             // 
-            this.tenRTextBox.Location = new System.Drawing.Point(84, 52);
+            this.tenRTextBox.Location = new System.Drawing.Point(82, 52);
             this.tenRTextBox.Name = "tenRTextBox";
             this.tenRTextBox.Size = new System.Drawing.Size(218, 20);
             this.tenRTextBox.TabIndex = 1;
@@ -95,7 +95,7 @@
             this.ghiChuRTextCtrl.Location = new System.Drawing.Point(82, 104);
             this.ghiChuRTextCtrl.Multiline = true;
             this.ghiChuRTextCtrl.Name = "ghiChuRTextCtrl";
-            this.ghiChuRTextCtrl.Size = new System.Drawing.Size(220, 57);
+            this.ghiChuRTextCtrl.Size = new System.Drawing.Size(218, 57);
             this.ghiChuRTextCtrl.TabIndex = 3;
             // 
             // radLabel1
@@ -108,7 +108,7 @@
             // 
             // thanhTienRTextBox
             // 
-            this.thanhTienRTextBox.Location = new System.Drawing.Point(84, 78);
+            this.thanhTienRTextBox.Location = new System.Drawing.Point(82, 78);
             this.thanhTienRTextBox.Name = "thanhTienRTextBox";
             this.thanhTienRTextBox.Size = new System.Drawing.Size(218, 20);
             this.thanhTienRTextBox.TabIndex = 2;
