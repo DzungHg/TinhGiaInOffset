@@ -24,8 +24,9 @@ namespace TinhGiaInOffset.WFUI.Model
         public string GhiChu { get; set; }
         public bool KhongSuDung { get; set; }
         public int ThuTuSapXep { get; set; }
+        public string ChiTietGiaInOffsetGiaCong { get; set; }
         //
-       
+
         public GiaInOffsetGiaCongModel()
         {
 
@@ -51,5 +52,6 @@ namespace TinhGiaInOffset.WFUI.Model
             this.KhongSuDung = khongSuDung;
             this.ThuTuSapXep = thuTuSapXep;
         }
+      
     }
 }

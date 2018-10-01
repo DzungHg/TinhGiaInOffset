@@ -95,6 +95,9 @@ namespace TinhGiaInOffset.WFUI
             panel01RPanel.Left = 4;
         }
 
-       
+        private void huyButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

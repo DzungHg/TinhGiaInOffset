@@ -32,7 +32,8 @@ namespace TinhGiaInOffset.DAL
             MayInOffsetBDO output;
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(tenDB)))
             {
-                output = connection.Query<MayInOffsetBDO>("dbo.spMayInOffset_DocTheoId", id).SingleOrDefault();
+                //output = connection.Query<MayInOffsetBDO>("dbo.spMayInOffset_DocTheoId", id).SingleOrDefault();
+                output = connection.Query<MayInOffsetBDO>("select * from MayInOffset where @id = id", new { id = id }).SingleOrDefault();
                 return output;
 
             }

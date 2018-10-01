@@ -343,6 +343,7 @@
             // 
             // huyButton
             // 
+            this.huyButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.huyButton.Location = new System.Drawing.Point(253, 443);
             this.huyButton.Name = "huyButton";
             this.huyButton.Size = new System.Drawing.Size(110, 24);

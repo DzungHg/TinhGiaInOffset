@@ -29,9 +29,18 @@ namespace TinhGiaInOffset.DAL
             GiaInOffsetGiaCongBDO output;
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(tenDB)))
             {
-                output = connection.Query<GiaInOffsetGiaCongBDO>("dbo.spGiaInOffsetGiaCong_DocTheoId", id).SingleOrDefault();
-                return output;
+                var p = new DynamicParameters();//dapper
+               p.Add("@id", id);
 
+             
+                //Excecute
+                //
+                //return output = connection.QuerySingle<GiaInOffsetGiaCongBDO>("dbo.spGiaInOffsetGiaCong_DocTheoId", new { id = id });
+
+                connection.Execute("dbo.spGiaInOffsetGiaCong_DocTheoId", p, commandType: CommandType.StoredProcedure);
+                //output = connection.Query<GiaInOffsetGiaCongBDO>("dbo.spGiaInOffsetGiaCong_DocTheoId", new { id = id }).SingleOrDefault();
+                output = connection.Query<GiaInOffsetGiaCongBDO>("select * from GiaInOffsetGiaCong where id = @id", new { id = id }).SingleOrDefault();
+                return output;
             }
         }
 

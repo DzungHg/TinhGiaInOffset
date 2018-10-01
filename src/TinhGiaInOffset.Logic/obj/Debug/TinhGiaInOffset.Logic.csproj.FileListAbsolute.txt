@@ -11,3 +11,16 @@ D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\bin\Debug\TinhGiaInOffset.
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\obj\Debug\TinhGiaInOffset.Logic.csprojResolveAssemblyReference.cache
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\obj\Debug\TinhGiaInOffset.Logic.dll
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\obj\Debug\TinhGiaInOffset.Logic.pdb
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\bin\Debug\TinhGiaInOffset.Logic.dll
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\bin\Debug\TinhGiaInOffset.Logic.pdb
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\bin\Debug\TinhGiaInOffset.DAL.dll
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\bin\Debug\TinhGiaInOffset.DBO.dll
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\bin\Debug\Dapper.dll
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\bin\Debug\TinhGiaInOffset.Common.dll
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\bin\Debug\TinhGiaInOffset.DAL.pdb
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\bin\Debug\TinhGiaInOffset.DBO.pdb
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\bin\Debug\Dapper.xml
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\bin\Debug\TinhGiaInOffset.Common.pdb
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\obj\Debug\TinhGiaInOffset.Logic.csprojResolveAssemblyReference.cache
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\obj\Debug\TinhGiaInOffset.Logic.dll
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Logic\obj\Debug\TinhGiaInOffset.Logic.pdb

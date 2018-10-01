@@ -27,5 +27,14 @@ namespace TinhGiaInOffset.WFUI
         {
             Application.Exit();
         }
+
+        private void themTinhGiaOffsetRButton_Click(object sender, EventArgs e)
+        {
+            var frm = new TinhGiaInOffsetForm();
+            frm.MaximizeBox = false;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.Show();
+
+        }
     }
 }

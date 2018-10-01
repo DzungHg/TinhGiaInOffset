@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.tieuDeFormLabel = new Telerik.WinControls.UI.RadLabel();
             this.nhaInOffsetDropDown = new Telerik.WinControls.UI.RadDropDownList();
             this.huyButton = new Telerik.WinControls.UI.RadButton();
             this.taoGiaRButton = new Telerik.WinControls.UI.RadButton();
             this.suaGiaRButton = new Telerik.WinControls.UI.RadButton();
             this.panel01RPanel = new Telerik.WinControls.UI.RadPanel();
+            this.giaInOffsetRGridView = new Telerik.WinControls.UI.RadGridView();
             this.panelHeadOfPanel01RPanel = new Telerik.WinControls.UI.RadPanel();
             this.tatCaNhaInRCheck = new Telerik.WinControls.UI.RadCheckBox();
-            this.giaInOffsetRGridView = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.tieuDeFormLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhaInOffsetDropDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.huyButton)).BeginInit();
@@ -45,11 +45,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.suaGiaRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel01RPanel)).BeginInit();
             this.panel01RPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.giaInOffsetRGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giaInOffsetRGridView.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelHeadOfPanel01RPanel)).BeginInit();
             this.panelHeadOfPanel01RPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tatCaNhaInRCheck)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.giaInOffsetRGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.giaInOffsetRGridView.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +77,7 @@
             this.huyButton.Size = new System.Drawing.Size(110, 24);
             this.huyButton.TabIndex = 52;
             this.huyButton.Text = "Hủy";
+            this.huyButton.Click += new System.EventHandler(this.huyButton_Click);
             // 
             // taoGiaRButton
             // 
@@ -105,6 +106,20 @@
             this.panel01RPanel.Size = new System.Drawing.Size(761, 272);
             this.panel01RPanel.TabIndex = 55;
             // 
+            // giaInOffsetRGridView
+            // 
+            this.giaInOffsetRGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.giaInOffsetRGridView.Location = new System.Drawing.Point(0, 39);
+            // 
+            // 
+            // 
+            this.giaInOffsetRGridView.MasterTemplate.AllowDragToGroup = false;
+            this.giaInOffsetRGridView.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.giaInOffsetRGridView.Name = "giaInOffsetRGridView";
+            this.giaInOffsetRGridView.ReadOnly = true;
+            this.giaInOffsetRGridView.Size = new System.Drawing.Size(761, 233);
+            this.giaInOffsetRGridView.TabIndex = 57;
+            // 
             // panelHeadOfPanel01RPanel
             // 
             this.panelHeadOfPanel01RPanel.Controls.Add(this.tatCaNhaInRCheck);
@@ -125,20 +140,6 @@
             this.tatCaNhaInRCheck.TabIndex = 55;
             this.tatCaNhaInRCheck.Text = "Tất cả";
             this.tatCaNhaInRCheck.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.tatCaNhaInRCheck_ToggleStateChanged);
-            // 
-            // giaInOffsetRGridView
-            // 
-            this.giaInOffsetRGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.giaInOffsetRGridView.Location = new System.Drawing.Point(0, 39);
-            // 
-            // 
-            // 
-            this.giaInOffsetRGridView.MasterTemplate.AllowDragToGroup = false;
-            this.giaInOffsetRGridView.MasterTemplate.ViewDefinition = tableViewDefinition3;
-            this.giaInOffsetRGridView.Name = "giaInOffsetRGridView";
-            this.giaInOffsetRGridView.ReadOnly = true;
-            this.giaInOffsetRGridView.Size = new System.Drawing.Size(761, 233);
-            this.giaInOffsetRGridView.TabIndex = 57;
             // 
             // QuanLyGiaInOffsetGiaCongForm
             // 
@@ -162,12 +163,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.suaGiaRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel01RPanel)).EndInit();
             this.panel01RPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.giaInOffsetRGridView.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giaInOffsetRGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelHeadOfPanel01RPanel)).EndInit();
             this.panelHeadOfPanel01RPanel.ResumeLayout(false);
             this.panelHeadOfPanel01RPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tatCaNhaInRCheck)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.giaInOffsetRGridView.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.giaInOffsetRGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

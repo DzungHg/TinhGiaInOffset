@@ -33,7 +33,11 @@
             this.thoatRMenuItem = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.quanLyGiaInOffsetRMenuItem = new Telerik.WinControls.UI.RadMenuItem();
+            this.themTinhGiaOffsetRButton = new Telerik.WinControls.UI.RadButton();
+            this.thoatRButton = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.themTinhGiaOffsetRButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thoatRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,12 +77,33 @@
             this.quanLyGiaInOffsetRMenuItem.Text = "Quản lý giá in offset";
             this.quanLyGiaInOffsetRMenuItem.Click += new System.EventHandler(this.quanLyGiaInOffsetRMenuItem_Click);
             // 
+            // themTinhGiaOffsetRButton
+            // 
+            this.themTinhGiaOffsetRButton.Location = new System.Drawing.Point(12, 26);
+            this.themTinhGiaOffsetRButton.Name = "themTinhGiaOffsetRButton";
+            this.themTinhGiaOffsetRButton.Size = new System.Drawing.Size(110, 55);
+            this.themTinhGiaOffsetRButton.TabIndex = 0;
+            this.themTinhGiaOffsetRButton.Text = "Tính giá Mới";
+            this.themTinhGiaOffsetRButton.Click += new System.EventHandler(this.themTinhGiaOffsetRButton_Click);
+            // 
+            // thoatRButton
+            // 
+            this.thoatRButton.Location = new System.Drawing.Point(128, 26);
+            this.thoatRButton.Name = "thoatRButton";
+            this.thoatRButton.Size = new System.Drawing.Size(110, 55);
+            this.thoatRButton.TabIndex = 1;
+            this.thoatRButton.Text = "Thoát";
+            this.thoatRButton.Click += new System.EventHandler(this.thoatRMenuItem_Click);
+            // 
             // TinhGiaInOffsetNavForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 93);
+            this.Controls.Add(this.thoatRButton);
+            this.Controls.Add(this.themTinhGiaOffsetRButton);
             this.Controls.Add(this.radMenu1);
+            this.MaximizeBox = false;
             this.Name = "TinhGiaInOffsetNavForm";
             // 
             // 
@@ -86,6 +111,8 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Form chính";
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.themTinhGiaOffsetRButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thoatRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -99,5 +126,7 @@
         private Telerik.WinControls.UI.RadMenuItem thoatRMenuItem;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem2;
         private Telerik.WinControls.UI.RadMenuItem quanLyGiaInOffsetRMenuItem;
+        private Telerik.WinControls.UI.RadButton themTinhGiaOffsetRButton;
+        private Telerik.WinControls.UI.RadButton thoatRButton;
     }
 }

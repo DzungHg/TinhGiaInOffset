@@ -28,11 +28,13 @@ namespace TinhGiaInOffset.WFUI
         private void DauNoiDuLieu()
         {
             nhaInOffsetDropDown.DataSource = null;
+            nhaInOffsetDropDown.Items.Clear();
             nhaInOffsetDropDown.DataSource = nhaInOffsetSrc;
-            nhaInOffsetDropDown.DataMember = "Id";
+            nhaInOffsetDropDown.DataMember = "Id";            
             nhaInOffsetDropDown.DisplayMember = "TenNhaIn";
 
             mayInOffsetDropDown.DataSource = null;
+            mayInOffsetDropDown.Items.Clear();
             mayInOffsetDropDown.DataSource = mayInOffsetSrc;
             mayInOffsetDropDown.DataMember = "Id";
             mayInOffsetDropDown.DisplayMember = "TenMayIn";
@@ -125,12 +127,17 @@ namespace TinhGiaInOffset.WFUI
 
                 int idNhaIn;
                 int idMayIn;
-                idMayIn = int.Parse(mayInOffsetDropDown.SelectedValue.ToString());
-                int.TryParse(nhaInOffsetDropDown.SelectedValue.ToString(), out idNhaIn);
+
+                idNhaIn = ((NhaInOffsetModel)nhaInOffsetDropDown.SelectedValue).Id;
+                idMayIn = ((MayInOffsetModel)mayInOffsetDropDown.SelectedValue).Id;
+                //int.TryParse(nhaInOffsetDropDown.SelectedValue.ToString(), out idNhaIn);
+                //int.TryParse(mayInOffsetDropDown.SelectedValue.ToString(), out idMayIn);
+
+
                 switch (this.TinhTrangForm)
                 {
                     case TinhTrangForm.Moi:
-                       
+
 
                         var model = new GiaInOffsetGiaCongModel(tenGiaInRTextBox.Text, dienGiaiRTextCtrl.Text, idNhaIn,
                             idMayIn, doiMayInRTextBox.Text, int.Parse(donGiaBaiRTextBox.Text), int.Parse(soToChayBuHaoCoBanRTextBox.Text),
@@ -158,8 +165,14 @@ namespace TinhGiaInOffset.WFUI
                         giaInSua.ThuTuSapXep = int.Parse(thuTuSapXepRTextBox.Text);
                         giaInOffsetContext.Sua(this.giaInSua);
                         break;
-                }
+                }//Switch
+                this.DialogResult = DialogResult.OK;
+            }//if
+            else
+            {
+                MessageBox.Show("Bạn cần điền đúng và đủ dữ liệu trên form");
             }
+            
         }
 
         private void mayInOffsetDropDown_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
@@ -168,6 +181,16 @@ namespace TinhGiaInOffset.WFUI
             {
                 var model = (MayInOffsetModel)mayInOffsetDropDown.SelectedItem.DataBoundItem;
                 chiTietMayInTextCtrl.Text = model.ChiTietMayIn;
+                ///mayInOffsetDropDown.SelectedValue là đối tượng
+                ///mình gắn vô để thử
+                ///
+                ///int idMayIn = 0;
+                ///int.TryParse(mayInOffsetDropDown.SelectedValue.ToString(), out idMayIn);
+                ///MessageBox.Show($"{idMayIn}");
+                ///var model2 = (MayInOffsetModel)mayInOffsetDropDown.SelectedValue;
+                ///MessageBox.Show(model2.Id.ToString());
+                ///Cuối cùng là đối tượng khác với nguyên gốc là DataMember
+                
             }
             catch { }
         }
@@ -185,14 +208,36 @@ namespace TinhGiaInOffset.WFUI
                 soLuongBaoInRTextBox.Text = this.giaInSua.SoLuongBaoIn.ToString();
                 donGiaVuotRTextBox.Text = this.giaInSua.DonGiaVuot.ToString();
                 donViTinhTheoSoLuongRTextBox.Text = this.giaInSua.DonViTinhSoLuong;
-                giaInSua.GiaDaBaoKem = giaDaBaoGomKemRCheck.Checked;
+                giaDaBaoGomKemRCheck.Checked = this.giaInSua.GiaDaBaoKem;
                 thongTinLienHeRTextCtrl.Text = this.giaInSua.ThongTinLienHe;
-                ghiChuRTextCtrl.Text = this.giaInSua.GhiChu;
+                ghiChuRTextCtrl.Text = this.giaInSua.GhiChu;               
                 khongSuDungRCheck.Checked = this.giaInSua.KhongSuDung;
                 thuTuSapXepRTextBox.Text = this.giaInSua.ThuTuSapXep.ToString();
                 //Id printer và
-                nhaInOffsetDropDown.SelectedValue = this.giaInSua.IdNhaIn;
-                mayInOffsetDropDown.SelectedValue = this.giaInSua.IdMayIn;
+                int index = 0;
+                foreach (var item in nhaInOffsetDropDown.Items)
+                {
+                    if (((NhaInOffsetModel)item.DataBoundItem).Id == this.giaInSua.IdNhaIn)
+                    {
+                        index = item.RowIndex;
+                        break;
+                    }                    
+                }
+                nhaInOffsetDropDown.SelectedIndex = index;
+
+                foreach (var item in mayInOffsetDropDown.Items)
+                {
+                    if (((MayInOffsetModel)item.DataBoundItem).Id == this.giaInSua.IdMayIn)
+                    {
+                        index = item.RowIndex;
+                        break;
+                    }
+                }
+                mayInOffsetDropDown.SelectedIndex = index;
+
+                //Nút
+                taoGiaButton.Text = "Lưu";
+                tieuDeFormLabel.Text = $"SỬA GIÁ ID [{this.giaInSua.Id}]";
 
             }
         }
