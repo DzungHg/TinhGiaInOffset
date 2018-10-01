@@ -20,23 +20,12 @@ namespace TinhGiaInOffset.WFUI
             InitializeComponent();
         }
 
-        private void TinhThanhTien()
-        {
-            int soLuong = 0;
-            int donGia = 0;
-            bool soLuongValid = int.TryParse(soLuongRTextBox.Text, out soLuong);
-            bool donGiaValid = int.TryParse(donGiaRTextBox.Text, out donGia);
-
-            if (soLuongValid && donGiaValid)
-                thanhTienRTextBox.Text = (soLuong * donGia).ToString();
-            else
-                thanhTienRTextBox.Text = 0.ToString();
-        }
+       
 
         private void ResetFormData()
         {
-            soLuongRTextBox.Text = 1.ToString();
-            donGiaRTextBox.Text = 1.ToString();
+            thanhTienRTextBox.Text = 1.ToString();
+            
             
         }
         private bool FormValidation()
@@ -47,32 +36,25 @@ namespace TinhGiaInOffset.WFUI
             {
                 output = false;
             }
-            if (donViTinhRTextBox.Text.Trim().Length == 0)
+            if (ghiChuRTextCtrl.Text.Trim().Length == 0)
             {
                 output = false;
             }
 
             //so
-            int soLuong = 0;
-            int donGia = 0;
+            decimal thanhTien = 0;
+           
 
-            bool soLuongValid = int.TryParse(soLuongRTextBox.Text, out soLuong);
-            if (soLuongValid == false)
+            bool thanhTienValid = decimal.TryParse(thanhTienRTextBox.Text, out thanhTien);
+            if (thanhTienValid == false)
                 output = false;
             else
             {
-                if (soLuong <= 0)
+                if (thanhTien <= 0)
                     output = false;
             }
 
-            bool donGiaValid = int.TryParse(donGiaRTextBox.Text, out donGia);
-            if (soLuongValid == false)
-                output = false;
-            else
-            {
-                if (donGia <= 0)
-                    output = false;
-            }
+           
 
 
             return output;
@@ -85,7 +67,7 @@ namespace TinhGiaInOffset.WFUI
                 switch (this.TinhTrangForm)
                 {
                     case TinhTrangForm.Moi:
-                        var model = new GiaBanThanhPhamModel(tenRTextBox.Text, int.Parse(soLuongRTextBox.Text), int.Parse(donGiaRTextBox.Text), donGiaRTextBox.Text);
+                        var model = new GiaBanThanhPhamModel(tenRTextBox.Text, decimal.Parse(thanhTienRTextBox.Text), ghiChuRTextCtrl.Text);
                         this.giaBanThanhPhamModel = model;
 
                         break;
@@ -100,10 +82,7 @@ namespace TinhGiaInOffset.WFUI
             }
         }
 
-        private void tinhThanhTienRButton_Click(object sender, EventArgs e)
-        {
-            TinhThanhTien();
-        }
+      
 
         private void TaoGiaBanThanhPhamForm_Load(object sender, EventArgs e)
         {
@@ -116,9 +95,8 @@ namespace TinhGiaInOffset.WFUI
                 case TinhTrangForm.Sua:
                     tieuDeFormLabel.Text = this.Text;
                     tenRTextBox.Text = this.giaBanThanhPhamModel.Ten;
-                    donGiaRTextBox.Text = this.giaBanThanhPhamModel.DonGia.ToString();
-                    soLuongRTextBox.Text = this.giaBanThanhPhamModel.SoLuong.ToString();
-                    donViTinhRTextBox.Text = this.giaBanThanhPhamModel.DonViTinh;
+                    thanhTienRTextBox.Text = this.giaBanThanhPhamModel.ThanhTien.ToString();
+                    ghiChuRTextCtrl.Text = this.giaBanThanhPhamModel.GhiChu;
                     break;
             }
         }

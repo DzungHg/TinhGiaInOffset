@@ -11,16 +11,14 @@ namespace TinhGiaInOffset.WFUI.Model
         private static int lastId = 0;
         public int Id { get; set; }
         public string Ten { get; set; }
-        public int SoLuong { get; set; }
-        public int DonGia { get; set; }
-        public string DonViTinh { get; set; }
+        public decimal ThanhTien { get; set; }
+        public string GhiChu { get; set; }
         public int IdTinhGia { get; set; }
-        public GiaBanThanhPhamModel(string ten, int soLuong, int donGia, string donViTinh)
+        public GiaBanThanhPhamModel(string ten, decimal thanhTien, string ghiChu)
         {
             this.Ten = ten;
-            this.DonGia = donGia;
-            this.SoLuong = soLuong;
-            this.DonViTinh = donViTinh;
+            this.ThanhTien = thanhTien;
+            this.GhiChu = ghiChu;
             //giả lập Id
             lastId += 1;
             this.Id = lastId;

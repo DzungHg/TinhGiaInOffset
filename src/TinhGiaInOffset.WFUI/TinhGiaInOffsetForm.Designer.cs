@@ -49,12 +49,12 @@
             this.tinhToanGiaRButton = new Telerik.WinControls.UI.RadButton();
             this.tabPageView = new Telerik.WinControls.UI.RadPageView();
             this.tabInVaGiayPageView = new Telerik.WinControls.UI.RadPageViewPage();
+            this.phiBaiInGiaCongRListView = new Telerik.WinControls.UI.RadListView();
+            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.tabCanPhuPageView = new Telerik.WinControls.UI.RadPageViewPage();
             this.giaBanCanPhuRListView = new Telerik.WinControls.UI.RadListView();
             this.tabThanhPhamPageView = new Telerik.WinControls.UI.RadPageViewPage();
             this.giaBanThanhPhamRListView = new Telerik.WinControls.UI.RadListView();
-            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
-            this.phiBaiInGiaCongRListView = new Telerik.WinControls.UI.RadListView();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yeuCauRTextCtrl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
@@ -77,13 +77,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabPageView)).BeginInit();
             this.tabPageView.SuspendLayout();
             this.tabInVaGiayPageView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.phiBaiInGiaCongRListView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
+            this.radPanel1.SuspendLayout();
             this.tabCanPhuPageView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.giaBanCanPhuRListView)).BeginInit();
             this.tabThanhPhamPageView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.giaBanThanhPhamRListView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
-            this.radPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.phiBaiInGiaCongRListView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,7 +147,7 @@
             // 
             // radLabel2
             // 
-            this.radLabel2.Location = new System.Drawing.Point(535, 84);
+            this.radLabel2.Location = new System.Drawing.Point(532, 55);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(92, 18);
             this.radLabel2.TabIndex = 8;
@@ -155,7 +155,7 @@
             // 
             // huyRButton
             // 
-            this.huyRButton.Location = new System.Drawing.Point(277, 449);
+            this.huyRButton.Location = new System.Drawing.Point(275, 544);
             this.huyRButton.Name = "huyRButton";
             this.huyRButton.Size = new System.Drawing.Size(110, 24);
             this.huyRButton.TabIndex = 51;
@@ -163,7 +163,7 @@
             // 
             // luuTinhGiaRButton
             // 
-            this.luuTinhGiaRButton.Location = new System.Drawing.Point(422, 449);
+            this.luuTinhGiaRButton.Location = new System.Drawing.Point(420, 544);
             this.luuTinhGiaRButton.Name = "luuTinhGiaRButton";
             this.luuTinhGiaRButton.Size = new System.Drawing.Size(110, 24);
             this.luuTinhGiaRButton.TabIndex = 50;
@@ -229,10 +229,10 @@
             // ketQuaTinhGiaBoxCtrl
             // 
             this.ketQuaTinhGiaBoxCtrl.IsReadOnly = true;
-            this.ketQuaTinhGiaBoxCtrl.Location = new System.Drawing.Point(532, 108);
+            this.ketQuaTinhGiaBoxCtrl.Location = new System.Drawing.Point(532, 82);
             this.ketQuaTinhGiaBoxCtrl.Multiline = true;
             this.ketQuaTinhGiaBoxCtrl.Name = "ketQuaTinhGiaBoxCtrl";
-            this.ketQuaTinhGiaBoxCtrl.Size = new System.Drawing.Size(265, 313);
+            this.ketQuaTinhGiaBoxCtrl.Size = new System.Drawing.Size(254, 158);
             this.ketQuaTinhGiaBoxCtrl.TabIndex = 9;
             // 
             // tinhToanGiaRButton
@@ -252,7 +252,7 @@
             this.tabPageView.Location = new System.Drawing.Point(19, 246);
             this.tabPageView.Name = "tabPageView";
             this.tabPageView.SelectedPage = this.tabInVaGiayPageView;
-            this.tabPageView.Size = new System.Drawing.Size(507, 186);
+            this.tabPageView.Size = new System.Drawing.Size(778, 278);
             this.tabPageView.TabIndex = 52;
             // 
             // tabInVaGiayPageView
@@ -262,46 +262,19 @@
             this.tabInVaGiayPageView.ItemSize = new System.Drawing.SizeF(65F, 28F);
             this.tabInVaGiayPageView.Location = new System.Drawing.Point(10, 37);
             this.tabInVaGiayPageView.Name = "tabInVaGiayPageView";
-            this.tabInVaGiayPageView.Size = new System.Drawing.Size(486, 138);
+            this.tabInVaGiayPageView.Size = new System.Drawing.Size(757, 230);
             this.tabInVaGiayPageView.Text = "In và Giấy";
             // 
-            // tabCanPhuPageView
+            // phiBaiInGiaCongRListView
             // 
-            this.tabCanPhuPageView.Controls.Add(this.giaBanCanPhuRListView);
-            this.tabCanPhuPageView.ItemSize = new System.Drawing.SizeF(58F, 28F);
-            this.tabCanPhuPageView.Location = new System.Drawing.Point(10, 37);
-            this.tabCanPhuPageView.Name = "tabCanPhuPageView";
-            this.tabCanPhuPageView.Size = new System.Drawing.Size(486, 138);
-            this.tabCanPhuPageView.Text = "Cán phủ";
-            // 
-            // giaBanCanPhuRListView
-            // 
-            this.giaBanCanPhuRListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.giaBanCanPhuRListView.ItemSpacing = -1;
-            this.giaBanCanPhuRListView.Location = new System.Drawing.Point(0, 0);
-            this.giaBanCanPhuRListView.Name = "giaBanCanPhuRListView";
-            this.giaBanCanPhuRListView.Size = new System.Drawing.Size(486, 138);
-            this.giaBanCanPhuRListView.TabIndex = 6;
-            this.giaBanCanPhuRListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
-            // 
-            // tabThanhPhamPageView
-            // 
-            this.tabThanhPhamPageView.Controls.Add(this.giaBanThanhPhamRListView);
-            this.tabThanhPhamPageView.ItemSize = new System.Drawing.SizeF(79F, 28F);
-            this.tabThanhPhamPageView.Location = new System.Drawing.Point(10, 37);
-            this.tabThanhPhamPageView.Name = "tabThanhPhamPageView";
-            this.tabThanhPhamPageView.Size = new System.Drawing.Size(486, 138);
-            this.tabThanhPhamPageView.Text = "Thành phẩm";
-            // 
-            // giaBanThanhPhamRListView
-            // 
-            this.giaBanThanhPhamRListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.giaBanThanhPhamRListView.ItemSpacing = -1;
-            this.giaBanThanhPhamRListView.Location = new System.Drawing.Point(0, 0);
-            this.giaBanThanhPhamRListView.Name = "giaBanThanhPhamRListView";
-            this.giaBanThanhPhamRListView.Size = new System.Drawing.Size(486, 138);
-            this.giaBanThanhPhamRListView.TabIndex = 7;
-            this.giaBanThanhPhamRListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
+            this.phiBaiInGiaCongRListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.phiBaiInGiaCongRListView.ItemSpacing = -1;
+            this.phiBaiInGiaCongRListView.Location = new System.Drawing.Point(0, 32);
+            this.phiBaiInGiaCongRListView.Name = "phiBaiInGiaCongRListView";
+            this.phiBaiInGiaCongRListView.Size = new System.Drawing.Size(757, 198);
+            this.phiBaiInGiaCongRListView.TabIndex = 6;
+            this.phiBaiInGiaCongRListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
+            this.phiBaiInGiaCongRListView.ColumnCreating += new Telerik.WinControls.UI.ListViewColumnCreatingEventHandler(this.phiBaiInGiaCongRListView_ColumnCreating);
             // 
             // radPanel1
             // 
@@ -312,25 +285,54 @@
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 0);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(486, 32);
+            this.radPanel1.Size = new System.Drawing.Size(757, 32);
             this.radPanel1.TabIndex = 0;
             // 
-            // phiBaiInGiaCongRListView
+            // tabCanPhuPageView
             // 
-            this.phiBaiInGiaCongRListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.phiBaiInGiaCongRListView.ItemSpacing = -1;
-            this.phiBaiInGiaCongRListView.Location = new System.Drawing.Point(0, 32);
-            this.phiBaiInGiaCongRListView.Name = "phiBaiInGiaCongRListView";
-            this.phiBaiInGiaCongRListView.Size = new System.Drawing.Size(486, 106);
-            this.phiBaiInGiaCongRListView.TabIndex = 6;
-            this.phiBaiInGiaCongRListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
-            this.phiBaiInGiaCongRListView.ColumnCreating += new Telerik.WinControls.UI.ListViewColumnCreatingEventHandler(this.phiBaiInGiaCongRListView_ColumnCreating);
+            this.tabCanPhuPageView.Controls.Add(this.giaBanCanPhuRListView);
+            this.tabCanPhuPageView.ItemSize = new System.Drawing.SizeF(58F, 28F);
+            this.tabCanPhuPageView.Location = new System.Drawing.Point(10, 37);
+            this.tabCanPhuPageView.Name = "tabCanPhuPageView";
+            this.tabCanPhuPageView.Size = new System.Drawing.Size(757, 230);
+            this.tabCanPhuPageView.Text = "Cán phủ";
+            // 
+            // giaBanCanPhuRListView
+            // 
+            this.giaBanCanPhuRListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.giaBanCanPhuRListView.ItemSpacing = -1;
+            this.giaBanCanPhuRListView.Location = new System.Drawing.Point(0, 0);
+            this.giaBanCanPhuRListView.Name = "giaBanCanPhuRListView";
+            this.giaBanCanPhuRListView.Size = new System.Drawing.Size(757, 230);
+            this.giaBanCanPhuRListView.TabIndex = 6;
+            this.giaBanCanPhuRListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
+            this.giaBanCanPhuRListView.ColumnCreating += new Telerik.WinControls.UI.ListViewColumnCreatingEventHandler(this.giaBanCanPhuRListView_ColumnCreating);
+            // 
+            // tabThanhPhamPageView
+            // 
+            this.tabThanhPhamPageView.Controls.Add(this.giaBanThanhPhamRListView);
+            this.tabThanhPhamPageView.ItemSize = new System.Drawing.SizeF(79F, 28F);
+            this.tabThanhPhamPageView.Location = new System.Drawing.Point(10, 37);
+            this.tabThanhPhamPageView.Name = "tabThanhPhamPageView";
+            this.tabThanhPhamPageView.Size = new System.Drawing.Size(757, 230);
+            this.tabThanhPhamPageView.Text = "Thành phẩm";
+            // 
+            // giaBanThanhPhamRListView
+            // 
+            this.giaBanThanhPhamRListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.giaBanThanhPhamRListView.ItemSpacing = -1;
+            this.giaBanThanhPhamRListView.Location = new System.Drawing.Point(0, 0);
+            this.giaBanThanhPhamRListView.Name = "giaBanThanhPhamRListView";
+            this.giaBanThanhPhamRListView.Size = new System.Drawing.Size(757, 230);
+            this.giaBanThanhPhamRListView.TabIndex = 7;
+            this.giaBanThanhPhamRListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
+            this.giaBanThanhPhamRListView.ColumnCreating += new Telerik.WinControls.UI.ListViewColumnCreatingEventHandler(this.giaBanThanhPhamRListView_ColumnCreating);
             // 
             // TinhGiaInOffsetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 499);
+            this.ClientSize = new System.Drawing.Size(814, 580);
             this.Controls.Add(this.ketQuaTinhGiaBoxCtrl);
             this.Controls.Add(this.tabPageView);
             this.Controls.Add(this.tinhToanGiaRButton);
@@ -376,14 +378,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabPageView)).EndInit();
             this.tabPageView.ResumeLayout(false);
             this.tabInVaGiayPageView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.phiBaiInGiaCongRListView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
+            this.radPanel1.ResumeLayout(false);
+            this.radPanel1.PerformLayout();
             this.tabCanPhuPageView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.giaBanCanPhuRListView)).EndInit();
             this.tabThanhPhamPageView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.giaBanThanhPhamRListView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
-            this.radPanel1.ResumeLayout(false);
-            this.radPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.phiBaiInGiaCongRListView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

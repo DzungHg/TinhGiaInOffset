@@ -72,6 +72,11 @@ namespace TinhGiaInOffset.WFUI
                 e.Column.HeaderText = "Tên Bài In";
                 e.Column.Width = 120;
             }
+            if (e.Column.Name == "DienGiai")
+            {
+                e.Column.HeaderText = "Diễn giải";
+                e.Column.Width = 240;
+            }
             if (e.Column.Name == "IdGiaInOffsetGiaCong")
             {
                 e.Column.HeaderText = "Id Bảng giá";
@@ -90,7 +95,66 @@ namespace TinhGiaInOffset.WFUI
 
             }
         }
+        private void giaBanCanPhuRListView_ColumnCreating(object sender, Telerik.WinControls.UI.ListViewColumnCreatingEventArgs e)
+        {
+            if (e.Column.Name == "Id")
+            {
+                e.Column.HeaderText = "Id";
+                e.Column.Width = 20;
+            }
+            if (e.Column.Name == "Ten")
+            {
+                e.Column.HeaderText = "Tên";
+                e.Column.Width = 120;
+            }
+            if (e.Column.Name == "ThanhTien")
+            {
+                e.Column.HeaderText = "Thành tiền";
+                e.Column.Width = 120;
+            }
+            if (e.Column.Name == "IdTinhGia")
+            {
+                e.Column.HeaderText = "Id Bảng giá";
+                e.Column.Width = 120;
+                e.Column.Visible = false;
+            }
+            if (e.Column.Name == "GhiChu")
+            {
+                e.Column.HeaderText = "Ghi chú";
+                e.Column.Width = 250;
+            }
 
+        }
+
+        private void giaBanThanhPhamRListView_ColumnCreating(object sender, Telerik.WinControls.UI.ListViewColumnCreatingEventArgs e)
+        {
+            if (e.Column.Name == "Id")
+            {
+                e.Column.HeaderText = "Id";
+                e.Column.Width = 20;
+            }
+            if (e.Column.Name == "Ten")
+            {
+                e.Column.HeaderText = "Tên";
+                e.Column.Width = 120;
+            }
+            if (e.Column.Name == "ThanhTien")
+            {
+                e.Column.HeaderText = "Thành tiền";
+                e.Column.Width = 120;
+            }
+            if (e.Column.Name == "IdTinhGia")
+            {
+                e.Column.HeaderText = "Id Bảng giá";
+                e.Column.Width = 120;
+                e.Column.Visible = false;
+            }
+            if (e.Column.Name == "GhiChu")
+            {
+                e.Column.HeaderText = "Ghi chú";
+                e.Column.Width = 250;
+            }
+        }
         private void ThemBaiIn()
         {
             var frm = new TaoBaiInOffsetGiaCongForm();
@@ -296,5 +360,7 @@ namespace TinhGiaInOffset.WFUI
 
             }
         }
+
+       
     }
 }
