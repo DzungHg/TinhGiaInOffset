@@ -25,7 +25,7 @@ namespace TinhGiaInOffset.WFUI.DTOContext
         }
         public List<GiaInOffsetGiaCongModel> DocGiaConSuDung()
         {
-            return this.DocTatCa().Where(x => x.KhongSuDung == false).ToList();
+            return this.DocTatCa().Where(x => x.KhongSuDung == false).OrderBy(x => x.ThuTuSapXep).ToList();
         }
         public List<GiaInOffsetGiaCongModel> DocTheoIdNhaInOffset(int idNhaIn)
         {

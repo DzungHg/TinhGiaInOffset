@@ -70,7 +70,8 @@
     <Compile Include="DTOContext\GiaInOffsetGiaCongContext.cs" />
     <Compile Include="DTOContext\MayInOffsetContext.cs" />
     <Compile Include="DTOContext\NhaInOffsetContext.cs" />
-    <Compile Include="Model\ChiPhiBaiInOffsetModel.cs" />
+    <Compile Include="Model\BaiInOffsetGiaCongModel.cs" />
+    <Compile Include="TinhToan\PhiBaiInOffset.cs" />
     <Compile Include="Model\GiaInOffsetGiaCongModel.cs" />
     <Compile Include="Model\GiayChoBaiInOffsetModel.cs" />
     <Compile Include="Model\MayInOffsetModel.cs" />

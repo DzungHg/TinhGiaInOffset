@@ -12,19 +12,21 @@ namespace TinhGiaInOffset.WFUI
 {
     public partial class TinhGiaInOffsetForm : Telerik.WinControls.UI.RadForm
     {
-        private List<ChiPhiBaiInOffsetModel> ChiPhiBaiInBaoGom = new List<ChiPhiBaiInOffsetModel>();
+        public TinhGiaInOffsetModel TinhGiaInOffset = new TinhGiaInOffsetModel();
+       
         public TinhGiaInOffsetForm()
         {
             InitializeComponent();
+            this.TinhGiaInOffset.BaiInOffsetGiaCongBaoGom = new List<BaiInOffsetGiaCongModel>();
             //Clear all danh sách cho phí
-            this.ChiPhiBaiInBaoGom.Clear();
+            this.TinhGiaInOffset.BaiInOffsetGiaCongBaoGom.Clear();
             //Bật tắt nút
            
         }
         private void DauNoiDuLieuChiPhiBaiIn()
         {
             phiBaiInGiaCongRListView.DataSource = null;
-            phiBaiInGiaCongRListView.DataSource = ChiPhiBaiInBaoGom;
+            phiBaiInGiaCongRListView.DataSource = this.TinhGiaInOffset.BaiInOffsetGiaCongBaoGom;
             phiBaiInGiaCongRListView.ValueMember = "Id";
             phiBaiInGiaCongRListView.DisplayMember = "TenChiPhi";
         }
@@ -40,7 +42,7 @@ namespace TinhGiaInOffset.WFUI
             if (frm.DialogResult == DialogResult.OK)
             {
                 //Thêm vô
-                this.ChiPhiBaiInBaoGom.Add(frm.ChiPhiBaiIn);
+                this.TinhGiaInOffset.BaiInOffsetGiaCongBaoGom.Add(frm.BaiInInOffsetGiaCong);
                 DauNoiDuLieuChiPhiBaiIn();
             }
         }
@@ -65,9 +67,20 @@ namespace TinhGiaInOffset.WFUI
                 e.Column.HeaderText = "Id";
                 e.Column.Width = 20;
             }
-            if (e.Column.Name == "TenChiPhi")
+            if (e.Column.Name == "TenBaiIn")
             {
-                e.Column.HeaderText = "Tên Phí In";
+                e.Column.HeaderText = "Tên Bài In";
+                e.Column.Width = 120;
+            }
+            if (e.Column.Name == "IdGiaInOffsetGiaCong")
+            {
+                e.Column.HeaderText = "Id Bảng giá";
+                e.Column.Width = 120;
+                e.Column.Visible = false;
+            }
+            if (e.Column.Name == "TenGiaInOffsetGiaCong")
+            {
+                e.Column.HeaderText = "Bảng Giá Gia Công";
                 e.Column.Width = 120;
             }
             if (e.Column.Name == "SoMatCanIn")
@@ -80,7 +93,8 @@ namespace TinhGiaInOffset.WFUI
 
         private void suaPhiInOffsetRButton_Click(object sender, EventArgs e)
         {
-            if (ChiPhiBaiInBaoGom.Count <= 0)
+            if (this.TinhGiaInOffset.BaiInOffsetGiaCongBaoGom.Count <= 0 ||
+                phiBaiInGiaCongRListView.SelectedItems.Count <= 0)
                 return;
             
 
@@ -89,13 +103,27 @@ namespace TinhGiaInOffset.WFUI
             frm.MaximizeBox = false;
             frm.MinimizeBox = false;
             frm.StartPosition = FormStartPosition.CenterParent;
-            var model = (ChiPhiBaiInOffsetModel)phiBaiInGiaCongRListView.SelectedItem.DataBoundItem;
-            frm.ChiPhiBaiIn = model;
+            var model = (BaiInOffsetGiaCongModel)phiBaiInGiaCongRListView.SelectedItem.DataBoundItem;
+            frm.BaiInInOffsetGiaCong = model;
             frm.ShowDialog();
             if (frm.DialogResult == DialogResult.OK)
             {
                 DauNoiDuLieuChiPhiBaiIn();
             }
+        }
+
+        private void xoaPhiInOffsetRButton_Click(object sender, EventArgs e)
+        {
+            if (phiBaiInGiaCongRListView.SelectedItems.Count <= 0)
+                return;
+
+            this.TinhGiaInOffset.BaiInOffsetGiaCongBaoGom.Remove((BaiInOffsetGiaCongModel)phiBaiInGiaCongRListView.SelectedItem.DataBoundItem);
+            DauNoiDuLieuChiPhiBaiIn();
+        }
+
+        private void tinhToanGiaRButton_Click(object sender, EventArgs e)
+        {
+            var line01 = this.TinhGiaInOffset.
         }
     }
 }

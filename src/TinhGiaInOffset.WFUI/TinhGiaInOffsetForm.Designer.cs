@@ -47,7 +47,7 @@
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.phanTramLoiNhuanGiayRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.ketQuaTinhGiaBoxCtrl = new Telerik.WinControls.UI.RadTextBoxControl();
-            this.radButton6 = new Telerik.WinControls.UI.RadButton();
+            this.tinhToanGiaRButton = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yeuCauRTextCtrl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
@@ -67,7 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanTramLoiNhuanGiayRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ketQuaTinhGiaBoxCtrl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tinhToanGiaRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,6 +188,7 @@
             this.xoaPhiInOffsetRButton.Size = new System.Drawing.Size(80, 24);
             this.xoaPhiInOffsetRButton.TabIndex = 21;
             this.xoaPhiInOffsetRButton.Text = "Xóa";
+            this.xoaPhiInOffsetRButton.Click += new System.EventHandler(this.xoaPhiInOffsetRButton_Click);
             // 
             // radLabel4
             // 
@@ -222,26 +223,27 @@
             // ketQuaTinhGiaBoxCtrl
             // 
             this.ketQuaTinhGiaBoxCtrl.IsReadOnly = true;
-            this.ketQuaTinhGiaBoxCtrl.Location = new System.Drawing.Point(376, 242);
+            this.ketQuaTinhGiaBoxCtrl.Location = new System.Drawing.Point(376, 246);
             this.ketQuaTinhGiaBoxCtrl.Multiline = true;
             this.ketQuaTinhGiaBoxCtrl.Name = "ketQuaTinhGiaBoxCtrl";
-            this.ketQuaTinhGiaBoxCtrl.Size = new System.Drawing.Size(255, 99);
+            this.ketQuaTinhGiaBoxCtrl.Size = new System.Drawing.Size(255, 95);
             this.ketQuaTinhGiaBoxCtrl.TabIndex = 9;
             // 
-            // radButton6
+            // tinhToanGiaRButton
             // 
-            this.radButton6.Location = new System.Drawing.Point(375, 212);
-            this.radButton6.Name = "radButton6";
-            this.radButton6.Size = new System.Drawing.Size(80, 24);
-            this.radButton6.TabIndex = 8;
-            this.radButton6.Text = "Tính";
+            this.tinhToanGiaRButton.Location = new System.Drawing.Point(376, 216);
+            this.tinhToanGiaRButton.Name = "tinhToanGiaRButton";
+            this.tinhToanGiaRButton.Size = new System.Drawing.Size(80, 24);
+            this.tinhToanGiaRButton.TabIndex = 8;
+            this.tinhToanGiaRButton.Text = "Tính";
+            this.tinhToanGiaRButton.Click += new System.EventHandler(this.tinhToanGiaRButton_Click);
             // 
             // TinhGiaInOffsetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 418);
-            this.Controls.Add(this.radButton6);
+            this.Controls.Add(this.tinhToanGiaRButton);
             this.Controls.Add(this.ketQuaTinhGiaBoxCtrl);
             this.Controls.Add(this.radLabel6);
             this.Controls.Add(this.phanTramLoiNhuanGiayRTextBox);
@@ -286,7 +288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phanTramLoiNhuanGiayRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ketQuaTinhGiaBoxCtrl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tinhToanGiaRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -314,6 +316,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel6;
         private Telerik.WinControls.UI.RadTextBox phanTramLoiNhuanGiayRTextBox;
         private Telerik.WinControls.UI.RadTextBoxControl ketQuaTinhGiaBoxCtrl;
-        private Telerik.WinControls.UI.RadButton radButton6;
+        private Telerik.WinControls.UI.RadButton tinhToanGiaRButton;
     }
 }

@@ -46,7 +46,7 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.soMatInRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
-            this.tenChiPhiRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.tenBaiInOffsetRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bangGiaOffsetGiaCongDropDown)).BeginInit();
@@ -67,7 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soMatInRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tenChiPhiRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tenBaiInOffsetRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -226,12 +226,12 @@
             this.radLabel5.TabIndex = 58;
             this.radLabel5.Text = "Số mặt in";
             // 
-            // tenChiPhiRTextBox
+            // tenBaiInOffsetRTextBox
             // 
-            this.tenChiPhiRTextBox.Location = new System.Drawing.Point(83, 56);
-            this.tenChiPhiRTextBox.Name = "tenChiPhiRTextBox";
-            this.tenChiPhiRTextBox.Size = new System.Drawing.Size(402, 20);
-            this.tenChiPhiRTextBox.TabIndex = 0;
+            this.tenBaiInOffsetRTextBox.Location = new System.Drawing.Point(83, 56);
+            this.tenBaiInOffsetRTextBox.Name = "tenBaiInOffsetRTextBox";
+            this.tenBaiInOffsetRTextBox.Size = new System.Drawing.Size(402, 20);
+            this.tenBaiInOffsetRTextBox.TabIndex = 0;
             // 
             // radLabel7
             // 
@@ -246,7 +246,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(530, 427);
-            this.Controls.Add(this.tenChiPhiRTextBox);
+            this.Controls.Add(this.tenBaiInOffsetRTextBox);
             this.Controls.Add(this.radLabel7);
             this.Controls.Add(this.radLabel5);
             this.Controls.Add(this.soMatInRTextBox);
@@ -263,6 +263,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "TaoPhiInOffsetGiaCongForm";
+            this.Load += new System.EventHandler(this.TaoPhiInOffsetGiaCongForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bangGiaOffsetGiaCongDropDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietBangGiaTextCtrl)).EndInit();
@@ -283,7 +284,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soMatInRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tenChiPhiRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tenBaiInOffsetRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -311,7 +312,7 @@
         private Telerik.WinControls.UI.RadLabel radLabel6;
         private Telerik.WinControls.UI.RadTextBox donGiaGiayRTextBox;
         private Telerik.WinControls.UI.RadCheckBox giayDaGomLoiNhuanRCheck;
-        private Telerik.WinControls.UI.RadTextBox tenChiPhiRTextBox;
+        private Telerik.WinControls.UI.RadTextBox tenBaiInOffsetRTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel7;
     }
 }
