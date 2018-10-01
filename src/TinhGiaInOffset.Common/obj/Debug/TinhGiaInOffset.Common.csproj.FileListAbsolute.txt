@@ -3,3 +3,8 @@ D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Common\bin\Debug\TinhGiaInOffset
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Common\obj\Debug\TinhGiaInOffset.Common.csprojResolveAssemblyReference.cache
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Common\obj\Debug\TinhGiaInOffset.Common.dll
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Common\obj\Debug\TinhGiaInOffset.Common.pdb
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Common\bin\Debug\TinhGiaInOffset.Common.dll
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Common\bin\Debug\TinhGiaInOffset.Common.pdb
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Common\obj\Debug\TinhGiaInOffset.Common.csprojResolveAssemblyReference.cache
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Common\obj\Debug\TinhGiaInOffset.Common.dll
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.Common\obj\Debug\TinhGiaInOffset.Common.pdb

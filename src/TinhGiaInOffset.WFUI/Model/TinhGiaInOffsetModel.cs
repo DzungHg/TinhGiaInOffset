@@ -13,6 +13,8 @@ namespace TinhGiaInOffset.WFUI.Model
         public DateTime NgayTinhGia { get; set; }
         public string YeuCau { get; set; }
         public List<BaiInOffsetGiaCongModel> BaiInOffsetGiaCongBaoGom { get; set; }
+        public List<GiaBanThanhPhamModel> GiaBanThanhPhamBaoGom { get; set; }
+        public List<GiaBanThanhPhamModel> GiaBanCanPhuBaoGom { get; set; }
         
         public int MucLoiNhuanBaiIn { get; set; }
         public int MucLoiNhuanGiay { get; set; }
@@ -23,7 +25,7 @@ namespace TinhGiaInOffset.WFUI.Model
             if (this.BaiInOffsetGiaCongBaoGom.Count > 0)
                 foreach (var baiIn in this.BaiInOffsetGiaCongBaoGom)
                 {
-                    kq += PhiBaiInOffset.PhiInOffset(baiIn.IdGiaInOffsetGiaCong, baiIn.SoMatCanIn);
+                    kq += PhiBaiInOffset.PhiInOffset(baiIn.IdGiaInOffsetGiaCong, baiIn.SoMatCanIn, baiIn.SoKemIn);
                 }
 
             return kq;
@@ -53,7 +55,7 @@ namespace TinhGiaInOffset.WFUI.Model
             return kq;
         }
 
-        public decimal GiaTienInBan()
+        public decimal GiaTienIn_Ban()
         {
             decimal kq = 0;
             if (this.MucLoiNhuanBaiIn > 0 && this.MucLoiNhuanBaiIn <100)
@@ -62,7 +64,7 @@ namespace TinhGiaInOffset.WFUI.Model
             }
             return kq;
         }
-        public decimal GiaTienGiayBan()
+        public decimal GiaTienGiay_Ban()
         {
             decimal kq = 0;
 

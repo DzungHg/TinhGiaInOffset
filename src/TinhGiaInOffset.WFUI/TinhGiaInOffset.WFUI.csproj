@@ -71,6 +71,13 @@
     <Compile Include="DTOContext\MayInOffsetContext.cs" />
     <Compile Include="DTOContext\NhaInOffsetContext.cs" />
     <Compile Include="Model\BaiInOffsetGiaCongModel.cs" />
+    <Compile Include="Model\GiaBanThanhPhamModel.cs" />
+    <Compile Include="TaoGiaBanThanhPhamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaoGiaBanThanhPhamForm.Designer.cs">
+      <DependentUpon>TaoGiaBanThanhPhamForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TinhToan\PhiBaiInOffset.cs" />
     <Compile Include="Model\GiaInOffsetGiaCongModel.cs" />
     <Compile Include="Model\GiayChoBaiInOffsetModel.cs" />
@@ -89,11 +96,11 @@
     <Compile Include="TaoGiaInOffsetGiaCongForm.Designer.cs">
       <DependentUpon>TaoGiaInOffsetGiaCongForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TaoPhiInOffsetGiaCongForm.cs">
+    <Compile Include="TaoBaiInOffsetGiaCongForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TaoPhiInOffsetGiaCongForm.Designer.cs">
-      <DependentUpon>TaoPhiInOffsetGiaCongForm.cs</DependentUpon>
+    <Compile Include="TaoBaiInOffsetGiaCongForm.Designer.cs">
+      <DependentUpon>TaoBaiInOffsetGiaCongForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TinhGiaInOffsetForm.cs">
       <SubType>Form</SubType>
@@ -111,11 +118,14 @@
     <EmbeddedResource Include="QuanLyGiaInOffsetGiaCongForm.resx">
       <DependentUpon>QuanLyGiaInOffsetGiaCongForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TaoGiaBanThanhPhamForm.resx">
+      <DependentUpon>TaoGiaBanThanhPhamForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TaoGiaInOffsetGiaCongForm.resx">
       <DependentUpon>TaoGiaInOffsetGiaCongForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TaoPhiInOffsetGiaCongForm.resx">
-      <DependentUpon>TaoPhiInOffsetGiaCongForm.cs</DependentUpon>
+    <EmbeddedResource Include="TaoBaiInOffsetGiaCongForm.resx">
+      <DependentUpon>TaoBaiInOffsetGiaCongForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TinhGiaInOffsetForm.resx">
       <DependentUpon>TinhGiaInOffsetForm.cs</DependentUpon>

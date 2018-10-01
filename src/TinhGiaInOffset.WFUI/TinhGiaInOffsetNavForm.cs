@@ -31,6 +31,7 @@ namespace TinhGiaInOffset.WFUI
         private void themTinhGiaOffsetRButton_Click(object sender, EventArgs e)
         {
             var frm = new TinhGiaInOffsetForm();
+            frm.TinhTrangForm = Common.Enum.TinhTrangForm.Moi;
             frm.MaximizeBox = false;
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.Show();
