@@ -12,9 +12,10 @@ namespace TinhGiaInOffset.WFUI.Model
         public string TieuDe { get; set; }
         public DateTime NgayTinhGia { get; set; }
         public string YeuCau { get; set; }
+        public string TenNguoiTinhGia { get; set; }
         public List<BaiInOffsetGiaCongModel> BaiInOffsetGiaCongBaoGom { get; set; }
-        public List<GiaBanThanhPhamModel> GiaBanThanhPhamBaoGom { get; set; }
-        public List<GiaBanThanhPhamModel> GiaBanCanPhuBaoGom { get; set; }
+        public List<GiaBanThanhPhamModel> GiaBanThanhPhamSauInBaoGom { get; set; }
+      
         
         public int MucLoiNhuanBaiIn { get; set; }
         public int MucLoiNhuanGiay { get; set; }
@@ -92,44 +93,23 @@ namespace TinhGiaInOffset.WFUI.Model
 
             return kq;
         }
-        public decimal TongGiaCanPhu_Ban()
-        {
-            decimal kq = 0;
-            if (this.GiaBanCanPhuBaoGom.Count > 0)
-            {
-                kq = this.GiaBanCanPhuBaoGom.Sum(x => x.ThanhTien);
-            }
-
-            return kq;
-        }
+       
         public decimal TongGiaThanhPham_Ban()
         {
             decimal kq = 0;
-            if (this.GiaBanThanhPhamBaoGom.Count > 0)
+            if (this.GiaBanThanhPhamSauInBaoGom.Count > 0)
             {
-                kq = this.GiaBanThanhPhamBaoGom.Sum(x => x.ThanhTien);
+                kq = this.GiaBanThanhPhamSauInBaoGom.Sum(x => x.ThanhTien);
             }
 
             return kq;
         }
-        public string CacLoaiCanPhu()
-        {
-            var kq = "";
-            if (this.GiaBanCanPhuBaoGom.Count > 0)
-                foreach (var baiTP in this.GiaBanCanPhuBaoGom)
-                {
-                    kq += baiTP.Ten + ",";
-                }
-            if (kq.Trim().Length > 0)
-                kq = kq.Trim().Substring(0, kq.Length - 1);//cái cuối 
-
-            return kq;
-        }
+       
         public string CacLoaiThanhPham()
         {
             var kq = "";
-            if (this.GiaBanThanhPhamBaoGom.Count > 0)
-                foreach (var baiTP in this.GiaBanThanhPhamBaoGom)
+            if (this.GiaBanThanhPhamSauInBaoGom.Count > 0)
+                foreach (var baiTP in this.GiaBanThanhPhamSauInBaoGom)
                 {
                     kq += baiTP.Ten + ",";
                 }
@@ -150,21 +130,16 @@ namespace TinhGiaInOffset.WFUI.Model
             kq += "-GIẤY---" + '\r' + '\n';
             kq += $"---Các loại giấy: {this.CacLoaiGiaySuDung()}" + '\r' + '\n';
             kq += string.Format("---Tổng tiền giấy: {0:0,0.00đ}" + '\r' + '\n', this.GiaTienGiay_Ban());
-            if (this.GiaBanCanPhuBaoGom.Count > 0)
+           
+            if (this.GiaBanThanhPhamSauInBaoGom.Count > 0)
             {
-                kq += "-CÁN PHỦ---" + '\r' + '\n';
-                kq += $"---Cán phủ: {this.CacLoaiCanPhu()}" + '\r' + '\n';
-                kq += string.Format("---Tổng tiền cán phủ: {0:0,0.00đ}" + '\r' + '\n', this.TongGiaCanPhu_Ban());
-            }
-            if (this.GiaBanThanhPhamBaoGom.Count > 0)
-            {
-                kq += "-THÀNH PHẨM---" + '\r' + '\n';
+                kq += "-THÀNH PHẨM SU IN---" + '\r' + '\n';
                 kq += $"---Thành phẩm: {this.CacLoaiThanhPham()}" + '\r' + '\n';
                 kq += string.Format("---Tổng tiền cán phủ: {0:0,0.00đ}" + '\r' + '\n', this.TongGiaThanhPham_Ban());
             }
             kq += "-TỔNG ---" + '\r' + '\n';
             kq += string.Format("---Giá tổng cộng: {0:0,0.00đ}", this.GiaTienIn_Ban() + this.GiaTienGiay_Ban() + 
-                        this.TongGiaCanPhu_Ban() + this.TongGiaThanhPham_Ban());
+                        this.TongGiaThanhPham_Ban());
             return kq;
         }
     }

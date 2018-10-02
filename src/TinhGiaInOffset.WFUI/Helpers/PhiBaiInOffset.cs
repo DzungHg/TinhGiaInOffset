@@ -13,7 +13,7 @@ namespace TinhGiaInOffset.WFUI.Helpers
     {
 
 
-        //TODO--Xem lại tính phí in đúng chưa
+      
         public static decimal PhiInOffset(int idGiaInOffsetGiaCong, int soMatCanIn, int soKemIn = 1)
         {
             decimal ketQua = 0;

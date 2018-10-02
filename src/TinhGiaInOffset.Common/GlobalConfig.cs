@@ -11,7 +11,7 @@ namespace TinhGiaInOffset.Common
     public class GlobalConfig
     {
         
-            //TODO - Làm Tiếp connent
+            
             public static void InitializeConnections()
             {
                 SqlConnection sql = new SqlConnection();

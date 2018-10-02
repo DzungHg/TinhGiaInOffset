@@ -19,8 +19,8 @@ namespace TinhGiaInOffset.WFUI
         {
             InitializeComponent();
             this.TinhGiaInOffset.BaiInOffsetGiaCongBaoGom = new List<BaiInOffsetGiaCongModel>();
-            this.TinhGiaInOffset.GiaBanCanPhuBaoGom = new List<GiaBanThanhPhamModel>();
-            this.TinhGiaInOffset.GiaBanThanhPhamBaoGom = new List<GiaBanThanhPhamModel>();
+           
+            this.TinhGiaInOffset.GiaBanThanhPhamSauInBaoGom = new List<GiaBanThanhPhamModel>();
             //Clear all danh sách cho phí
             this.TinhGiaInOffset.BaiInOffsetGiaCongBaoGom.Clear();
             //Bật tắt nút
@@ -33,11 +33,8 @@ namespace TinhGiaInOffset.WFUI
             phiBaiInGiaCongRListView.ValueMember = "Id";
             phiBaiInGiaCongRListView.DisplayMember = "TenChiPhi";
 
-            giaBanCanPhuRListView.DataSource = null;
-            giaBanCanPhuRListView.DataSource = this.TinhGiaInOffset.GiaBanCanPhuBaoGom;
-
             giaBanThanhPhamRListView.DataSource = null;
-            giaBanThanhPhamRListView.DataSource = this.TinhGiaInOffset.GiaBanThanhPhamBaoGom;
+            giaBanThanhPhamRListView.DataSource = this.TinhGiaInOffset.GiaBanThanhPhamSauInBaoGom;
 
 
         }
@@ -95,36 +92,7 @@ namespace TinhGiaInOffset.WFUI
 
             }
         }
-        private void giaBanCanPhuRListView_ColumnCreating(object sender, Telerik.WinControls.UI.ListViewColumnCreatingEventArgs e)
-        {
-            if (e.Column.Name == "Id")
-            {
-                e.Column.HeaderText = "Id";
-                e.Column.Width = 20;
-            }
-            if (e.Column.Name == "Ten")
-            {
-                e.Column.HeaderText = "Tên";
-                e.Column.Width = 120;
-            }
-            if (e.Column.Name == "ThanhTien")
-            {
-                e.Column.HeaderText = "Thành tiền";
-                e.Column.Width = 120;
-            }
-            if (e.Column.Name == "IdTinhGia")
-            {
-                e.Column.HeaderText = "Id Bảng giá";
-                e.Column.Width = 120;
-                e.Column.Visible = false;
-            }
-            if (e.Column.Name == "GhiChu")
-            {
-                e.Column.HeaderText = "Ghi chú";
-                e.Column.Width = 250;
-            }
-
-        }
+       
 
         private void giaBanThanhPhamRListView_ColumnCreating(object sender, Telerik.WinControls.UI.ListViewColumnCreatingEventArgs e)
         {
@@ -138,6 +106,16 @@ namespace TinhGiaInOffset.WFUI
                 e.Column.HeaderText = "Tên";
                 e.Column.Width = 120;
             }
+            if (e.Column.Name == "SoLuong")
+            {
+                e.Column.HeaderText = "Số lượng";
+                e.Column.Width = 60;
+            }
+            if (e.Column.Name == "DonViTinh")
+            {
+                e.Column.HeaderText = "ĐVT";
+                e.Column.Width = 60;
+            }
             if (e.Column.Name == "ThanhTien")
             {
                 e.Column.HeaderText = "Thành tiền";
@@ -153,6 +131,12 @@ namespace TinhGiaInOffset.WFUI
             {
                 e.Column.HeaderText = "Ghi chú";
                 e.Column.Width = 250;
+            }
+            if (e.Column.Name == "LoaiThanhPham")
+            {
+                e.Column.HeaderText = "Loại TP";
+                e.Column.Width = 60;
+                e.Column.Visible = false;
             }
         }
         private void ThemBaiIn()
@@ -198,53 +182,7 @@ namespace TinhGiaInOffset.WFUI
             this.TinhGiaInOffset.BaiInOffsetGiaCongBaoGom.Remove((BaiInOffsetGiaCongModel)phiBaiInGiaCongRListView.SelectedItem.DataBoundItem);
             DauNoiDuLieuChiPhiBaiIn();
         }
-        //Cán phủ
-        private void ThemGiaCanPhu()
-        {
-            var frm = new TaoGiaBanThanhPhamForm();
-            frm.Text = "Thêm mới giá cán phủ";
-            frm.TinhTrangForm = Common.Enum.TinhTrangForm.Moi;
-            frm.MaximizeBox = false;
-            frm.MinimizeBox = false;
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.ShowDialog();
-            if (frm.DialogResult == DialogResult.OK)
-            {
-                //Thêm vô
-                this.TinhGiaInOffset.GiaBanCanPhuBaoGom.Add(frm.giaBanThanhPhamModel);
-                DauNoiDuLieuChiPhiBaiIn();
-            }
-        }
-        private void SuaGiaCanPhu()
-        {
-            if (this.TinhGiaInOffset.GiaBanCanPhuBaoGom.Count <= 0 ||
-                 giaBanCanPhuRListView.SelectedItems.Count <= 0)
-                return;
-
-
-            var frm = new TaoGiaBanThanhPhamForm();
-            frm.TinhTrangForm = Common.Enum.TinhTrangForm.Sua;
-            var model = (GiaBanThanhPhamModel)giaBanCanPhuRListView.SelectedItem.DataBoundItem;
-            frm.Text = $"Sửa Giá Cán phủ Id [{model.Id}]";
-            frm.MaximizeBox = false;
-            frm.MinimizeBox = false;
-            frm.StartPosition = FormStartPosition.CenterParent;
-           
-            frm.giaBanThanhPhamModel = model;
-            frm.ShowDialog();
-            if (frm.DialogResult == DialogResult.OK)
-            {
-                DauNoiDuLieuChiPhiBaiIn();
-            }
-        }
-        private void XoaGiaCanPhu()
-        {
-            if (giaBanCanPhuRListView.SelectedItems.Count <= 0)
-                return;
-
-            this.TinhGiaInOffset.GiaBanCanPhuBaoGom.Remove((GiaBanThanhPhamModel) giaBanCanPhuRListView.SelectedItem.DataBoundItem);
-            DauNoiDuLieuChiPhiBaiIn();
-        }
+       
         //Giá bán thành phẩm
         private void ThemGiaThanhPham()
         {
@@ -258,13 +196,13 @@ namespace TinhGiaInOffset.WFUI
             if (frm.DialogResult == DialogResult.OK)
             {
                 //Thêm vô
-                this.TinhGiaInOffset.GiaBanThanhPhamBaoGom.Add(frm.giaBanThanhPhamModel);
+                this.TinhGiaInOffset.GiaBanThanhPhamSauInBaoGom.Add(frm.giaBanThanhPhamModel);
                 DauNoiDuLieuChiPhiBaiIn();
             }
         }
         private void SuaGiaThanhPham()
         {
-            if (this.TinhGiaInOffset.GiaBanThanhPhamBaoGom.Count <= 0 ||
+            if (this.TinhGiaInOffset.GiaBanThanhPhamSauInBaoGom.Count <= 0 ||
                  giaBanThanhPhamRListView.SelectedItems.Count <= 0)
                 return;
 
@@ -289,7 +227,7 @@ namespace TinhGiaInOffset.WFUI
             if (giaBanThanhPhamRListView.SelectedItems.Count <= 0)
                 return;
 
-            this.TinhGiaInOffset.GiaBanThanhPhamBaoGom.Remove((GiaBanThanhPhamModel)giaBanThanhPhamRListView.SelectedItem.DataBoundItem);
+            this.TinhGiaInOffset.GiaBanThanhPhamSauInBaoGom.Remove((GiaBanThanhPhamModel)giaBanThanhPhamRListView.SelectedItem.DataBoundItem);
             DauNoiDuLieuChiPhiBaiIn();
         }
 
@@ -302,21 +240,60 @@ namespace TinhGiaInOffset.WFUI
                 output = false;
             if (yeuCauRTextCtrl.Text.Trim().Length == 0)
                 output = false;
+            if (tenNguoiTinhGiaRTextBox.Text.Trim().Length == 0)
+                output = false;
+            int phanTramInMarkup = 0;
+            int phanTramGiayMarkup = 0;
+
+            bool phanTramInMarkupValid = int.TryParse(phanTramLoiNhuanInRTextBox.Text, out phanTramInMarkup);
+            if (!phanTramInMarkupValid)
+            {
+                output = false;
+            } else
+            {
+                if (phanTramInMarkup <=0)
+                    output = false;
+            }
+
+            bool phanTramGiayMarkupValid = int.TryParse(phanTramLoiNhuanGiayRTextBox.Text, out phanTramGiayMarkup);
+            if (!phanTramInMarkupValid)
+            {
+                output = false;
+            }
+            else
+            {
+                if (phanTramGiayMarkup <= 0)
+                    output= false;
+            }
+
+            bool baiInValid = (this.TinhGiaInOffset.BaiInOffsetGiaCongBaoGom.Count > 0);
+            if (!baiInValid )
+            {
+                output = false;
+            }
+            
 
 
             return output;
         }
         private void tinhToanGiaRButton_Click(object sender, EventArgs e)
         {
-            //Gắn trước một số dữ liệu
-            this.TinhGiaInOffset.TieuDe = tieuDeTinhGiaRTextBox.Text;
-            this.TinhGiaInOffset.NgayTinhGia = ngayTinhGiaDateTime.Value;
-            this.TinhGiaInOffset.MucLoiNhuanBaiIn = int.Parse(phanTramLoiNhuanInRTextBox.Text);
-            this.TinhGiaInOffset.MucLoiNhuanGiay = int.Parse(phanTramLoiNhuanGiayRTextBox.Text);
+            if (FormValidation())
+            {
+                //Gắn trước một số dữ liệu
+                this.TinhGiaInOffset.TieuDe = tieuDeTinhGiaRTextBox.Text;
+                this.TinhGiaInOffset.NgayTinhGia = ngayTinhGiaDateTime.Value;
+                this.TinhGiaInOffset.MucLoiNhuanBaiIn = int.Parse(phanTramLoiNhuanInRTextBox.Text);
+                this.TinhGiaInOffset.MucLoiNhuanGiay = int.Parse(phanTramLoiNhuanGiayRTextBox.Text);
 
-            ketQuaTinhGiaBoxCtrl.Clear();
-           
-            ketQuaTinhGiaBoxCtrl.Text = this.TinhGiaInOffset.TomTatTinhToan();
+                ketQuaTinhGiaBoxCtrl.Clear();
+
+                ketQuaTinhGiaBoxCtrl.Text = this.TinhGiaInOffset.TomTatTinhToan();
+            }
+            else
+            {
+                MessageBox.Show("Bạn cần điền đủ và đúng nội dung thông tin");
+            }
         }
 
         private void TinhGiaInOffsetForm_Load(object sender, EventArgs e)
@@ -339,10 +316,8 @@ namespace TinhGiaInOffset.WFUI
                 case "tabInVaGiayPageView":
                     ThemBaiIn();
                     break;
-                case "tabCanPhuPageView":
-                    ThemGiaCanPhu();
-                    break;
-                case "tabThanhPhamPageView":
+               
+                case "tabThanhPhamSauInPageView":
                     ThemGiaThanhPham();
                     break;
 
@@ -355,11 +330,8 @@ namespace TinhGiaInOffset.WFUI
             {
                 SuaBaiIn();
             }
-            if (tabPageView.SelectedPage.Name == "tabCanPhuPageView")
-            {
-                SuaGiaCanPhu();
-            }
-            if (tabPageView.SelectedPage.Name == "tabThanhPhamPageView")
+          
+            if (tabPageView.SelectedPage.Name == "tabThanhPhamSauInPageView")
             {
                 SuaGiaThanhPham();
             }
@@ -373,10 +345,8 @@ namespace TinhGiaInOffset.WFUI
                 case "tabInVaGiayPageView":
                     XoaBaiIn();
                     break;
-                case "tabCanPhuPageView":
-                    XoaGiaCanPhu();
-                    break;
-                case "tabThanhPhamPageView":
+              
+                case "tabThanhPhamSauInPageView":
                     XoaGiaThanhPham();
                     break;
 

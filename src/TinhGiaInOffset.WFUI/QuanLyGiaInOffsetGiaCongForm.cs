@@ -99,5 +99,69 @@ namespace TinhGiaInOffset.WFUI
         {
             this.Close();
         }
+
+        private void giaInOffsetRGridView_CreateCell(object sender, Telerik.WinControls.UI.GridViewCreateCellEventArgs e)
+        {
+            if (e.Column.Name == "id")
+            {
+                e.Column.HeaderText = "Id";
+                e.Column.Width = 20;
+            }
+            if (e.Column.Name == "TenGia")
+            {
+                e.Column.HeaderText = "Tên bảng giá";
+                e.Column.Width = 120;
+            }
+            if (e.Column.Name == "DienGiai")
+            {
+                e.Column.HeaderText = "Diễn giải";
+                e.Column.Width = 200;
+            }
+            if (e.Column.Name == "idNhaIn")
+            {
+                
+                e.Column.HeaderText = "Id Nhà In";
+                e.Column.Width = 120;
+                if (tatCaNhaInRCheck.Checked)
+                    e.Column.IsVisible = true;
+                else
+                    e.Column.IsVisible = false;
+            }
+            if (e.Column.Name == "DoiMayIn")
+            {
+                e.Column.HeaderText = "Đời máy in";
+                e.Column.Width = 60;
+            }
+            if (e.Column.Name == "DonGiaBai")
+            {
+                e.Column.HeaderText = "Giá 1 bài";
+                e.Column.Width = 60;
+            }
+            if (e.Column.Name == "GiaDaBaoKem")
+            {
+                e.Column.HeaderText = "Giá bao kẽm";
+                e.Column.Width = 40;
+            }
+            if (e.Column.Name == "ThongTinLienHe")
+            {
+                e.Column.HeaderText = "Thông tin liên hệ";
+                e.Column.Width = 200;
+            }
+            if (e.Column.Name == "GhiChu")
+            {
+                e.Column.HeaderText = "Ghi chú";
+                e.Column.Width = 250;
+            }
+            if (e.Column.Name == "KhongSuDung")
+            {
+                e.Column.HeaderText = "Không dùng";
+                e.Column.Width = 120;
+            }
+            if (e.Column.Name == "ThuTuSapXem")
+            {
+                e.Column.HeaderText = "Thứ tự";
+                e.Column.Width = 40;
+            }
+        }
     }
 }

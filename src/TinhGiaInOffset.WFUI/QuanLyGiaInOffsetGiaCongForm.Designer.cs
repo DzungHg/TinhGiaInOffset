@@ -119,6 +119,7 @@
             this.giaInOffsetRGridView.ReadOnly = true;
             this.giaInOffsetRGridView.Size = new System.Drawing.Size(761, 233);
             this.giaInOffsetRGridView.TabIndex = 57;
+            this.giaInOffsetRGridView.CreateCell += new Telerik.WinControls.UI.GridViewCreateCellEventHandler(this.giaInOffsetRGridView_CreateCell);
             // 
             // panelHeadOfPanel01RPanel
             // 
