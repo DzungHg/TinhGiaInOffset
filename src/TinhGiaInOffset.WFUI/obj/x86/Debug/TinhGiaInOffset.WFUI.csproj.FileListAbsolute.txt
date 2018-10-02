@@ -67,7 +67,8 @@ F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffs
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.csproj.GenerateResource.Cache
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.exe.licenses
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.TinhGiaInOffsetForm.resources
-D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.TaoPhiInOffsetGiaCongForm.resources
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.TinhGiaInOffsetForm.resources
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.TaoBaiInOffsetGiaCongForm.resources
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.TaoGiaBanThanhPhamForm.resources
+D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.TaoGiaBanThanhPhamForm.resources
+D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.TaoBaiInOffsetGiaCongForm.resources

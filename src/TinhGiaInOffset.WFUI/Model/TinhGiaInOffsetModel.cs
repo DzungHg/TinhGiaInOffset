@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TinhGiaInOffset.WFUI.TinhToan;
+using TinhGiaInOffset.WFUI.Helpers;
 
 namespace TinhGiaInOffset.WFUI.Model
 {
@@ -60,7 +60,7 @@ namespace TinhGiaInOffset.WFUI.Model
             decimal kq = 0;
             if (this.MucLoiNhuanBaiIn > 0 && this.MucLoiNhuanBaiIn <100)
             {
-                kq = this.TongPhiIn() / (1 - this.MucLoiNhuanBaiIn);
+                kq = this.TongPhiIn() / (1 - (decimal)this.MucLoiNhuanBaiIn/100);
             }
             return kq;
         }
@@ -73,7 +73,7 @@ namespace TinhGiaInOffset.WFUI.Model
             decimal phanChuaLoiNhuan = 0;
             if(this.MucLoiNhuanGiay > 0 && this.MucLoiNhuanGiay <100)
                 {
-                phanChuaLoiNhuan = this.TongPhiGiayChuaLoiNhuan() / (1 - this.MucLoiNhuanGiay);
+                phanChuaLoiNhuan = this.TongPhiGiayChuaLoiNhuan() / (1 - (decimal)this.MucLoiNhuanGiay/100);
             }
 
             kq = phanGomLoiNhuan + phanChuaLoiNhuan;
@@ -129,7 +129,7 @@ namespace TinhGiaInOffset.WFUI.Model
         {
             var kq = "";
             if (this.GiaBanThanhPhamBaoGom.Count > 0)
-                foreach (var baiTP in this.GiaBanCanPhuBaoGom)
+                foreach (var baiTP in this.GiaBanThanhPhamBaoGom)
                 {
                     kq += baiTP.Ten + ",";
                 }
@@ -141,24 +141,30 @@ namespace TinhGiaInOffset.WFUI.Model
         public string TomTatTinhToan()
         {
             var kq = "";
-            kq += this.TieuDe + '\r' + '\n';
-            kq += this.NgayTinhGia.ToString() + '\r' + '\n';
-            kq += "---IN---" + '\r' + '\n';
-            kq += $"---Số bài in bao gồm: {this.BaiInOffsetGiaCongBaoGom.Count}";
+            kq += $"Chào giá: {this.TieuDe}" + '\r' + '\n';
+            kq += $"Ngày: {this.NgayTinhGia.ToString()}" + '\r' + '\n';
+            kq += "-IN---" + '\r' + '\n';
+            kq += $"---Số bài in bao gồm: {this.BaiInOffsetGiaCongBaoGom.Count}" + '\r' + '\n';
             kq += string.Format("---Tổng tiền in: {0:0,0.00đ}" + '\r' + '\n', this.GiaTienIn_Ban());
 
-            kq += "---GIẤY---" + '\r' + '\n';
-            kq += $"---Các loại giấy: {this.CacLoaiGiaySuDung()}";
+            kq += "-GIẤY---" + '\r' + '\n';
+            kq += $"---Các loại giấy: {this.CacLoaiGiaySuDung()}" + '\r' + '\n';
             kq += string.Format("---Tổng tiền giấy: {0:0,0.00đ}" + '\r' + '\n', this.GiaTienGiay_Ban());
-
-            kq += "---CÁN PHỦ---" + '\r' + '\n';
-            kq += $"---Cán phủ: {this.CacLoaiCanPhu()}";
-            kq += string.Format("---Tổng tiền cán phủ: {0:0,0.00đ}" + '\r' + '\n', this.TongGiaCanPhu_Ban());
-
-            kq += "---THÀNH PHẨM---" + '\r' + '\n';
-            kq += $"---Thành phẩm: {this.CacLoaiThanhPham()}";
-            kq += string.Format("---Tổng tiền cán phủ: {0:0,0.00đ}" + '\r' + '\n', this.TongGiaThanhPham_Ban());
-
+            if (this.GiaBanCanPhuBaoGom.Count > 0)
+            {
+                kq += "-CÁN PHỦ---" + '\r' + '\n';
+                kq += $"---Cán phủ: {this.CacLoaiCanPhu()}" + '\r' + '\n';
+                kq += string.Format("---Tổng tiền cán phủ: {0:0,0.00đ}" + '\r' + '\n', this.TongGiaCanPhu_Ban());
+            }
+            if (this.GiaBanThanhPhamBaoGom.Count > 0)
+            {
+                kq += "-THÀNH PHẨM---" + '\r' + '\n';
+                kq += $"---Thành phẩm: {this.CacLoaiThanhPham()}" + '\r' + '\n';
+                kq += string.Format("---Tổng tiền cán phủ: {0:0,0.00đ}" + '\r' + '\n', this.TongGiaThanhPham_Ban());
+            }
+            kq += "-TỔNG ---" + '\r' + '\n';
+            kq += string.Format("---Giá tổng cộng: {0:0,0.00đ}", this.GiaTienIn_Ban() + this.GiaTienGiay_Ban() + 
+                        this.TongGiaCanPhu_Ban() + this.TongGiaThanhPham_Ban());
             return kq;
         }
     }

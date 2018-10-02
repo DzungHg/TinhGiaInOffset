@@ -7,7 +7,7 @@ using TinhGiaInOffset.WFUI.Model;
 using TinhGiaInOffset.WFUI.DTOContext;
 
 
-namespace TinhGiaInOffset.WFUI.TinhToan
+namespace TinhGiaInOffset.WFUI.Helpers
 {
     public static class PhiBaiInOffset
     {

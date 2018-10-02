@@ -78,7 +78,7 @@
     <Compile Include="TaoGiaBanThanhPhamForm.Designer.cs">
       <DependentUpon>TaoGiaBanThanhPhamForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TinhToan\PhiBaiInOffset.cs" />
+    <Compile Include="Helpers\PhiBaiInOffset.cs" />
     <Compile Include="Model\GiaInOffsetGiaCongModel.cs" />
     <Compile Include="Model\GiayChoBaiInOffsetModel.cs" />
     <Compile Include="Model\MayInOffsetModel.cs" />
