@@ -292,11 +292,28 @@ namespace TinhGiaInOffset.WFUI
             this.TinhGiaInOffset.GiaBanThanhPhamBaoGom.Remove((GiaBanThanhPhamModel)giaBanThanhPhamRListView.SelectedItem.DataBoundItem);
             DauNoiDuLieuChiPhiBaiIn();
         }
+
+        //TODO--Làm tiếp formvalidatioin
+        private bool FormValidation()
+        {
+            bool output = true;
+
+            if (tieuDeTinhGiaRTextBox.Text.Trim().Length == 0)
+                output = false;
+            if (yeuCauRTextCtrl.Text.Trim().Length == 0)
+                output = false;
+
+
+            return output;
+        }
         private void tinhToanGiaRButton_Click(object sender, EventArgs e)
         {
             //Gắn trước một số dữ liệu
             this.TinhGiaInOffset.TieuDe = tieuDeTinhGiaRTextBox.Text;
             this.TinhGiaInOffset.NgayTinhGia = ngayTinhGiaDateTime.Value;
+            this.TinhGiaInOffset.MucLoiNhuanBaiIn = int.Parse(phanTramLoiNhuanInRTextBox.Text);
+            this.TinhGiaInOffset.MucLoiNhuanGiay = int.Parse(phanTramLoiNhuanGiayRTextBox.Text);
+
             ketQuaTinhGiaBoxCtrl.Clear();
            
             ketQuaTinhGiaBoxCtrl.Text = this.TinhGiaInOffset.TomTatTinhToan();
