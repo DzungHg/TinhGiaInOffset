@@ -19,6 +19,7 @@ namespace TinhGiaInOffset.WFUI.Model
         
         public int MucLoiNhuanBaiIn { get; set; }
         public int MucLoiNhuanGiay { get; set; }
+        public string TomTatQuanLy { get; set; }
         //Các procedure
         public decimal TongPhiIn ()
         {
@@ -38,7 +39,7 @@ namespace TinhGiaInOffset.WFUI.Model
                 foreach (var baiIn in this.BaiInOffsetGiaCongBaoGom)
                 {
                     if (!baiIn.GiayDaCoLoiNhuan)
-                        kq += PhiBaiInOffset.TienGiayIn(baiIn.DonGiayTheoTo, baiIn.SoLuongToGiay);
+                        kq += PhiBaiInOffset.TienGiayIn(baiIn.DonGiaGiayTheoTo, baiIn.SoLuongToGiay);
                 }
 
             return kq;
@@ -50,7 +51,7 @@ namespace TinhGiaInOffset.WFUI.Model
                 foreach (var baiIn in this.BaiInOffsetGiaCongBaoGom)
                 {
                     if (baiIn.GiayDaCoLoiNhuan)
-                        kq += PhiBaiInOffset.TienGiayIn(baiIn.DonGiayTheoTo, baiIn.SoLuongToGiay);
+                        kq += PhiBaiInOffset.TienGiayIn(baiIn.DonGiaGiayTheoTo, baiIn.SoLuongToGiay);
                 }
 
             return kq;
@@ -118,7 +119,7 @@ namespace TinhGiaInOffset.WFUI.Model
 
             return kq;
         }
-        public string TomTatTinhToan()
+        public string TaoTomTat_ChaoGia()
         {
             var kq = "";
             kq += $"Chào giá: {this.TieuDe}" + '\r' + '\n';
@@ -139,6 +140,37 @@ namespace TinhGiaInOffset.WFUI.Model
             }
             kq += "-TỔNG ---" + '\r' + '\n';
             kq += string.Format("---Giá tổng cộng: {0:0,0.00đ}", this.GiaTienIn_Ban() + this.GiaTienGiay_Ban() + 
+                        this.TongGiaThanhPham_Ban());
+            return kq;
+        }
+        public string TaoTomTat_QuanLy()
+        {
+            var kq = "";
+            kq += $"Chào giá: {this.TieuDe}" + '\r' + '\n';
+            kq += $"Ngày: {this.NgayTinhGia.ToString()}, Tính bởi: {this.TenNguoiTinhGia}" + '\r' + '\n';
+            kq += $"Lợi nhuận cài đặt: " + '\r' + '\n';
+            kq += $"--In:{this.MucLoiNhuanBaiIn}%" + '\r' + '\n';
+            kq += $"--Giấy:{this.MucLoiNhuanGiay}%" + '\r' + '\n';
+            kq += "-IN---" + '\r' + '\n';
+            kq += $"---Số bài in bao gồm: {this.BaiInOffsetGiaCongBaoGom.Count}" + '\r' + '\n';
+            var strTam = "";
+            foreach (var baiIn in this.BaiInOffsetGiaCongBaoGom)
+            {
+                strTam += $"----{baiIn.TenBaiIn}; Kiểu in: {baiIn.KieuInOffset}; Số kẽm: {baiIn.SoKemIn};" + '\r' + '\n';
+                strTam += $"-----{baiIn.TenBaiIn}; Giấy: {baiIn.TenGiay}; Số Tờ: {baiIn.SoLuongToGiay} tờ;" + '\r' + '\n';
+            }
+            kq += strTam;
+            kq += string.Format("---Tổng tiền in: {0:0,0.00đ}" + '\r' + '\n', this.GiaTienIn_Ban());           
+            kq += string.Format("---Tổng tiền giấy: {0:0,0.00đ}" + '\r' + '\n', this.GiaTienGiay_Ban());
+
+            if (this.GiaBanThanhPhamSauInBaoGom.Count > 0)
+            {
+                kq += "-THÀNH PHẨM SU IN---" + '\r' + '\n';
+                kq += $"---Thành phẩm: {this.CacLoaiThanhPham()}" + '\r' + '\n';
+                kq += string.Format("---Tổng tiền cán phủ: {0:0,0.00đ}" + '\r' + '\n', this.TongGiaThanhPham_Ban());
+            }
+            kq += "-TỔNG ---" + '\r' + '\n';
+            kq += string.Format("---Giá tổng cộng: {0:0,0.00đ}", this.GiaTienIn_Ban() + this.GiaTienGiay_Ban() +
                         this.TongGiaThanhPham_Ban());
             return kq;
         }

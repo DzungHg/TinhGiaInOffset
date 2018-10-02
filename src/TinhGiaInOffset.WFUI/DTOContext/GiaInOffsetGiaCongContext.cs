@@ -42,23 +42,6 @@ namespace TinhGiaInOffset.WFUI.DTOContext
 
             var objModel = mapper.Map<GiaInOffsetGiaCongModel>(objBDO);
 
-            //Thêm chi tiết Máy in tại đây
-
-            var chiTietGiaInGiaCongOffset = "";
-            if (objModel.IdMayIn > 0)
-           {
-                
-               //Lay chi tiết máy in
-               var modelMayIn = new MayInOffsetContext().DocTheoId(objModel.IdMayIn);
-
-               var line01 = modelMayIn.ChiTietMayIn + '\r' + '\n';
-               var line02 = objModel.DoiMayIn + '\r' + '\n';
-               var line03 = string.Format("{0:0,0.00} đ/bài" + '\r' + '\n', objModel.DonGiaBai);
-
-               chiTietGiaInGiaCongOffset = line01 + line02 + line03;
-           }
-            objModel.ChiTietGiaInOffsetGiaCong = chiTietGiaInGiaCongOffset;
-
             //Trả về
             return objModel;
         }

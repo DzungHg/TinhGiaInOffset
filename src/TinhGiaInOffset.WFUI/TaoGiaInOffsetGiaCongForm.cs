@@ -10,6 +10,7 @@ using TinhGiaInOffset.Common.Enum;
 using TinhGiaInOffset.WFUI.Model;
 using TinhGiaInOffset.WFUI.DTOContext;
 
+
 namespace TinhGiaInOffset.WFUI
 {
     public partial class TaoGiaInOffsetGiaCongForm : Telerik.WinControls.UI.RadForm
@@ -19,6 +20,9 @@ namespace TinhGiaInOffset.WFUI
         //Dữ liệu nhà in và máy in
         private List<NhaInOffsetModel> nhaInOffsetSrc = new NhaInOffsetContext().DocTatCa();
         private List<MayInOffsetModel> mayInOffsetSrc = new MayInOffsetContext().DocTatCa();
+
+       
+
         public TaoGiaInOffsetGiaCongForm()
         {
             InitializeComponent();

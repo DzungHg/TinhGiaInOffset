@@ -102,7 +102,7 @@ namespace TinhGiaInOffset.WFUI
 
         private void giaInOffsetRGridView_CreateCell(object sender, Telerik.WinControls.UI.GridViewCreateCellEventArgs e)
         {
-            if (e.Column.Name == "id")
+            if (e.Column.Name == "Id")
             {
                 e.Column.HeaderText = "Id";
                 e.Column.Width = 20;

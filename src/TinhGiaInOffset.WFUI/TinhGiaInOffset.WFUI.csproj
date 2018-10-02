@@ -72,6 +72,7 @@
     <Compile Include="DTOContext\NhaInOffsetContext.cs" />
     <Compile Include="Model\BaiInOffsetGiaCongModel.cs" />
     <Compile Include="Model\GiaBanThanhPhamModel.cs" />
+    <Compile Include="Presentation\BaiInOffsetGiaCongPresenter.cs" />
     <Compile Include="TaoGiaBanThanhPhamForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +115,7 @@
     <Compile Include="TinhGiaInOffsetNavForm.Designer.cs">
       <DependentUpon>TinhGiaInOffsetNavForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\IViewBaiInOffsetGiaCong.cs" />
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLyGiaInOffsetGiaCongForm.resx">
       <DependentUpon>QuanLyGiaInOffsetGiaCongForm.cs</DependentUpon>

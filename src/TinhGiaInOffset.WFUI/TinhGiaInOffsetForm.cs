@@ -54,6 +54,7 @@ namespace TinhGiaInOffset.WFUI
         }
         private void ResetFormData()
         {
+            ngayTinhGiaDateTime.Value = DateTime.Today;
             phanTramLoiNhuanGiayRTextBox.Text = 30.ToString();
             phanTramLoiNhuanInRTextBox.Text = 30.ToString();
         }
@@ -288,7 +289,7 @@ namespace TinhGiaInOffset.WFUI
 
                 ketQuaTinhGiaBoxCtrl.Clear();
 
-                ketQuaTinhGiaBoxCtrl.Text = this.TinhGiaInOffset.TomTatTinhToan();
+                ketQuaTinhGiaBoxCtrl.Text = this.TinhGiaInOffset.TaoTomTat_ChaoGia();
             }
             else
             {

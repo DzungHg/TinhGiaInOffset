@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.bangGiaOffsetGiaCongDropDown = new Telerik.WinControls.UI.RadDropDownList();
+            this.giaOffsetGiaCongDropDown = new Telerik.WinControls.UI.RadDropDownList();
             this.chiTietBangGiaTextCtrl = new Telerik.WinControls.UI.RadTextBoxControl();
             this.tieuDeFormLabel = new Telerik.WinControls.UI.RadLabel();
             this.huyButton = new Telerik.WinControls.UI.RadButton();
@@ -60,7 +60,7 @@
             this.mayTinhRCal = new Telerik.WinControls.UI.RadCalculatorDropDown();
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bangGiaOffsetGiaCongDropDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giaOffsetGiaCongDropDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietBangGiaTextCtrl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tieuDeFormLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.huyButton)).BeginInit();
@@ -103,14 +103,14 @@
             this.radLabel4.TabIndex = 11;
             this.radLabel4.Text = "Chọn bảng giá";
             // 
-            // bangGiaOffsetGiaCongDropDown
+            // giaOffsetGiaCongDropDown
             // 
-            this.bangGiaOffsetGiaCongDropDown.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.bangGiaOffsetGiaCongDropDown.Location = new System.Drawing.Point(12, 167);
-            this.bangGiaOffsetGiaCongDropDown.Name = "bangGiaOffsetGiaCongDropDown";
-            this.bangGiaOffsetGiaCongDropDown.Size = new System.Drawing.Size(211, 20);
-            this.bangGiaOffsetGiaCongDropDown.TabIndex = 2;
-            this.bangGiaOffsetGiaCongDropDown.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.bangGiaOffsetGiaCongDropDown_SelectedIndexChanged);
+            this.giaOffsetGiaCongDropDown.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.giaOffsetGiaCongDropDown.Location = new System.Drawing.Point(12, 167);
+            this.giaOffsetGiaCongDropDown.Name = "giaOffsetGiaCongDropDown";
+            this.giaOffsetGiaCongDropDown.Size = new System.Drawing.Size(211, 20);
+            this.giaOffsetGiaCongDropDown.TabIndex = 2;
+            this.giaOffsetGiaCongDropDown.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.bangGiaOffsetGiaCongDropDown_SelectedIndexChanged);
             // 
             // chiTietBangGiaTextCtrl
             // 
@@ -381,7 +381,7 @@
             this.Controls.Add(this.taoGiaButton);
             this.Controls.Add(this.tieuDeFormLabel);
             this.Controls.Add(this.radLabel4);
-            this.Controls.Add(this.bangGiaOffsetGiaCongDropDown);
+            this.Controls.Add(this.giaOffsetGiaCongDropDown);
             this.Controls.Add(this.chiTietBangGiaTextCtrl);
             this.Name = "TaoBaiInOffsetGiaCongForm";
             // 
@@ -391,7 +391,7 @@
             this.Text = "Tạo bài in offset gia công";
             this.Load += new System.EventHandler(this.TaoPhiInOffsetGiaCongForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bangGiaOffsetGiaCongDropDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giaOffsetGiaCongDropDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietBangGiaTextCtrl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tieuDeFormLabel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.huyButton)).EndInit();
@@ -434,7 +434,7 @@
         #endregion
 
         private Telerik.WinControls.UI.RadLabel radLabel4;
-        private Telerik.WinControls.UI.RadDropDownList bangGiaOffsetGiaCongDropDown;
+        private Telerik.WinControls.UI.RadDropDownList giaOffsetGiaCongDropDown;
         private Telerik.WinControls.UI.RadTextBoxControl chiTietBangGiaTextCtrl;
         private Telerik.WinControls.UI.RadLabel tieuDeFormLabel;
         private Telerik.WinControls.UI.RadButton huyButton;

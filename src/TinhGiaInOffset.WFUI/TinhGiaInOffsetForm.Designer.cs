@@ -149,9 +149,9 @@
             // 
             this.radLabel2.Location = new System.Drawing.Point(532, 55);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(92, 18);
+            this.radLabel2.Size = new System.Drawing.Size(85, 18);
             this.radLabel2.TabIndex = 8;
-            this.radLabel2.Text = "Tóm tắt tính toán";
+            this.radLabel2.Text = "Tóm tắt tính giá";
             // 
             // huyRButton
             // 

@@ -22,7 +22,7 @@ namespace TinhGiaInOffset.WFUI.Model
         public string KieuInOffset { get; set; }
         public string TenGiay { get; set; }
         public string KhoGiayChay { get; set; }
-        public int DonGiayTheoTo { get; set; }
+        public int DonGiaGiayTheoTo { get; set; }
         public int SoLuongToGiay { get; set; }
         public bool GiayDaCoLoiNhuan { get; set; }
 
@@ -44,7 +44,7 @@ namespace TinhGiaInOffset.WFUI.Model
             this.KieuInOffset = kieuInOffset;
             this.TenGiay = tenGiay;
             this.KhoGiayChay = khoGiay;
-            this.DonGiayTheoTo = donGiaGiayTheoTo;
+            this.DonGiaGiayTheoTo = donGiaGiayTheoTo;
             this.SoLuongToGiay = soLuongToGiay;
             this.GiayDaCoLoiNhuan = giayDaCoLoiNhuan;
 
