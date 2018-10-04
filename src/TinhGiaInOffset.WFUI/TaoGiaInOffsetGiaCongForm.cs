@@ -244,6 +244,7 @@ namespace TinhGiaInOffset.WFUI
                 tieuDeFormLabel.Text = $"SỬA GIÁ ID [{this.giaInSua.Id}]";
 
             }
+            tieuDeFormLabel.Left = (ClientSize.Width - tieuDeFormLabel.Width) / 2;
         }
     }
 }

@@ -112,7 +112,7 @@
             this.ghiChuRTextCtrl.Multiline = true;
             this.ghiChuRTextCtrl.Name = "ghiChuRTextCtrl";
             this.ghiChuRTextCtrl.Size = new System.Drawing.Size(200, 57);
-            this.ghiChuRTextCtrl.TabIndex = 6;
+            this.ghiChuRTextCtrl.TabIndex = 7;
             // 
             // radLabel1
             // 
@@ -196,7 +196,7 @@
             this.mucLoiNhuanRTextBox.Location = new System.Drawing.Point(96, 179);
             this.mucLoiNhuanRTextBox.Name = "mucLoiNhuanRTextBox";
             this.mucLoiNhuanRTextBox.Size = new System.Drawing.Size(200, 20);
-            this.mucLoiNhuanRTextBox.TabIndex = 16;
+            this.mucLoiNhuanRTextBox.TabIndex = 6;
             // 
             // TaoGiaBanThanhPhamGiaCongForm
             // 

@@ -104,6 +104,7 @@
             // 
             // ghiChuRTextCtrl
             // 
+            this.ghiChuRTextCtrl.AcceptsReturn = true;
             this.ghiChuRTextCtrl.Location = new System.Drawing.Point(82, 179);
             this.ghiChuRTextCtrl.Multiline = true;
             this.ghiChuRTextCtrl.Name = "ghiChuRTextCtrl";
@@ -179,7 +180,7 @@
             this.loaiThanhPhamDropDown.Size = new System.Drawing.Size(216, 20);
             this.loaiThanhPhamDropDown.TabIndex = 1;
             // 
-            // TaoGiaBanThanhPhamForm
+            // TaoGiaBanThanhPhamTaiChoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -199,7 +200,7 @@
             this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.tenRTextBox);
             this.Controls.Add(this.tieuDeFormLabel);
-            this.Name = "TaoGiaBanThanhPhamForm";
+            this.Name = "TaoGiaBanThanhPhamTaiChoForm";
             // 
             // 
             // 

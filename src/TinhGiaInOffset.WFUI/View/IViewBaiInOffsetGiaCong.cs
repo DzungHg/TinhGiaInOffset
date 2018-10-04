@@ -12,6 +12,7 @@ namespace TinhGiaInOffset.WFUI.View
         string DienGiai { get; set; }
         int IdGiaInOffsetGiaCong { get; set; }
         string TenGiaInOffsetGiaCong { get; set; }
+        
         int SoMatCanIn { get; set; }
         int SoKemIn { get; set; }
         int SoToChayBuHaoThucCan { get; set; }

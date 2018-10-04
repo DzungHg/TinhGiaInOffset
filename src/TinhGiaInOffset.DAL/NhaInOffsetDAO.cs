@@ -29,7 +29,7 @@ namespace TinhGiaInOffset.DAL
             NhaInOffsetBDO output;
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(tenDB)))
             {
-                output = connection.Query<NhaInOffsetBDO>("dbo.spNhaInOffset_DocTheoId", id).SingleOrDefault();
+                output = connection.Query<NhaInOffsetBDO>("select * from NhaInOffset where @id = id",new { id = id }).SingleOrDefault();
                 return output;
 
             }

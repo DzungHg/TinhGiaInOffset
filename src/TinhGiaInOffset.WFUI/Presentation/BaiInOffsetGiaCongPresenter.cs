@@ -28,11 +28,18 @@ namespace TinhGiaInOffset.WFUI.Presentation
         {
             return new GiaInOffsetGiaCongContext().DocGiaConSuDung();
         }
+        public string LayTenNhaInOffset (int idBangGia)
+        {
+            var kq = "";
+            var bGia = giaInGiaCongOffset.DocTheoId(idBangGia);
+            kq = nhaInOffsetContext.DocTheoId(bGia.IdNhaIn).TenNhaIn;
+            return kq;
+        }
         public BaiInOffsetGiaCongModel ThemBaiIn(string tenBaiIn, string dienGiai, int idGiaInOffsetGiaCong, string tenGiaInOffsetGiaCong,
             int soMatCanIn, int soKem, int soToBuHaoThucCan, string kieuInOffset, string tenGiay, string khoGiay, int donGiaGiayTheoTo,
             int soLuongToGiay, bool giayDaCoLoiNhuan, bool inTheoLo)
         {
-            var model = new BaiInOffsetGiaCongModel(tenBaiIn,dienGiai,  idGiaInOffsetGiaCong, tenGiaInOffsetGiaCong,
+            var model = new BaiInOffsetGiaCongModel(tenBaiIn,dienGiai,  idGiaInOffsetGiaCong, tenGiaInOffsetGiaCong, this.LayTenNhaInOffset(View.IdGiaInOffsetGiaCong),
              soMatCanIn,  soKem, soToBuHaoThucCan,  kieuInOffset,  tenGiay,  khoGiay,  donGiaGiayTheoTo,
              soLuongToGiay,  giayDaCoLoiNhuan, inTheoLo);
 
@@ -68,7 +75,7 @@ namespace TinhGiaInOffset.WFUI.Presentation
             View.TenBaiIn = "";
             View.DienGiai = "";
             View.TenGiay = "Couche";
-            View.DonGiaGiayTheoTo = 0;
+            View.DonGiaGiayTheoTo = 1;
             View.SoLuongToGiay = 500;
             View.SoMatCanIn = 500;
             View.SoKemIn = 1;

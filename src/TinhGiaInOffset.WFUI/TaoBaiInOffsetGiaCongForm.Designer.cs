@@ -49,7 +49,9 @@
             this.tenBaiInOffsetRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
+            this.inTheoLoCheck = new Telerik.WinControls.UI.RadCheckBox();
             this.soKemRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
             this.soToChayBuHaoThucCanRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.kieuInOffsetDropDown = new Telerik.WinControls.UI.RadDropDownList();
@@ -58,9 +60,8 @@
             this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
             this.mayTinhRCal = new Telerik.WinControls.UI.RadCalculatorDropDown();
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
-            this.inTheoLoCheck = new Telerik.WinControls.UI.RadCheckBox();
-            this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
             this.thongBaoRLabel = new Telerik.WinControls.UI.RadLabel();
+            this.tenNhaInOffsetRLabel = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giaOffsetGiaCongDropDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietBangGiaTextCtrl)).BeginInit();
@@ -84,7 +85,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
             this.radGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inTheoLoCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soKemRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soToChayBuHaoThucCanRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kieuInOffsetDropDown)).BeginInit();
@@ -93,9 +96,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mayTinhRCal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inTheoLoCheck)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thongBaoRLabel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tenNhaInOffsetRLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -288,6 +290,15 @@
             this.radGroupBox2.TabIndex = 10;
             this.radGroupBox2.Text = "In";
             // 
+            // inTheoLoCheck
+            // 
+            this.inTheoLoCheck.Location = new System.Drawing.Point(22, 21);
+            this.inTheoLoCheck.Name = "inTheoLoCheck";
+            this.inTheoLoCheck.Size = new System.Drawing.Size(68, 18);
+            this.inTheoLoCheck.TabIndex = 11;
+            this.inTheoLoCheck.Text = "In theo lô";
+            this.inTheoLoCheck.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.inTheoLoCheck_ToggleStateChanged);
+            // 
             // soKemRTextBox
             // 
             this.soKemRTextBox.Location = new System.Drawing.Point(105, 74);
@@ -296,6 +307,14 @@
             this.soKemRTextBox.Size = new System.Drawing.Size(135, 20);
             this.soKemRTextBox.TabIndex = 13;
             this.soKemRTextBox.Text = "14";
+            // 
+            // radLabel8
+            // 
+            this.radLabel8.Location = new System.Drawing.Point(22, 48);
+            this.radLabel8.Name = "radLabel8";
+            this.radLabel8.Size = new System.Drawing.Size(40, 18);
+            this.radLabel8.TabIndex = 14;
+            this.radLabel8.Text = "Kiểu in";
             // 
             // soToChayBuHaoThucCanRTextBox
             // 
@@ -365,23 +384,6 @@
             this.radLabel13.TabIndex = 65;
             this.radLabel13.Text = "Máy tính";
             // 
-            // inTheoLoCheck
-            // 
-            this.inTheoLoCheck.Location = new System.Drawing.Point(22, 21);
-            this.inTheoLoCheck.Name = "inTheoLoCheck";
-            this.inTheoLoCheck.Size = new System.Drawing.Size(68, 18);
-            this.inTheoLoCheck.TabIndex = 11;
-            this.inTheoLoCheck.Text = "In theo lô";
-            this.inTheoLoCheck.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.inTheoLoCheck_ToggleStateChanged);
-            // 
-            // radLabel8
-            // 
-            this.radLabel8.Location = new System.Drawing.Point(22, 48);
-            this.radLabel8.Name = "radLabel8";
-            this.radLabel8.Size = new System.Drawing.Size(40, 18);
-            this.radLabel8.TabIndex = 14;
-            this.radLabel8.Text = "Kiểu in";
-            // 
             // thongBaoRLabel
             // 
             this.thongBaoRLabel.ForeColor = System.Drawing.Color.Red;
@@ -391,11 +393,20 @@
             this.thongBaoRLabel.TabIndex = 66;
             this.thongBaoRLabel.Text = ".";
             // 
+            // tenNhaInOffsetRLabel
+            // 
+            this.tenNhaInOffsetRLabel.Location = new System.Drawing.Point(239, 169);
+            this.tenNhaInOffsetRLabel.Name = "tenNhaInOffsetRLabel";
+            this.tenNhaInOffsetRLabel.Size = new System.Drawing.Size(90, 18);
+            this.tenNhaInOffsetRLabel.TabIndex = 67;
+            this.tenNhaInOffsetRLabel.Text = "Tên nhà in offset";
+            // 
             // TaoBaiInOffsetGiaCongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 455);
+            this.Controls.Add(this.tenNhaInOffsetRLabel);
             this.Controls.Add(this.thongBaoRLabel);
             this.Controls.Add(this.radLabel13);
             this.Controls.Add(this.mayTinhRCal);
@@ -443,7 +454,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).EndInit();
             this.radGroupBox2.ResumeLayout(false);
             this.radGroupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inTheoLoCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soKemRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soToChayBuHaoThucCanRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kieuInOffsetDropDown)).EndInit();
@@ -452,9 +465,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mayTinhRCal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inTheoLoCheck)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thongBaoRLabel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tenNhaInOffsetRLabel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -496,5 +508,6 @@
         private Telerik.WinControls.UI.RadCheckBox inTheoLoCheck;
         private Telerik.WinControls.UI.RadLabel radLabel8;
         private Telerik.WinControls.UI.RadLabel thongBaoRLabel;
+        private Telerik.WinControls.UI.RadLabel tenNhaInOffsetRLabel;
     }
 }

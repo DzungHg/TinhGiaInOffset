@@ -14,12 +14,16 @@ namespace TinhGiaInOffset.WFUI.Model
         public GiaBanThanhPhamGiaCongModel(string ten, int soLuong, string donViTinh, decimal thanhTien, string ghiChu, string loaiThanhPhamSauIn, int mucLoiNhuan)
         {
             base.Ten = ten;
-            base.ThanhTien = thanhTien;
-            base.GhiChu = ghiChu;
-            base.DonViTinh = donViTinh;
-            base.SoLuong = soLuong;
             base.LoaiThanhPham = loaiThanhPhamSauIn;
+            base.SoLuong = soLuong;
+            base.DonViTinh = donViTinh;
+            base.ThanhTien = thanhTien;
             this.MucLoiNhuan = mucLoiNhuan;
+            base.GhiChu = ghiChu;
+            
+            
+           
+           
             //giả lập Id
             lastId += 1;
             this.Id = lastId;
@@ -37,6 +41,9 @@ namespace TinhGiaInOffset.WFUI.Model
                     return kq;
             }
         }
-
+        public string GiaBanText
+        {
+            get { return string.Format("{0:0,0.00đ}", this.GiaBan); }
+        }
     }
 }

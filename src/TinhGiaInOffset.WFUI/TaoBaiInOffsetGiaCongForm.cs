@@ -255,6 +255,7 @@ namespace TinhGiaInOffset.WFUI
                 var idGiaIn = ((GiaInOffsetGiaCongModel)giaOffsetGiaCongDropDown.SelectedValue).Id;
 
                 chiTietBangGiaTextCtrl.Text = baiInOffsetGiaCongPres.ChiTietGiaInGiaCong(idGiaIn);
+                tenNhaInOffsetRLabel.Text = baiInOffsetGiaCongPres.LayTenNhaInOffset(idGiaIn);
             } catch { }
 
                    
@@ -454,6 +455,7 @@ namespace TinhGiaInOffset.WFUI
                     this.InTheoLo = this.BaiInInOffsetGiaCong.InTheoLo;
                     break;
             }
+            tieuDeFormLabel.Left = (ClientSize.Width - tieuDeFormLabel.Width) / 2;
         }
 
         private void kieuInOffsetDropDown_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)

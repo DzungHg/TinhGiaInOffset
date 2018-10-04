@@ -29,7 +29,8 @@ namespace TinhGiaInOffset.WFUI
         private void ResetFormData()
         {
             phiGiaCongRTextBox.Text = 1.ToString();
-            
+            soLuongRTextBox.Text = 1.ToString();
+            mucLoiNhuanRTextBox.Text = 30.ToString();
             
         }
         private bool FormValidation()
@@ -69,12 +70,12 @@ namespace TinhGiaInOffset.WFUI
                     output = false;
             }
 
-            bool mucLoiNhuanValid = int.TryParse(mucLoiNhuanRTextBox.Text, out soLuong);
+            bool mucLoiNhuanValid = int.TryParse(mucLoiNhuanRTextBox.Text, out mucLoiNhuan);
             if (mucLoiNhuanValid == false)
                 output = false;
             else
             {
-                if (mucLoiNhuan <= 0)
+                if (mucLoiNhuan <= 0 || mucLoiNhuan >= 100)
                     output = false;
             }
 
@@ -137,6 +138,7 @@ namespace TinhGiaInOffset.WFUI
                     //combo
                     break;
             }
+            tieuDeFormLabel.Left = (ClientSize.Width - tieuDeFormLabel.Width) / 2;
         }
     }
 }

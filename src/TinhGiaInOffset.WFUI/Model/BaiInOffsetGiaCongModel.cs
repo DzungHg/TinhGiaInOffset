@@ -16,6 +16,7 @@ namespace TinhGiaInOffset.WFUI.Model
         public string DienGiai { get; set; }
         public int IdGiaInOffsetGiaCong { get; set; }
         public string TenGiaInOffsetGiaCong { get; set; }
+        public string TenNhaInOffset { get; set; }
         public int SoMatCanIn { get; set; }
         public bool InTheoLo { get; set; }
         public int SoKemIn { get; set; }        
@@ -28,7 +29,7 @@ namespace TinhGiaInOffset.WFUI.Model
         public bool GiayDaCoLoiNhuan { get; set; }
 
         public BaiInOffsetGiaCongModel(string tenBaiIn, string dienGiai, int idGiaInOffsetGiaCong, string tenGiaInOffsetGiaCong,
-            int soMatCanIn, int soKem, int soToBuHaoThucCan, string kieuInOffset, string tenGiay, string khoGiay, int donGiaGiayTheoTo, 
+            string tenNhaInOffset, int soMatCanIn, int soKem, int soToBuHaoThucCan, string kieuInOffset, string tenGiay, string khoGiay, int donGiaGiayTheoTo, 
             int soLuongToGiay, bool giayDaCoLoiNhuan, bool inTheoLo)
         {
             //Tăng lên id

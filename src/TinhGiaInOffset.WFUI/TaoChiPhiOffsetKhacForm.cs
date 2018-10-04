@@ -99,12 +99,13 @@ namespace TinhGiaInOffset.WFUI
                     break;
                 case TinhTrangForm.Sua:
                     tieuDeFormLabel.Text = this.Text;
-                  
+                    tenRTextBox.Text = this.chiPhiOffsetKhacModel.Ten;
                     tienPhiRTextBox.Text = this.chiPhiOffsetKhacModel.TienPhi.ToString();
                     ghiChuRTextCtrl.Text = this.chiPhiOffsetKhacModel.GhiChu;
                     //combo
                     break;
             }
+            tieuDeFormLabel.Left = (ClientSize.Width - tieuDeFormLabel.Width) / 2;
         }
     }
 }
