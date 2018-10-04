@@ -76,6 +76,8 @@
     <Compile Include="Model\GiaBanThanhPhamGiaCongModel.cs" />
     <Compile Include="Model\GiaBanThanhPhamTaiChoModel.cs" />
     <Compile Include="Presentation\BaiInOffsetGiaCongPresenter.cs" />
+    <Compile Include="Presentation\QuanLyGiaInOffsetGiaCongPresenter.cs" />
+    <Compile Include="Presentation\TaoMayInOffsetPresenter.cs" />
     <Compile Include="Presentation\TinhGiaInOffsetPresenter.cs" />
     <Compile Include="TaoGiaBanThanhPhamGiaCongForm.cs">
       <SubType>Form</SubType>
@@ -119,6 +121,12 @@
     <Compile Include="TaoBaiInOffsetGiaCongForm.Designer.cs">
       <DependentUpon>TaoBaiInOffsetGiaCongForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TaoMayInOffsetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaoMayInOffsetForm.Designer.cs">
+      <DependentUpon>TaoMayInOffsetForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TinhGiaInOffsetForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +140,7 @@
       <DependentUpon>TinhGiaInOffsetNavForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\IViewBaiInOffsetGiaCong.cs" />
+    <Compile Include="View\IViewTaoMayInOffset.cs" />
     <Compile Include="View\IViewTinhGiaInOffset.cs" />
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLyGiaInOffsetGiaCongForm.resx">
@@ -151,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TaoBaiInOffsetGiaCongForm.resx">
       <DependentUpon>TaoBaiInOffsetGiaCongForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaoMayInOffsetForm.resx">
+      <DependentUpon>TaoMayInOffsetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TinhGiaInOffsetForm.resx">
       <DependentUpon>TinhGiaInOffsetForm.cs</DependentUpon>

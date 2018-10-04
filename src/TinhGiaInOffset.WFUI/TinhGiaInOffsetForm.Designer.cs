@@ -117,7 +117,7 @@
             this.yeuCauRTextCtrl.Multiline = true;
             this.yeuCauRTextCtrl.Name = "yeuCauRTextCtrl";
             this.yeuCauRTextCtrl.Size = new System.Drawing.Size(415, 125);
-            this.yeuCauRTextCtrl.TabIndex = 6;
+            this.yeuCauRTextCtrl.TabIndex = 4;
             // 
             // radLabel3
             // 
@@ -132,7 +132,7 @@
             this.tieuDeTinhGiaRTextBox.Location = new System.Drawing.Point(100, 82);
             this.tieuDeTinhGiaRTextBox.Name = "tieuDeTinhGiaRTextBox";
             this.tieuDeTinhGiaRTextBox.Size = new System.Drawing.Size(415, 20);
-            this.tieuDeTinhGiaRTextBox.TabIndex = 5;
+            this.tieuDeTinhGiaRTextBox.TabIndex = 3;
             // 
             // tieuDeFormLabel
             // 
@@ -156,7 +156,7 @@
             this.ngayTinhGiaDateTime.Location = new System.Drawing.Point(100, 55);
             this.ngayTinhGiaDateTime.Name = "ngayTinhGiaDateTime";
             this.ngayTinhGiaDateTime.Size = new System.Drawing.Size(164, 20);
-            this.ngayTinhGiaDateTime.TabIndex = 2;
+            this.ngayTinhGiaDateTime.TabIndex = 1;
             this.ngayTinhGiaDateTime.TabStop = false;
             this.ngayTinhGiaDateTime.Text = "Monday, October 1, 2018";
             this.ngayTinhGiaDateTime.Value = new System.DateTime(2018, 10, 1, 8, 9, 15, 145);
@@ -183,7 +183,7 @@
             this.themRButton.Location = new System.Drawing.Point(29, 239);
             this.themRButton.Name = "themRButton";
             this.themRButton.Size = new System.Drawing.Size(80, 24);
-            this.themRButton.TabIndex = 7;
+            this.themRButton.TabIndex = 10;
             this.themRButton.Text = "Thêm";
             this.themRButton.Click += new System.EventHandler(this.themRButton_Click);
             // 
@@ -218,7 +218,7 @@
             this.phanTramLoiNhuanInRTextBox.Location = new System.Drawing.Point(96, 3);
             this.phanTramLoiNhuanInRTextBox.Name = "phanTramLoiNhuanInRTextBox";
             this.phanTramLoiNhuanInRTextBox.Size = new System.Drawing.Size(80, 20);
-            this.phanTramLoiNhuanInRTextBox.TabIndex = 6;
+            this.phanTramLoiNhuanInRTextBox.TabIndex = 16;
             // 
             // radLabel6
             // 
@@ -233,7 +233,7 @@
             this.phanTramLoiNhuanGiayRTextBox.Location = new System.Drawing.Point(295, 4);
             this.phanTramLoiNhuanGiayRTextBox.Name = "phanTramLoiNhuanGiayRTextBox";
             this.phanTramLoiNhuanGiayRTextBox.Size = new System.Drawing.Size(80, 20);
-            this.phanTramLoiNhuanGiayRTextBox.TabIndex = 7;
+            this.phanTramLoiNhuanGiayRTextBox.TabIndex = 17;
             // 
             // tomTatChaoGiaTextBoxCtrl
             // 
@@ -264,7 +264,7 @@
             this.PageViewChiTiet.Name = "PageViewChiTiet";
             this.PageViewChiTiet.SelectedPage = this.tabInVaGiayPageView;
             this.PageViewChiTiet.Size = new System.Drawing.Size(778, 278);
-            this.PageViewChiTiet.TabIndex = 8;
+            this.PageViewChiTiet.TabIndex = 11;
             // 
             // tabInVaGiayPageView
             // 
@@ -283,7 +283,7 @@
             this.phiBaiInGiaCongRListView.Location = new System.Drawing.Point(0, 32);
             this.phiBaiInGiaCongRListView.Name = "phiBaiInGiaCongRListView";
             this.phiBaiInGiaCongRListView.Size = new System.Drawing.Size(757, 198);
-            this.phiBaiInGiaCongRListView.TabIndex = 6;
+            this.phiBaiInGiaCongRListView.TabIndex = 12;
             this.phiBaiInGiaCongRListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
             this.phiBaiInGiaCongRListView.ColumnCreating += new Telerik.WinControls.UI.ListViewColumnCreatingEventHandler(this.phiBaiInGiaCongRListView_ColumnCreating);
             // 
@@ -297,7 +297,7 @@
             this.radPanel1.Location = new System.Drawing.Point(0, 0);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(757, 32);
-            this.radPanel1.TabIndex = 0;
+            this.radPanel1.TabIndex = 11;
             // 
             // tabThanhPhamTai123PageView
             // 
@@ -315,7 +315,7 @@
             this.giaBanThanhPhamRListView.Location = new System.Drawing.Point(0, 0);
             this.giaBanThanhPhamRListView.Name = "giaBanThanhPhamRListView";
             this.giaBanThanhPhamRListView.Size = new System.Drawing.Size(757, 230);
-            this.giaBanThanhPhamRListView.TabIndex = 7;
+            this.giaBanThanhPhamRListView.TabIndex = 13;
             this.giaBanThanhPhamRListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
             this.giaBanThanhPhamRListView.ColumnCreating += new Telerik.WinControls.UI.ListViewColumnCreatingEventHandler(this.giaBanThanhPhamRListView_ColumnCreating);
             // 
@@ -335,7 +335,7 @@
             this.giaBanThanhPhamGiaCongRListView.Location = new System.Drawing.Point(0, 0);
             this.giaBanThanhPhamGiaCongRListView.Name = "giaBanThanhPhamGiaCongRListView";
             this.giaBanThanhPhamGiaCongRListView.Size = new System.Drawing.Size(757, 230);
-            this.giaBanThanhPhamGiaCongRListView.TabIndex = 8;
+            this.giaBanThanhPhamGiaCongRListView.TabIndex = 14;
             this.giaBanThanhPhamGiaCongRListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
             this.giaBanThanhPhamGiaCongRListView.ColumnCreating += new Telerik.WinControls.UI.ListViewColumnCreatingEventHandler(this.giaBanThanhPhamGiaCongRListView_ColumnCreating);
             // 
@@ -355,7 +355,7 @@
             this.chiPhiKhacRListView.Location = new System.Drawing.Point(0, 0);
             this.chiPhiKhacRListView.Name = "chiPhiKhacRListView";
             this.chiPhiKhacRListView.Size = new System.Drawing.Size(757, 230);
-            this.chiPhiKhacRListView.TabIndex = 8;
+            this.chiPhiKhacRListView.TabIndex = 15;
             this.chiPhiKhacRListView.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
             this.chiPhiKhacRListView.ColumnCreating += new Telerik.WinControls.UI.ListViewColumnCreatingEventHandler(this.chiPhiKhacRListView_ColumnCreating);
             // 
@@ -364,7 +364,7 @@
             this.tenNguoiTinhGiaRTextBox.Location = new System.Drawing.Point(343, 56);
             this.tenNguoiTinhGiaRTextBox.Name = "tenNguoiTinhGiaRTextBox";
             this.tenNguoiTinhGiaRTextBox.Size = new System.Drawing.Size(172, 20);
-            this.tenNguoiTinhGiaRTextBox.TabIndex = 3;
+            this.tenNguoiTinhGiaRTextBox.TabIndex = 2;
             // 
             // radLabel7
             // 
@@ -382,7 +382,7 @@
             this.PageViewTomTat.Name = "PageViewTomTat";
             this.PageViewTomTat.SelectedPage = this.tabTomTatChaoGiaPageView;
             this.PageViewTomTat.Size = new System.Drawing.Size(276, 214);
-            this.PageViewTomTat.TabIndex = 52;
+            this.PageViewTomTat.TabIndex = 20;
             // 
             // tabTomTatChaoGiaPageView
             // 

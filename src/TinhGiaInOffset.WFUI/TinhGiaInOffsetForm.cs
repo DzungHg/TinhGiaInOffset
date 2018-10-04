@@ -523,6 +523,9 @@ namespace TinhGiaInOffset.WFUI
 
             }
             tieuDeFormLabel.Left = (ClientSize.Width - tieuDeFormLabel.Width) / 2;
+            tenNguoiTinhGiaRTextBox.NullText = "Tên người tính giá";
+            tieuDeTinhGiaRTextBox.NullText = "Tiêu đề";
+            yeuCauRTextCtrl.NullText = "Yêu cầu";
         }
 
         private void themRButton_Click(object sender, EventArgs e)

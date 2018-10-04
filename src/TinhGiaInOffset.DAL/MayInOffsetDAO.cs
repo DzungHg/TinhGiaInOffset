@@ -48,14 +48,22 @@ namespace TinhGiaInOffset.DAL
                 p.Add("@id", entityBDO.Id);
                 p.Add("@TenMayIn", entityBDO.TenMayIn);
                 p.Add("@MoTa", entityBDO.MoTa);
+                p.Add("@KhoGiayToiDaRong", entityBDO.KhoGiayToiDaRong);
+                p.Add("@KhoGiayToiDaDai", entityBDO.KhoGiayToiDaDai);
+                p.Add("@KhoGiayToiThieuRong", entityBDO.KhoGiayToiThieuRong);
+                p.Add("@KhoGiayToiThieuDai", entityBDO.KhoGiayToiThieuDai);
                 p.Add("@KhoInToiDaRong", entityBDO.KhoInToiDaRong);
                 p.Add("@KhoInToiDaDai", entityBDO.KhoInToiDaDai);
                 p.Add("@KhoInToiThieuRong", entityBDO.KhoInToiThieuRong);
                 p.Add("@KhoInToiThieuDai", entityBDO.KhoInToiThieuDai);
+                p.Add("@ThongTinTocDo", entityBDO.ThongTinTocDo);
                 p.Add("@TocDoToGio", entityBDO.TocDoToGio);
+                p.Add("@GiayCoTheIn", entityBDO.GiayCoTheIn);
                 p.Add("@SoMauIn", entityBDO.SoMauIn);
                 p.Add("@DonViDemClick", entityBDO.DonViDemClick);
                 p.Add("@HangSanXuat", entityBDO.HangSanXuat);
+                p.Add("@LeBatNhip", entityBDO.LeBatNhip);
+                p.Add("@LeTuTro", entityBDO.LeTuTro);
 
                 //Excecute
                 connection.Execute("dbo.spMayInOffset_SuaTheoId", p, commandType: CommandType.StoredProcedure);
@@ -70,17 +78,24 @@ namespace TinhGiaInOffset.DAL
             {
                 var p = new DynamicParameters(); //Của dapper
 
-                p.Add("@TenMayIn", entityBDO.TenMayIn);               
+                p.Add("@TenMayIn", entityBDO.TenMayIn);
                 p.Add("@MoTa", entityBDO.MoTa);
+                p.Add("@KhoGiayToiDaRong", entityBDO.KhoGiayToiDaRong);
+                p.Add("@KhoGiayToiDaDai", entityBDO.KhoGiayToiDaDai);
+                p.Add("@KhoGiayToiThieuRong", entityBDO.KhoGiayToiThieuRong);
+                p.Add("@KhoGiayToiThieuDai", entityBDO.KhoGiayToiThieuDai);
                 p.Add("@KhoInToiDaRong", entityBDO.KhoInToiDaRong);
                 p.Add("@KhoInToiDaDai", entityBDO.KhoInToiDaDai);
                 p.Add("@KhoInToiThieuRong", entityBDO.KhoInToiThieuRong);
                 p.Add("@KhoInToiThieuDai", entityBDO.KhoInToiThieuDai);
+                p.Add("@ThongTinTocDo", entityBDO.ThongTinTocDo);
                 p.Add("@TocDoToGio", entityBDO.TocDoToGio);
+                p.Add("@GiayCoTheIn", entityBDO.GiayCoTheIn);
                 p.Add("@SoMauIn", entityBDO.SoMauIn);
                 p.Add("@DonViDemClick", entityBDO.DonViDemClick);
                 p.Add("@HangSanXuat", entityBDO.HangSanXuat);
-
+                p.Add("@LeBatNhip", entityBDO.LeBatNhip);
+                p.Add("@LeTuTro", entityBDO.LeTuTro);
                 p.Add("@id", dbType: DbType.Int32, direction: ParameterDirection.Output);
                 //Excecute
                 connection.Execute("dbo.spMayInOffset_Them", p, commandType: CommandType.StoredProcedure);

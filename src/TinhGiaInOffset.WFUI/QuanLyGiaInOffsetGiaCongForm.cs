@@ -6,19 +6,23 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
-using TinhGiaInOffset.WFUI.DTOContext;
+using TinhGiaInOffset.WFUI.Presentation;
 using TinhGiaInOffset.WFUI.Model;
 
 namespace TinhGiaInOffset.WFUI
 {
     public partial class QuanLyGiaInOffsetGiaCongForm : Telerik.WinControls.UI.RadForm
     {
-        private List<GiaInOffsetGiaCongModel> giaInOffsetSrc = null;
-        private List<NhaInOffsetModel> nhaInOffsetSrc = new NhaInOffsetContext().DocTatCa();
+       
+       
+        QuanLyGiaInOffsetGiaCongPresenter quanLyGiaInPres;
+        private List<GiaInOffsetGiaCongModel> giaInOffsetSrc;
         public QuanLyGiaInOffsetGiaCongForm()
         {
             InitializeComponent();
+            quanLyGiaInPres = new QuanLyGiaInOffsetGiaCongPresenter();
             //Cài check
+
             tatCaNhaInRCheck.Checked = true;
             DauNoiDuLieu();
            
@@ -28,11 +32,76 @@ namespace TinhGiaInOffset.WFUI
         private void DauNoiDuLieu()
         {
             nhaInOffsetDropDown.DataSource = null;
-            nhaInOffsetDropDown.DataSource = nhaInOffsetSrc;
+            nhaInOffsetDropDown.DataSource = quanLyGiaInPres.NhaInOffsetS();
             nhaInOffsetDropDown.DataMember = "Id";
             nhaInOffsetDropDown.DisplayMember = "TenNhaIn";
+            //Máy in
+            mayInOffsetRGridView.DataSource = null;
+            mayInOffsetRGridView.DataSource = quanLyGiaInPres.MayInOffsetS();
         }
         private void taoGiaRButton_Click(object sender, EventArgs e)
+        {
+            switch (PageView1.SelectedPage.Name)
+            {
+                case "tabGiaGiaCongPageView":
+                    TaoBangGia();
+                    break;
+                case "tabMayInPageView":
+                    TaoMayInOffset();
+                    break;
+            }
+        }
+
+
+
+
+        
+        private void suaGiaRButton_Click(object sender, EventArgs e)
+        {
+            switch (PageView1.SelectedPage.Name)
+            {
+                case "tabGiaGiaCongPageView":
+                    SuaBangGia();
+                    break;
+                case "tabMayInPageView":
+                    SuaMayInOffset();
+                    break;
+            }
+        }
+
+        private void tatCaNhaInRCheck_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+            //Tắt mở
+            nhaInOffsetDropDown.Enabled = !tatCaNhaInRCheck.Checked;
+            // đấu lại dữ liệu
+           
+            if (tatCaNhaInRCheck.Checked)
+            {
+                giaInOffsetSrc = quanLyGiaInPres.GiaInOffsetS();
+            }
+            else
+            {
+                if (nhaInOffsetDropDown.SelectedItem != null)
+                {
+                    var model = (NhaInOffsetModel) nhaInOffsetDropDown.SelectedItem.DataBoundItem;
+                    giaInOffsetSrc = quanLyGiaInPres.GiaInOffsetSTheoNhaIn(model.Id);
+                }
+            }
+            giaInOffsetRGridView.DataSource = null;
+            giaInOffsetRGridView.DataSource = giaInOffsetSrc;
+    }
+
+        private void QuanLyGiaInOffsetGiaCongForm_Resize(object sender, EventArgs e)
+        {
+            PageView1.Width = ClientSize.Width - 8;
+            PageView1.Left = 4;
+        }
+
+        private void huyButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void TaoBangGia()
         {
             var frm = new TaoGiaInOffsetGiaCongForm();
             frm.TinhTrangForm = Common.Enum.TinhTrangForm.Moi;
@@ -45,9 +114,9 @@ namespace TinhGiaInOffset.WFUI
                 DauNoiDuLieu();
             }
         }
-        private void suaGiaRButton_Click(object sender, EventArgs e)
+        private void SuaBangGia()
         {
-            if (giaInOffsetRGridView.CurrentCell == null)
+            if (giaInOffsetRGridView.CurrentRow == null)
             {
                 MessageBox.Show("Bạn cần chọn gì đó để sửa");
                 return;
@@ -66,40 +135,41 @@ namespace TinhGiaInOffset.WFUI
                 DauNoiDuLieu();
             }
         }
-
-        private void tatCaNhaInRCheck_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        private void TaoMayInOffset()
         {
-            //Tắt mở
-            nhaInOffsetDropDown.Enabled = !tatCaNhaInRCheck.Checked;
-            // đấu lại dữ liệu
-            
-            if (tatCaNhaInRCheck.Checked)
+            var frm = new TaoMayInOffsetForm();
+            frm.TinhTrangForm = Common.Enum.TinhTrangForm.Moi;
+            frm.MaximizeBox = false;
+            frm.MinimizeBox = false;
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+            if (frm.DialogResult == DialogResult.OK)
             {
-                giaInOffsetSrc = new GiaInOffsetGiaCongContext().DocTatCa();
+                DauNoiDuLieu();
             }
-            else
+        }
+        private void SuaMayInOffset()
+        {
+            if (mayInOffsetRGridView.CurrentRow == null)
             {
-                if (nhaInOffsetDropDown.SelectedItem != null)
-                {
-                    var model = (NhaInOffsetModel) nhaInOffsetDropDown.SelectedItem.DataBoundItem;
-                    giaInOffsetSrc = new GiaInOffsetGiaCongContext().DocTheoIdNhaInOffset(model.Id);
-                }
+                MessageBox.Show("Bạn cần chọn gì đó để sửa");
+                return;
             }
-            giaInOffsetRGridView.DataSource = null;
-            giaInOffsetRGridView.DataSource = giaInOffsetSrc;
-    }
+            var model = (MayInOffsetModel)mayInOffsetRGridView.CurrentRow.DataBoundItem;
 
-        private void QuanLyGiaInOffsetGiaCongForm_Resize(object sender, EventArgs e)
-        {
-            panel01RPanel.Width = ClientSize.Width - 8;
-            panel01RPanel.Left = 4;
+            var frm = new TaoMayInOffsetForm();
+            frm.Text = $"SỬA MÁY IN OFFSET ID {model.Id}";
+            frm.TinhTrangForm = Common.Enum.TinhTrangForm.Sua;
+            frm.MayInOffsetModel = model;
+            frm.MaximizeBox = false;
+            frm.MinimizeBox = false;
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                DauNoiDuLieu();
+            }
         }
-
-        private void huyButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void giaInOffsetRGridView_CreateCell(object sender, Telerik.WinControls.UI.GridViewCreateCellEventArgs e)
         {
             if (e.Column.Name == "Id")
