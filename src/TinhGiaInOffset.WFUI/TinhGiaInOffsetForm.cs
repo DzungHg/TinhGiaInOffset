@@ -8,19 +8,124 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using TinhGiaInOffset.WFUI.Model;
 using TinhGiaInOffset.Common.Enum;
+using TinhGiaInOffset.WFUI.View;
+using TinhGiaInOffset.WFUI.Presentation;
 
 namespace TinhGiaInOffset.WFUI
 {
-    public partial class TinhGiaInOffsetForm : Telerik.WinControls.UI.RadForm
+    public partial class TinhGiaInOffsetForm : Telerik.WinControls.UI.RadForm, IViewTinhGiaInOffset
     {
+        TinhGiaInOffsetPresenter tinhGiaOffsetPres;
         public TinhGiaInOffsetModel TinhGiaInOffset = new TinhGiaInOffsetModel();
         public TinhTrangForm TinhTrangForm { get; set; }
+
+        #region implement IViewTinhGiaInOffset
+        public string TieuDe
+        {
+            get
+            {
+                return tieuDeTinhGiaRTextBox.Text;
+            }
+
+            set
+            {
+                tieuDeTinhGiaRTextBox.Text = value;
+               
+            }
+        }
+
+        public DateTime NgayTinhGia
+        {
+            get
+            {
+                return ngayTinhGiaDateTime.Value;
+            }
+
+            set
+            {
+                ngayTinhGiaDateTime.Value = value;
+            }
+        }
+
+        public string YeuCau
+        {
+            get
+            {
+                return yeuCauRTextCtrl.Text;
+            }
+
+            set
+            {
+                yeuCauRTextCtrl.Text = value;
+            }
+        }
+
+        public string TenNguoiTinhGia
+        {
+            get
+            {
+                return tenNguoiTinhGiaRTextBox.Text;
+            }
+
+            set
+            {
+                tenNguoiTinhGiaRTextBox.Text = value;
+            }
+        }
+
+        public int MucLoiNhuanBaiIn
+        {
+            get
+            {
+                int mucLoiNhuanIn = 0;
+                int.TryParse(phanTramLoiNhuanInRTextBox.Text, out mucLoiNhuanIn);
+                return mucLoiNhuanIn;
+            }
+
+            set
+            {
+                phanTramLoiNhuanGiayRTextBox.Text = value.ToString();
+            }
+        }
+
+        public int MucLoiNhuanGiay
+        {
+            get
+            {
+                int mucLoiNhuanGiay = 0;
+                int.TryParse(phanTramLoiNhuanGiayRTextBox.Text, out mucLoiNhuanGiay);
+                return mucLoiNhuanGiay;
+            }
+
+            set
+            {
+                phanTramLoiNhuanGiayRTextBox.Text = value.ToString();
+            }
+        }
+
+        public string TomTatChaoGia
+        {
+            get
+            {
+                return ketQuaTinhGiaBoxCtrl.Text;
+            }
+
+            set
+            {
+                ketQuaTinhGiaBoxCtrl.Text = value;
+            }
+        }
+        #endregion
+
         public TinhGiaInOffsetForm()
         {
             InitializeComponent();
+            tinhGiaOffsetPres = new TinhGiaInOffsetPresenter(this);
+            //
             this.TinhGiaInOffset.BaiInOffsetGiaCongBaoGom = new List<BaiInOffsetGiaCongModel>();
            
-            this.TinhGiaInOffset.GiaBanThanhPhamSauInBaoGom = new List<GiaBanThanhPhamModel>();
+            this.TinhGiaInOffset.GiaBanThanhPhamTaiChoBaoGom = new List<GiaBanThanhPhamTaiChoModel>();
+          
             //Clear all danh sách cho phí
             this.TinhGiaInOffset.BaiInOffsetGiaCongBaoGom.Clear();
             //Bật tắt nút
@@ -34,8 +139,19 @@ namespace TinhGiaInOffset.WFUI
             phiBaiInGiaCongRListView.DisplayMember = "TenChiPhi";
 
             giaBanThanhPhamRListView.DataSource = null;
-            giaBanThanhPhamRListView.DataSource = this.TinhGiaInOffset.GiaBanThanhPhamSauInBaoGom;
-
+            giaBanThanhPhamRListView.DataSource = this.TinhGiaInOffset.GiaBanThanhPhamTaiChoBaoGom;
+            giaBanThanhPhamRListView.ValueMember = "Id";
+            giaBanThanhPhamRListView.DisplayMember = "Ten";
+            //            
+            giaBanThanhPhamGiaCongRListView.DataSource = null;
+            giaBanThanhPhamGiaCongRListView.DataSource = tinhGiaOffsetPres.GiaBanThanhPhamGiaCongBaoGom;
+            giaBanThanhPhamGiaCongRListView.ValueMember = "Id";
+            giaBanThanhPhamGiaCongRListView.DisplayMember = "Ten";
+            //
+            chiPhiKhacRListView.DataSource = null;
+            chiPhiKhacRListView.DataSource = tinhGiaOffsetPres.ChiPhiKhacBaoGom;
+            chiPhiKhacRListView.ValueMember = "Id";
+            chiPhiKhacRListView.DisplayMember = "Ten";
 
         }
 
@@ -155,6 +271,7 @@ namespace TinhGiaInOffset.WFUI
                 DauNoiDuLieuChiPhiBaiIn();
             }
         }
+        #region Them, sua, xoa bai in
         private void SuaBaiIn()
         {
             if (this.TinhGiaInOffset.BaiInOffsetGiaCongBaoGom.Count <= 0 ||
@@ -183,11 +300,12 @@ namespace TinhGiaInOffset.WFUI
             this.TinhGiaInOffset.BaiInOffsetGiaCongBaoGom.Remove((BaiInOffsetGiaCongModel)phiBaiInGiaCongRListView.SelectedItem.DataBoundItem);
             DauNoiDuLieuChiPhiBaiIn();
         }
-       
+        #endregion;
         //Giá bán thành phẩm
+        #region them, sua, xoa thanh pham tai cho
         private void ThemGiaThanhPham()
         {
-            var frm = new TaoGiaBanThanhPhamForm();
+            var frm = new TaoGiaBanThanhPhamTaiChoForm();
             frm.Text = "Thêm mới giá thành phẩm";
             frm.TinhTrangForm = Common.Enum.TinhTrangForm.Moi;
             frm.MaximizeBox = false;
@@ -197,20 +315,20 @@ namespace TinhGiaInOffset.WFUI
             if (frm.DialogResult == DialogResult.OK)
             {
                 //Thêm vô
-                this.TinhGiaInOffset.GiaBanThanhPhamSauInBaoGom.Add(frm.giaBanThanhPhamModel);
+                this.TinhGiaInOffset.GiaBanThanhPhamTaiChoBaoGom.Add(frm.giaBanThanhPhamModel);
                 DauNoiDuLieuChiPhiBaiIn();
             }
         }
         private void SuaGiaThanhPham()
         {
-            if (this.TinhGiaInOffset.GiaBanThanhPhamSauInBaoGom.Count <= 0 ||
+            if (this.TinhGiaInOffset.GiaBanThanhPhamTaiChoBaoGom.Count <= 0 ||
                  giaBanThanhPhamRListView.SelectedItems.Count <= 0)
                 return;
 
 
-            var frm = new TaoGiaBanThanhPhamForm();
+            var frm = new TaoGiaBanThanhPhamTaiChoForm();
             frm.TinhTrangForm = Common.Enum.TinhTrangForm.Sua;
-            var model = (GiaBanThanhPhamModel)giaBanThanhPhamRListView.SelectedItem.DataBoundItem;
+            var model = (GiaBanThanhPhamTaiChoModel)giaBanThanhPhamRListView.SelectedItem.DataBoundItem;
             frm.Text = $"Sửa Giá thành phẩm Id [{model.Id}]";
             frm.MaximizeBox = false;
             frm.MinimizeBox = false;
@@ -228,10 +346,109 @@ namespace TinhGiaInOffset.WFUI
             if (giaBanThanhPhamRListView.SelectedItems.Count <= 0)
                 return;
 
-            this.TinhGiaInOffset.GiaBanThanhPhamSauInBaoGom.Remove((GiaBanThanhPhamModel)giaBanThanhPhamRListView.SelectedItem.DataBoundItem);
+            this.TinhGiaInOffset.GiaBanThanhPhamTaiChoBaoGom.Remove((GiaBanThanhPhamTaiChoModel)giaBanThanhPhamRListView.SelectedItem.DataBoundItem);
             DauNoiDuLieuChiPhiBaiIn();
         }
+        #endregion
 
+        #region them, sua, xoa ThanhPham Gia cong
+        private void ThemGiaThanhPhamGiaCong()
+        {
+            var frm = new TaoGiaBanThanhPhamGiaCongForm();
+            frm.Text = "Thêm mới giá thành phẩm";
+            frm.TinhTrangForm = Common.Enum.TinhTrangForm.Moi;
+            frm.MaximizeBox = false;
+            frm.MinimizeBox = false;
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                //Thêm vô
+                tinhGiaOffsetPres.GiaBanThanhPhamGiaCongBaoGom.Add(frm.giaBanThanhPhamModel);
+                DauNoiDuLieuChiPhiBaiIn();
+            }
+        }
+        private void SuaGiaThanhPhamGiaCong()
+        {
+            if (tinhGiaOffsetPres.GiaBanThanhPhamGiaCongBaoGom.Count <= 0 ||
+                 giaBanThanhPhamRListView.SelectedItems.Count <= 0)
+                return;
+
+
+            var frm = new TaoGiaBanThanhPhamGiaCongForm();
+            frm.TinhTrangForm = Common.Enum.TinhTrangForm.Sua;
+            var model = (GiaBanThanhPhamGiaCongModel)giaBanThanhPhamRListView.SelectedItem.DataBoundItem;
+            frm.Text = $"Sửa Giá TP Gia công Id [{model.Id}]";
+            frm.MaximizeBox = false;
+            frm.MinimizeBox = false;
+            frm.StartPosition = FormStartPosition.CenterParent;
+
+            frm.giaBanThanhPhamModel = model;
+            frm.ShowDialog();
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                DauNoiDuLieuChiPhiBaiIn();
+            }
+        }
+        private void XoaGiaThanhPhamGiaCong()
+        {
+            if (giaBanThanhPhamRListView.SelectedItems.Count <= 0)
+                return;
+
+            tinhGiaOffsetPres.GiaBanThanhPhamGiaCongBaoGom.Remove((GiaBanThanhPhamGiaCongModel)giaBanThanhPhamRListView.SelectedItem.DataBoundItem);
+            DauNoiDuLieuChiPhiBaiIn();
+        }
+        #endregion
+
+        #region PhiInOffset khac: Them, Sua, Xoa
+        private void ThemChiPhiInOffsetKhac()
+        {
+            var frm = new TaoChiPhiOffsetKhacForm();
+            frm.Text = "Thêm mới phí in offset";
+            frm.TinhTrangForm = Common.Enum.TinhTrangForm.Moi;
+            frm.MaximizeBox = false;
+            frm.MinimizeBox = false;
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                //Thêm vô
+                tinhGiaOffsetPres.ChiPhiKhacBaoGom.Add(frm.chiPhiOffsetKhacModel);
+                DauNoiDuLieuChiPhiBaiIn();
+            }
+        }
+        private void SuaChiPhiInOffsetKhac()
+        {
+            if (tinhGiaOffsetPres.ChiPhiKhacBaoGom.Count <= 0 ||
+                 giaBanThanhPhamRListView.SelectedItems.Count <= 0)
+                return;
+
+
+            var frm = new TaoChiPhiOffsetKhacForm();
+            frm.TinhTrangForm = Common.Enum.TinhTrangForm.Sua;
+            var model = (ChiPhiOffsetKhacModel)giaBanThanhPhamRListView.SelectedItem.DataBoundItem;
+            frm.Text = $"Sửa Chi phí in Offset Id [{model.Id}]";
+            frm.MaximizeBox = false;
+            frm.MinimizeBox = false;
+            frm.StartPosition = FormStartPosition.CenterParent;
+
+            frm.chiPhiOffsetKhacModel = model;
+            frm.ShowDialog();
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                DauNoiDuLieuChiPhiBaiIn();
+            }
+        }
+        private void XoaChiPhiInOffsetKhac()
+        {
+            if (giaBanThanhPhamRListView.SelectedItems.Count <= 0)
+                return;
+
+            tinhGiaOffsetPres.ChiPhiKhacBaoGom.Remove((ChiPhiOffsetKhacModel)giaBanThanhPhamRListView.SelectedItem.DataBoundItem);
+            DauNoiDuLieuChiPhiBaiIn();
+        }
+        #endregion
+    
         //TODO--Làm tiếp formvalidatioin
         private bool FormValidation()
         {
@@ -347,7 +564,7 @@ namespace TinhGiaInOffset.WFUI
                     XoaBaiIn();
                     break;
               
-                case "tabThanhPhamSauInPageView":
+                case "tabThanhPhamTai123PageView":
                     XoaGiaThanhPham();
                     break;
 

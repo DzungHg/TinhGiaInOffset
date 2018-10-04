@@ -14,12 +14,13 @@ namespace TinhGiaInOffset.WFUI.Model
         public string YeuCau { get; set; }
         public string TenNguoiTinhGia { get; set; }
         public List<BaiInOffsetGiaCongModel> BaiInOffsetGiaCongBaoGom { get; set; }
-        public List<GiaBanThanhPhamModel> GiaBanThanhPhamSauInBaoGom { get; set; }
+        public List<GiaBanThanhPhamTaiChoModel> GiaBanThanhPhamTaiChoBaoGom { get; set; }
       
         
         public int MucLoiNhuanBaiIn { get; set; }
         public int MucLoiNhuanGiay { get; set; }
         public string TomTatQuanLy { get; set; }
+        public string TomTatChaoGia { get; set; }
         //Các procedure
         public decimal TongPhiIn ()
         {
@@ -27,7 +28,7 @@ namespace TinhGiaInOffset.WFUI.Model
             if (this.BaiInOffsetGiaCongBaoGom.Count > 0)
                 foreach (var baiIn in this.BaiInOffsetGiaCongBaoGom)
                 {
-                    kq += PhiBaiInOffset.PhiInOffset(baiIn.IdGiaInOffsetGiaCong, baiIn.SoMatCanIn, baiIn.SoKemIn);
+                    kq += TinhToanIn.PhiInOffset(baiIn.IdGiaInOffsetGiaCong, baiIn.SoMatCanIn, baiIn.SoKemIn);
                 }
 
             return kq;
@@ -39,7 +40,7 @@ namespace TinhGiaInOffset.WFUI.Model
                 foreach (var baiIn in this.BaiInOffsetGiaCongBaoGom)
                 {
                     if (!baiIn.GiayDaCoLoiNhuan)
-                        kq += PhiBaiInOffset.TienGiayIn(baiIn.DonGiaGiayTheoTo, baiIn.SoLuongToGiay);
+                        kq += TinhToanIn.TienGiayIn(baiIn.DonGiaGiayTheoTo, baiIn.SoLuongToGiay);
                 }
 
             return kq;
@@ -51,7 +52,7 @@ namespace TinhGiaInOffset.WFUI.Model
                 foreach (var baiIn in this.BaiInOffsetGiaCongBaoGom)
                 {
                     if (baiIn.GiayDaCoLoiNhuan)
-                        kq += PhiBaiInOffset.TienGiayIn(baiIn.DonGiaGiayTheoTo, baiIn.SoLuongToGiay);
+                        kq += TinhToanIn.TienGiayIn(baiIn.DonGiaGiayTheoTo, baiIn.SoLuongToGiay);
                 }
 
             return kq;
@@ -98,9 +99,9 @@ namespace TinhGiaInOffset.WFUI.Model
         public decimal TongGiaThanhPham_Ban()
         {
             decimal kq = 0;
-            if (this.GiaBanThanhPhamSauInBaoGom.Count > 0)
+            if (this.GiaBanThanhPhamTaiChoBaoGom.Count > 0)
             {
-                kq = this.GiaBanThanhPhamSauInBaoGom.Sum(x => x.ThanhTien);
+                kq = this.GiaBanThanhPhamTaiChoBaoGom.Sum(x => x.ThanhTien);
             }
 
             return kq;
@@ -109,8 +110,8 @@ namespace TinhGiaInOffset.WFUI.Model
         public string CacLoaiThanhPham()
         {
             var kq = "";
-            if (this.GiaBanThanhPhamSauInBaoGom.Count > 0)
-                foreach (var baiTP in this.GiaBanThanhPhamSauInBaoGom)
+            if (this.GiaBanThanhPhamTaiChoBaoGom.Count > 0)
+                foreach (var baiTP in this.GiaBanThanhPhamTaiChoBaoGom)
                 {
                     kq += baiTP.Ten + ",";
                 }
@@ -132,9 +133,9 @@ namespace TinhGiaInOffset.WFUI.Model
             kq += $"---Các loại giấy: {this.CacLoaiGiaySuDung()}" + '\r' + '\n';
             kq += string.Format("---Tổng tiền giấy: {0:0,0.00đ}" + '\r' + '\n', this.GiaTienGiay_Ban());
            
-            if (this.GiaBanThanhPhamSauInBaoGom.Count > 0)
+            if (this.GiaBanThanhPhamTaiChoBaoGom.Count > 0)
             {
-                kq += "-THÀNH PHẨM SU IN---" + '\r' + '\n';
+                kq += "-THÀNH PHẨM SAU IN---" + '\r' + '\n';
                 kq += $"---Thành phẩm: {this.CacLoaiThanhPham()}" + '\r' + '\n';
                 kq += string.Format("---Tổng tiền cán phủ: {0:0,0.00đ}" + '\r' + '\n', this.TongGiaThanhPham_Ban());
             }
@@ -163,9 +164,9 @@ namespace TinhGiaInOffset.WFUI.Model
             kq += string.Format("---Tổng tiền in: {0:0,0.00đ}" + '\r' + '\n', this.GiaTienIn_Ban());           
             kq += string.Format("---Tổng tiền giấy: {0:0,0.00đ}" + '\r' + '\n', this.GiaTienGiay_Ban());
 
-            if (this.GiaBanThanhPhamSauInBaoGom.Count > 0)
+            if (this.GiaBanThanhPhamTaiChoBaoGom.Count > 0)
             {
-                kq += "-THÀNH PHẨM SU IN---" + '\r' + '\n';
+                kq += "-THÀNH PHẨM SAU IN---" + '\r' + '\n';
                 kq += $"---Thành phẩm: {this.CacLoaiThanhPham()}" + '\r' + '\n';
                 kq += string.Format("---Tổng tiền cán phủ: {0:0,0.00đ}" + '\r' + '\n', this.TongGiaThanhPham_Ban());
             }

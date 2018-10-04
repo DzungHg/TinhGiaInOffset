@@ -3,3 +3,8 @@ D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\bin\Debug\TinhGiaInOffset.DB
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\obj\Debug\TinhGiaInOffset.BDO.csprojResolveAssemblyReference.cache
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\obj\Debug\TinhGiaInOffset.DBO.dll
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\obj\Debug\TinhGiaInOffset.DBO.pdb
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\bin\Debug\TinhGiaInOffset.DBO.dll
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\bin\Debug\TinhGiaInOffset.DBO.pdb
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\obj\Debug\TinhGiaInOffset.BDO.csprojResolveAssemblyReference.cache
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\obj\Debug\TinhGiaInOffset.DBO.dll
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\obj\Debug\TinhGiaInOffset.DBO.pdb

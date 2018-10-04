@@ -205,7 +205,21 @@ namespace TinhGiaInOffset.WFUI
                 giayDaGomLoiNhuanRCheck.Checked = value;
             }
         }
-#endregion
+        public bool InTheoLo
+        {
+            get
+            {
+                return inTheoLoCheck.Checked;
+            }
+
+            set
+            {
+                inTheoLoCheck.Checked = value;
+            }
+        }
+
+     
+        #endregion
         public TaoBaiInOffsetGiaCongForm()
         {
             InitializeComponent();
@@ -250,26 +264,45 @@ namespace TinhGiaInOffset.WFUI
             baiInOffsetGiaCongPres.ResetViewData();
 
         }
-        private bool FormValidation()
+        private void TatMoControlsTheoInTheoLo()
         {
+            if (this.InTheoLo)
+            {
+                kieuInOffsetDropDown.Enabled = false;
+                kieuInOffsetDropDown.Visible = false;
+                soKemRTextBox.ReadOnly = false;
+            }
+            else
+            {
+                kieuInOffsetDropDown.Enabled = true;
+                kieuInOffsetDropDown.Visible = true;
+                soKemRTextBox.ReadOnly = true;
+            }
+
+        }
+        private bool FormValidation(out string loi)
+        {
+            List<string> lois = new List<string>();
             bool output = true;
 
             if (tenBaiInOffsetRTextBox.Text.Trim().Length == 0)
             {
-                output = false;
+                
+                lois.Add("Tên bài in?");
             }
 
             if (tenGiayRTextBox.Text.Trim().Length == 0)
             {
-                output = false;
+                
+                lois.Add("Tên giấy?");
             }
             if (khoGiayRTextBox.Text.Trim().Length == 0)
             {
-                output = false;
+                lois.Add("Khổ giấy?");
             }
             if (dienGiaiRTextCtrl.Text.Trim().Length == 0)
             {
-                output = false;
+                lois.Add("Diễn giải?"); ;
             }
            
 
@@ -282,66 +315,78 @@ namespace TinhGiaInOffset.WFUI
             bool donGiaGiayValid = int.TryParse(donGiaGiayRTextBox.Text, out donGiaGiay);
             if (!donGiaGiayValid)
             {
-                output = false;
+                lois.Add("Đơn giá dạng số");
             }
             else
             {
                 if (donGiaGiay <= 0)
-                    output = false;
+                    lois.Add("Trị giá đơn giá");
             }
 
             bool soToValid = int.TryParse(soToGiayRTextBox.Text, out soTo);
             if (!soToValid)
             {
-                output = false;
+                lois.Add("Số tờ giấy");
             }
             else
             {
                 if (soTo <= 0)
-                    output = false;
+                    lois.Add("Số lượng tờ giấy"); ;
             }
 
 
             bool soMatInValid = int.TryParse(soMatInRTextBox.Text, out soMatIn);
             if (!soMatInValid)
             {
-                output = false;
+                lois.Add("Số mặt in");
             }
             else
             {
                 if (soMatIn <= 0)
-                    output = false;
+                    lois.Add("Số lượng mặt in"); ;
             }
 
             bool soKemInValid = int.TryParse(soKemRTextBox.Text, out soKemIn);
             if (!soKemInValid)
             {
-                output = false;
+                lois.Add("Số kẽm"); ;
             }
             else
             {
                 if (soKemIn < 1)
-                    output = false;
+                    lois.Add("Số lượng kẽm"); ;
             }
             bool soToChayBuHaoThucCanValid = int.TryParse(soToChayBuHaoThucCanRTextBox.Text, out soToChayBuHaoThucCan);
             if (!soToChayBuHaoThucCanValid)
             {
-                output = false;
+               lois.Add("Số tờ chạy bù hao"); ;
             }
             else
             {
                 if (soToChayBuHaoThucCan < 50)
-                    output = false;
+                    lois.Add("Số lượng tờ chạy bù hao"); ;
             }
-
+            var msg = "";
+            if (lois.Count > 0)
+            {
+                output = false;
+                msg = "Lỗi: ";
+                foreach (var str in lois)
+                {
+                    msg += str + ";";
+                }
+            }
+            loi = msg;
             return output;
 
         }
 
         private void taoGiaButton_Click(object sender, EventArgs e)
         {
-            if (FormValidation())
+            var thongBao = "";
+            if (FormValidation(out thongBao))
             {
+                
                 var modelGiaInOffset = (GiaInOffsetGiaCongModel)giaOffsetGiaCongDropDown.SelectedValue;
                 switch (this.TinhTrangForm)
                 {
@@ -354,7 +399,7 @@ namespace TinhGiaInOffset.WFUI
 
                         this.BaiInInOffsetGiaCong = baiInOffsetGiaCongPres.ThemBaiIn(this.TenBaiIn, this.DienGiai, this.IdGiaInOffsetGiaCong,
                             this.TenGiaInOffsetGiaCong, this.SoMatCanIn, this.SoKemIn, this.SoToChayBuHaoThucCan, this.KieuInOffset,
-                            this.TenGiay, this.KhoGiayChay, this.DonGiaGiayTheoTo, this.SoLuongToGiay, this.GiayDaCoLoiNhuan);    
+                            this.TenGiay, this.KhoGiayChay, this.DonGiaGiayTheoTo, this.SoLuongToGiay, this.GiayDaCoLoiNhuan, this.InTheoLo);    
                         
                         break;
                     case TinhTrangForm.Sua:
@@ -370,6 +415,7 @@ namespace TinhGiaInOffset.WFUI
                         this.BaiInInOffsetGiaCong.DonGiaGiayTheoTo = int.Parse(donGiaGiayRTextBox.Text);
                         this.BaiInInOffsetGiaCong.SoLuongToGiay = int.Parse(soToGiayRTextBox.Text);
                         this.BaiInInOffsetGiaCong.GiayDaCoLoiNhuan = giayDaGomLoiNhuanRCheck.Checked;
+                        this.BaiInInOffsetGiaCong.InTheoLo = inTheoLoCheck.Checked;
 
                         break;
                 }
@@ -379,7 +425,8 @@ namespace TinhGiaInOffset.WFUI
             }
             else
             {
-                MessageBox.Show("Bạn cần điền đầy đủ chi tiết form");
+                //MessageBox.Show("Bạn cần điền đầy đủ chi tiết form");
+                thongBaoRLabel.Text = thongBao;
             }
         }
 
@@ -404,6 +451,7 @@ namespace TinhGiaInOffset.WFUI
                     this.SoLuongToGiay = this.BaiInInOffsetGiaCong.SoLuongToGiay;
                     this.GiayDaCoLoiNhuan = this.BaiInInOffsetGiaCong.GiayDaCoLoiNhuan;
                     this.KieuInOffset = this.BaiInInOffsetGiaCong.KieuInOffset;
+                    this.InTheoLo = this.BaiInInOffsetGiaCong.InTheoLo;
                     break;
             }
         }
@@ -425,6 +473,11 @@ namespace TinhGiaInOffset.WFUI
                     soKemRTextBox.Text = 1.ToString();
                     break;
             }
+        }
+
+        private void inTheoLoCheck_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+            TatMoControlsTheoInTheoLo();
         }
     }
 }

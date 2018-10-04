@@ -71,15 +71,31 @@
     <Compile Include="DTOContext\MayInOffsetContext.cs" />
     <Compile Include="DTOContext\NhaInOffsetContext.cs" />
     <Compile Include="Model\BaiInOffsetGiaCongModel.cs" />
+    <Compile Include="Model\ChiPhiOffsetKhacModel.cs" />
     <Compile Include="Model\GiaBanThanhPhamModel.cs" />
+    <Compile Include="Model\GiaBanThanhPhamGiaCongModel.cs" />
+    <Compile Include="Model\GiaBanThanhPhamTaiChoModel.cs" />
     <Compile Include="Presentation\BaiInOffsetGiaCongPresenter.cs" />
-    <Compile Include="TaoGiaBanThanhPhamForm.cs">
+    <Compile Include="Presentation\TinhGiaInOffsetPresenter.cs" />
+    <Compile Include="TaoGiaBanThanhPhamGiaCongForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TaoGiaBanThanhPhamForm.Designer.cs">
-      <DependentUpon>TaoGiaBanThanhPhamForm.cs</DependentUpon>
+    <Compile Include="TaoGiaBanThanhPhamGiaCongForm.Designer.cs">
+      <DependentUpon>TaoGiaBanThanhPhamGiaCongForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\PhiBaiInOffset.cs" />
+    <Compile Include="TaoChiPhiOffsetKhacForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaoChiPhiOffsetKhacForm.Designer.cs">
+      <DependentUpon>TaoChiPhiOffsetKhacForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaoGiaBanThanhPhamTaiChoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaoGiaBanThanhPhamTaiChoForm.Designer.cs">
+      <DependentUpon>TaoGiaBanThanhPhamTaiChoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\TinhToanIn.cs" />
     <Compile Include="Model\GiaInOffsetGiaCongModel.cs" />
     <Compile Include="Model\GiayChoBaiInOffsetModel.cs" />
     <Compile Include="Model\MayInOffsetModel.cs" />
@@ -116,12 +132,19 @@
       <DependentUpon>TinhGiaInOffsetNavForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\IViewBaiInOffsetGiaCong.cs" />
+    <Compile Include="View\IViewTinhGiaInOffset.cs" />
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLyGiaInOffsetGiaCongForm.resx">
       <DependentUpon>QuanLyGiaInOffsetGiaCongForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TaoGiaBanThanhPhamForm.resx">
-      <DependentUpon>TaoGiaBanThanhPhamForm.cs</DependentUpon>
+    <EmbeddedResource Include="TaoGiaBanThanhPhamGiaCongForm.resx">
+      <DependentUpon>TaoGiaBanThanhPhamGiaCongForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaoChiPhiOffsetKhacForm.resx">
+      <DependentUpon>TaoChiPhiOffsetKhacForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaoGiaBanThanhPhamTaiChoForm.resx">
+      <DependentUpon>TaoGiaBanThanhPhamTaiChoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaoGiaInOffsetGiaCongForm.resx">
       <DependentUpon>TaoGiaInOffsetGiaCongForm.cs</DependentUpon>

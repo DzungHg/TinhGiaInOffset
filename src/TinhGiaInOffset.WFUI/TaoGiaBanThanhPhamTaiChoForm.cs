@@ -11,11 +11,11 @@ using TinhGiaInOffset.WFUI.Model;
 
 namespace TinhGiaInOffset.WFUI
 {
-    public partial class TaoGiaBanThanhPhamForm : Telerik.WinControls.UI.RadForm
+    public partial class TaoGiaBanThanhPhamTaiChoForm : Telerik.WinControls.UI.RadForm
     {
         public TinhTrangForm TinhTrangForm { get; set; }
-        public GiaBanThanhPhamModel giaBanThanhPhamModel { get; set; }
-        public TaoGiaBanThanhPhamForm()
+        public GiaBanThanhPhamTaiChoModel giaBanThanhPhamModel { get; set; }
+        public TaoGiaBanThanhPhamTaiChoForm()
         {
             InitializeComponent();
             DauNoiDuLieuDropBox();
@@ -80,7 +80,7 @@ namespace TinhGiaInOffset.WFUI
                 switch (this.TinhTrangForm)
                 {
                     case TinhTrangForm.Moi:
-                        var model = new GiaBanThanhPhamModel(tenRTextBox.Text, int.Parse(soLuongRTextBox.Text),
+                        var model = new GiaBanThanhPhamTaiChoModel(tenRTextBox.Text, int.Parse(soLuongRTextBox.Text),
                             donViTinhRTextBox.Text, decimal.Parse(thanhTienRTextBox.Text), ghiChuRTextCtrl.Text, loaiThanhPhamDropDown.Text);
                         this.giaBanThanhPhamModel = model;
 

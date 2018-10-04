@@ -17,6 +17,7 @@ namespace TinhGiaInOffset.WFUI.Model
         public int IdGiaInOffsetGiaCong { get; set; }
         public string TenGiaInOffsetGiaCong { get; set; }
         public int SoMatCanIn { get; set; }
+        public bool InTheoLo { get; set; }
         public int SoKemIn { get; set; }        
         public int SoToChayBuHaoThucCan { get; set; }
         public string KieuInOffset { get; set; }
@@ -28,7 +29,7 @@ namespace TinhGiaInOffset.WFUI.Model
 
         public BaiInOffsetGiaCongModel(string tenBaiIn, string dienGiai, int idGiaInOffsetGiaCong, string tenGiaInOffsetGiaCong,
             int soMatCanIn, int soKem, int soToBuHaoThucCan, string kieuInOffset, string tenGiay, string khoGiay, int donGiaGiayTheoTo, 
-            int soLuongToGiay, bool giayDaCoLoiNhuan)
+            int soLuongToGiay, bool giayDaCoLoiNhuan, bool inTheoLo)
         {
             //Tăng lên id
             lastId += 1;
@@ -47,6 +48,7 @@ namespace TinhGiaInOffset.WFUI.Model
             this.DonGiaGiayTheoTo = donGiaGiayTheoTo;
             this.SoLuongToGiay = soLuongToGiay;
             this.GiayDaCoLoiNhuan = giayDaCoLoiNhuan;
+            this.InTheoLo = InTheoLo;
 
         }
        

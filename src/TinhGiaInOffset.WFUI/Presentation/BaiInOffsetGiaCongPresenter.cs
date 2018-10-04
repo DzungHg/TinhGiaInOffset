@@ -30,11 +30,11 @@ namespace TinhGiaInOffset.WFUI.Presentation
         }
         public BaiInOffsetGiaCongModel ThemBaiIn(string tenBaiIn, string dienGiai, int idGiaInOffsetGiaCong, string tenGiaInOffsetGiaCong,
             int soMatCanIn, int soKem, int soToBuHaoThucCan, string kieuInOffset, string tenGiay, string khoGiay, int donGiaGiayTheoTo,
-            int soLuongToGiay, bool giayDaCoLoiNhuan)
+            int soLuongToGiay, bool giayDaCoLoiNhuan, bool inTheoLo)
         {
             var model = new BaiInOffsetGiaCongModel(tenBaiIn,dienGiai,  idGiaInOffsetGiaCong, tenGiaInOffsetGiaCong,
              soMatCanIn,  soKem, soToBuHaoThucCan,  kieuInOffset,  tenGiay,  khoGiay,  donGiaGiayTheoTo,
-             soLuongToGiay,  giayDaCoLoiNhuan);
+             soLuongToGiay,  giayDaCoLoiNhuan, inTheoLo);
 
             return model;
         }
@@ -74,6 +74,7 @@ namespace TinhGiaInOffset.WFUI.Presentation
             View.SoKemIn = 1;
             View.SoToChayBuHaoThucCan = 50;
             View.KhoGiayChay = this.KhoMayInLonNhat(View.IdGiaInOffsetGiaCong);
+            View.InTheoLo = true;
         }
 
     }

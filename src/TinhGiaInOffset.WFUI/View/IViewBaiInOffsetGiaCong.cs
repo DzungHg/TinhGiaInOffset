@@ -21,5 +21,7 @@ namespace TinhGiaInOffset.WFUI.View
         int DonGiaGiayTheoTo { get; set; }
         int SoLuongToGiay { get; set; }
         bool GiayDaCoLoiNhuan { get; set; }
+
+        bool InTheoLo { get; set; }
     }
 }

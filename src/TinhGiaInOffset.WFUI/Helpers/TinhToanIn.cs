@@ -9,7 +9,7 @@ using TinhGiaInOffset.WFUI.DTOContext;
 
 namespace TinhGiaInOffset.WFUI.Helpers
 {
-    public static class PhiBaiInOffset
+    public static class TinhToanIn
     {
 
 
@@ -18,14 +18,12 @@ namespace TinhGiaInOffset.WFUI.Helpers
         {
             decimal ketQua = 0;
             var giaInOffset = new GiaInOffsetGiaCongContext().DocTheoId(idGiaInOffsetGiaCong);
-            
-            
-            var soMatBaoIn = giaInOffset.SoLuongBaoIn;
-            
-            var soMatInChenhLech = soMatCanIn - soMatBaoIn;
-            ///Nếu âm thì không sao nếu dương thì lấy tính tiép
-            decimal phiKemIn = 0;
-            phiKemIn = giaInOffset.DonGiaBai * soKemIn;
+
+            //Tính số mặt chênh lệch với số mặt bao in
+            var soMatInChenhLech = soMatCanIn - giaInOffset.SoLuongBaoIn;
+
+            //Phí kẽm in            
+            var phiKemIn = giaInOffset.DonGiaBai * soKemIn;
 
             decimal phiInSoLuongVuot = 0;
 
