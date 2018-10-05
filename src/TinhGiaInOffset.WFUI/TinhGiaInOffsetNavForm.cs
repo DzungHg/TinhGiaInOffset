@@ -37,5 +37,14 @@ namespace TinhGiaInOffset.WFUI
             frm.Show();
 
         }
+
+        private void xemBangGiaInOffsetGiaCongRButton_Click(object sender, EventArgs e)
+        {
+            var frm = new XemBangGiaInOffsetGiaCongForm();
+            frm.MaximizeBox = false;
+            frm.MinimizeBox = false;
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.Show();
+        }
     }
 }

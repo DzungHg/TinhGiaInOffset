@@ -79,6 +79,7 @@
     <Compile Include="Presentation\QuanLyGiaInOffsetGiaCongPresenter.cs" />
     <Compile Include="Presentation\TaoMayInOffsetPresenter.cs" />
     <Compile Include="Presentation\TinhGiaInOffsetPresenter.cs" />
+    <Compile Include="Presentation\XemGiaInOffsetGiaCongPresenter.cs" />
     <Compile Include="TaoGiaBanThanhPhamGiaCongForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,8 +141,15 @@
       <DependentUpon>TinhGiaInOffsetNavForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\IViewBaiInOffsetGiaCong.cs" />
+    <Compile Include="View\IViewXemGiaInOffsetGiaCong.cs" />
     <Compile Include="View\IViewTaoMayInOffset.cs" />
     <Compile Include="View\IViewTinhGiaInOffset.cs" />
+    <Compile Include="XemBangGiaInOffsetGiaCongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XemBangGiaInOffsetGiaCongForm.Designer.cs">
+      <DependentUpon>XemBangGiaInOffsetGiaCongForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLyGiaInOffsetGiaCongForm.resx">
       <DependentUpon>QuanLyGiaInOffsetGiaCongForm.cs</DependentUpon>
@@ -181,6 +189,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="XemBangGiaInOffsetGiaCongForm.resx">
+      <DependentUpon>XemBangGiaInOffsetGiaCongForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

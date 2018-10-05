@@ -23,6 +23,13 @@ namespace TinhGiaInOffset.WFUI.DTOContext
             List<GiaInOffsetGiaCongModel> nguon = mapper.Map<List<GiaInOffsetGiaCongBDO>, List<GiaInOffsetGiaCongModel>>(logic.DocTatCa());
             return nguon;
         }
+        public List<GiaInOffsetGiaCongModel> DocTatCa_ConDung_CoTenNhaIn()
+        {
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<GiaInOffsetGiaCongBDO, GiaInOffsetGiaCongModel>());
+            var mapper = config.CreateMapper();
+            List<GiaInOffsetGiaCongModel> nguon = mapper.Map<List<GiaInOffsetGiaCongBDO>, List<GiaInOffsetGiaCongModel>>(logic.DocTatCa_ConDung_CoTenNhaIn());
+            return nguon;
+        }
         public List<GiaInOffsetGiaCongModel> DocGiaConSuDung()
         {
             return this.DocTatCa().Where(x => x.KhongSuDung == false).OrderBy(x => x.ThuTuSapXep).ToList();

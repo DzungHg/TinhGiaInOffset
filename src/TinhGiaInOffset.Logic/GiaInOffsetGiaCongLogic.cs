@@ -15,6 +15,10 @@ namespace TinhGiaInOffset.Logic
         {
             return dataDAO.DocTatCa().ToList();
         }
+        public List<GiaInOffsetGiaCongBDO> DocTatCa_ConDung_CoTenNhaIn()
+        {
+            return dataDAO.DocTatCa_ConDung_CoTenNhaIn().ToList();
+        }
         public GiaInOffsetGiaCongBDO DocTheoId(int idGiaInOffsetGiaCong)
         {
             return dataDAO.DocTheoId(idGiaInOffsetGiaCong);

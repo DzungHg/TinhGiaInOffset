@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TinhGiaInOffset.WFUI.View;
-using TinhGiaInOffset.Common.Enum;
-using TinhGiaInOffset.Logic;
-using TinhGiaInOffset.BDO;
+
 using TinhGiaInOffset.WFUI.DTOContext;
 using TinhGiaInOffset.WFUI.Model;
 

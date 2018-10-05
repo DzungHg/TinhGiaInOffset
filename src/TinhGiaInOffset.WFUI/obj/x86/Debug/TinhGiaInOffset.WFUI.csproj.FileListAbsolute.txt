@@ -77,3 +77,4 @@ F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffs
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.TaoChiPhiOffsetKhacForm.resources
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.TaoGiaBanThanhPhamTaiChoForm.resources
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.TaoMayInOffsetForm.resources
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.XemBangGiaInOffsetGiaCongForm.resources

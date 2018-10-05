@@ -23,7 +23,15 @@ namespace TinhGiaInOffset.DAL
                 return output;
             }
         }
-
+        public IEnumerable<GiaInOffsetGiaCongBDO> DocTatCa_ConDung_CoTenNhaIn()
+        {
+            IEnumerable<GiaInOffsetGiaCongBDO> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(tenDB)))
+            {
+                output = connection.Query<GiaInOffsetGiaCongBDO>("dbo.spGiaInOffsetGiaCong_DocTatCa_ConDung_CoTenNhaIn");
+                return output;
+            }
+        }
         public GiaInOffsetGiaCongBDO DocTheoId(int id)
         {
             GiaInOffsetGiaCongBDO output;
