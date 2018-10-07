@@ -44,12 +44,10 @@ F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\Telerik.WinContro
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\Telerik.WinControls.UI.dll
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TelerikCommon.dll
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.Common.dll
-F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.DBO.dll
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.Logic.dll
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.DAL.dll
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\Dapper.dll
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.Common.pdb
-F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.DBO.pdb
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.Logic.pdb
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\AutoMapper.pdb
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\AutoMapper.xml
@@ -78,3 +76,5 @@ F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffs
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.TaoGiaBanThanhPhamTaiChoForm.resources
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.TaoMayInOffsetForm.resources
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.XemBangGiaInOffsetGiaCongForm.resources
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.BDO.dll
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.BDO.pdb

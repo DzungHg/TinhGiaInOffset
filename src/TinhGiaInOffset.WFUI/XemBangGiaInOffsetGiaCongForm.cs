@@ -71,7 +71,7 @@ namespace TinhGiaInOffset.WFUI
 
             set
             {
-                donGiaBaiRTextBox.Text = value.ToString();
+                donGiaVuotRTextBox.Text = value.ToString();
             }
         }
 
@@ -170,6 +170,12 @@ namespace TinhGiaInOffset.WFUI
             giaInOffsetGiaCongListCtrl.DataSource = xemGiaInPres.GiaInOffsetGiaCongConDung();
             giaInOffsetGiaCongListCtrl.ValueMember = "Id";
             giaInOffsetGiaCongListCtrl.DisplayMember = "TenGia";
+            //Chọn để bẩy hiện chi tiết
+            if (giaInOffsetGiaCongListCtrl.DataSource != null)
+            {
+                giaInOffsetGiaCongListCtrl.SelectedIndex = -1;
+                giaInOffsetGiaCongListCtrl.SelectedIndex = 0;
+            }
         }
 
         private void giaInOffsetGiaCongListCtrl_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
@@ -181,8 +187,7 @@ namespace TinhGiaInOffset.WFUI
 
                 int.TryParse(giaInOffsetGiaCongListCtrl.SelectedValue.ToString(), out idGiaIn);
                 //MessageBox.Show(idGiaIn.ToString());
-                
-               
+                               
                 xemGiaInPres.TrinhBayChiTietGia(idGiaIn);
             } catch { }
         }

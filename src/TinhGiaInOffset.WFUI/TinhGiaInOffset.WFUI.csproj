@@ -69,12 +69,14 @@
   <ItemGroup>
     <Compile Include="DTOContext\GiaInOffsetGiaCongContext.cs" />
     <Compile Include="DTOContext\MayInOffsetContext.cs" />
+    <Compile Include="DTOContext\HangLoiNhuanOffsetGiaCongContext.cs" />
     <Compile Include="DTOContext\NhaInOffsetContext.cs" />
     <Compile Include="Model\BaiInOffsetGiaCongModel.cs" />
     <Compile Include="Model\ChiPhiOffsetKhacModel.cs" />
     <Compile Include="Model\GiaBanThanhPhamModel.cs" />
     <Compile Include="Model\GiaBanThanhPhamGiaCongModel.cs" />
     <Compile Include="Model\GiaBanThanhPhamTaiChoModel.cs" />
+    <Compile Include="Model\HangLoiNhuanOffsetGiaCongModel.cs" />
     <Compile Include="Presentation\BaiInOffsetGiaCongPresenter.cs" />
     <Compile Include="Presentation\QuanLyGiaInOffsetGiaCongPresenter.cs" />
     <Compile Include="Presentation\TaoMayInOffsetPresenter.cs" />

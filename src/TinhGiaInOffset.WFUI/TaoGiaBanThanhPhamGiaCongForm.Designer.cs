@@ -44,7 +44,7 @@
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
             this.loaiThanhPhamDropDown = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
-            this.mucLoiNhuanRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.mucLoiNhuanRSpin = new Telerik.WinControls.UI.RadSpinEditor();
             ((System.ComponentModel.ISupportInitialize)(this.tieuDeFormLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenRTextBox)).BeginInit();
@@ -61,7 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaiThanhPhamDropDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mucLoiNhuanRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mucLoiNhuanRSpin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,27 +185,28 @@
             // 
             // radLabel6
             // 
-            this.radLabel6.Location = new System.Drawing.Point(12, 181);
+            this.radLabel6.Location = new System.Drawing.Point(12, 179);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(78, 18);
             this.radLabel6.TabIndex = 17;
             this.radLabel6.Text = "Mức lợi nhuận";
             // 
-            // mucLoiNhuanRTextBox
+            // mucLoiNhuanRSpin
             // 
-            this.mucLoiNhuanRTextBox.Location = new System.Drawing.Point(96, 179);
-            this.mucLoiNhuanRTextBox.Name = "mucLoiNhuanRTextBox";
-            this.mucLoiNhuanRTextBox.Size = new System.Drawing.Size(200, 20);
-            this.mucLoiNhuanRTextBox.TabIndex = 6;
+            this.mucLoiNhuanRSpin.Location = new System.Drawing.Point(96, 179);
+            this.mucLoiNhuanRSpin.Name = "mucLoiNhuanRSpin";
+            this.mucLoiNhuanRSpin.Size = new System.Drawing.Size(100, 20);
+            this.mucLoiNhuanRSpin.TabIndex = 6;
+            this.mucLoiNhuanRSpin.TabStop = false;
             // 
             // TaoGiaBanThanhPhamGiaCongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(323, 322);
+            this.Controls.Add(this.mucLoiNhuanRSpin);
             this.Controls.Add(this.radLabel6);
             this.Controls.Add(this.radLabel8);
-            this.Controls.Add(this.mucLoiNhuanRTextBox);
             this.Controls.Add(this.loaiThanhPhamDropDown);
             this.Controls.Add(this.radLabel5);
             this.Controls.Add(this.radLabel4);
@@ -243,7 +244,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaiThanhPhamDropDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mucLoiNhuanRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mucLoiNhuanRSpin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -268,6 +269,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel8;
         private Telerik.WinControls.UI.RadDropDownList loaiThanhPhamDropDown;
         private Telerik.WinControls.UI.RadLabel radLabel6;
-        private Telerik.WinControls.UI.RadTextBox mucLoiNhuanRTextBox;
+        private Telerik.WinControls.UI.RadSpinEditor mucLoiNhuanRSpin;
     }
 }

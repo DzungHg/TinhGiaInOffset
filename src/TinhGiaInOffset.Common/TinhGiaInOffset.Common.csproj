@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConstOffsetGiaCong.cs" />
     <Compile Include="Enum\KieuInOffset.cs" />
     <Compile Include="Enum\LoaiGiaSauInKemOffset.cs" />
     <Compile Include="Enum\TinhTrangForm.cs" />

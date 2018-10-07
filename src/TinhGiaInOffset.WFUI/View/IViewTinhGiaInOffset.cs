@@ -15,6 +15,8 @@ namespace TinhGiaInOffset.WFUI.View
          
         int MucLoiNhuanBaiIn { get; set; }
         int MucLoiNhuanGiay { get; set; }
+        int MucLoiNhuanGiayMin { get; set; }
+        int MucLoiNhuanInMin { get; set; }
         string TomTatChaoGia { get; set; }
     }
 }

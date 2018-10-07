@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TinhGiaInOffset.WFUI.View;
-using TinhGiaInOffset.Common.Enum;
+using TinhGiaInOffset.Common;
 using TinhGiaInOffset.Logic;
 using TinhGiaInOffset.BDO;
 using TinhGiaInOffset.WFUI.DTOContext;
@@ -21,9 +21,16 @@ namespace TinhGiaInOffset.WFUI.Presentation
         public List<GiaBanThanhPhamTaiChoModel> GiaBanThanhPhamTaiChoBaoGom = new List<GiaBanThanhPhamTaiChoModel>();
         public List<GiaBanThanhPhamGiaCongModel> GiaBanThanhPhamGiaCongBaoGom = new List<GiaBanThanhPhamGiaCongModel>();
         public List<ChiPhiOffsetKhacModel> ChiPhiKhacBaoGom = new List<ChiPhiOffsetKhacModel>();
+        public HangLoiNhuanOffsetGiaCongContext hangLoiNhuanOffset = new HangLoiNhuanOffsetGiaCongContext();
         public TinhGiaInOffsetPresenter(IViewTinhGiaInOffset view)
         {
             View = view;
+        }
+
+        public void KhoiTaoGiaTriBanDau()
+        {
+            View.MucLoiNhuanInMin = hangLoiNhuanOffset.LayTheoMa(ConstOffsetGiaCong.maMucLaiInOffsetOffsetGiaCongMin).PhanTram;
+            View.MucLoiNhuanGiayMin = hangLoiNhuanOffset.LayTheoMa(ConstOffsetGiaCong.maMucLaiGiayInOffsetOffsetGiaCongMin).PhanTram;
         }
 
         public decimal TongPhiIn()

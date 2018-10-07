@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GiaInOffsetGiaCongLogic.cs" />
+    <Compile Include="HangLoiNhuanOffsetGiaCongLogic.cs" />
     <Compile Include="MayInOffsetLogic.cs" />
     <Compile Include="NhaInOffsetLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

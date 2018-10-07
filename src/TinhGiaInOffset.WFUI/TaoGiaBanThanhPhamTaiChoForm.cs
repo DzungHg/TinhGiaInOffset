@@ -125,6 +125,7 @@ namespace TinhGiaInOffset.WFUI
                     //combo
                     break;
             }
+            tieuDeFormLabel.Left = (ClientSize.Width - tieuDeFormLabel.Width) / 2;
         }
     }
 }

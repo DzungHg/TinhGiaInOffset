@@ -41,15 +41,15 @@
             this.suaRButton = new Telerik.WinControls.UI.RadButton();
             this.xoaRButton = new Telerik.WinControls.UI.RadButton();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.phanTramLoiNhuanInRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
-            this.phanTramLoiNhuanGiayRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.tomTatChaoGiaTextBoxCtrl = new Telerik.WinControls.UI.RadTextBoxControl();
             this.tinhToanGiaRButton = new Telerik.WinControls.UI.RadButton();
             this.PageViewChiTiet = new Telerik.WinControls.UI.RadPageView();
             this.tabInVaGiayPageView = new Telerik.WinControls.UI.RadPageViewPage();
             this.phiBaiInGiaCongRListView = new Telerik.WinControls.UI.RadListView();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.phanTramLoiNhuanGiaySpin = new Telerik.WinControls.UI.RadSpinEditor();
+            this.phanTramLoiNhuanInSpin = new Telerik.WinControls.UI.RadSpinEditor();
             this.tabThanhPhamTai123PageView = new Telerik.WinControls.UI.RadPageViewPage();
             this.giaBanThanhPhamRListView = new Telerik.WinControls.UI.RadListView();
             this.tabThanhPhamGiaCongPageView = new Telerik.WinControls.UI.RadPageViewPage();
@@ -75,9 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.suaRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xoaRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phanTramLoiNhuanInRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phanTramLoiNhuanGiayRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tomTatChaoGiaTextBoxCtrl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinhToanGiaRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PageViewChiTiet)).BeginInit();
@@ -86,6 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.phiBaiInGiaCongRListView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.phanTramLoiNhuanGiaySpin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phanTramLoiNhuanInSpin)).BeginInit();
             this.tabThanhPhamTai123PageView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.giaBanThanhPhamRListView)).BeginInit();
             this.tabThanhPhamGiaCongPageView.SuspendLayout();
@@ -207,33 +207,19 @@
             // 
             // radLabel4
             // 
-            this.radLabel4.Location = new System.Drawing.Point(3, 3);
+            this.radLabel4.Location = new System.Drawing.Point(3, 6);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(87, 18);
             this.radLabel4.TabIndex = 9;
             this.radLabel4.Text = "Lợi nhuận in (%)";
             // 
-            // phanTramLoiNhuanInRTextBox
-            // 
-            this.phanTramLoiNhuanInRTextBox.Location = new System.Drawing.Point(96, 3);
-            this.phanTramLoiNhuanInRTextBox.Name = "phanTramLoiNhuanInRTextBox";
-            this.phanTramLoiNhuanInRTextBox.Size = new System.Drawing.Size(80, 20);
-            this.phanTramLoiNhuanInRTextBox.TabIndex = 16;
-            // 
             // radLabel6
             // 
-            this.radLabel6.Location = new System.Drawing.Point(197, 5);
+            this.radLabel6.Location = new System.Drawing.Point(216, 6);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(99, 18);
             this.radLabel6.TabIndex = 17;
             this.radLabel6.Text = "Lợi nhuận giấy (%)";
-            // 
-            // phanTramLoiNhuanGiayRTextBox
-            // 
-            this.phanTramLoiNhuanGiayRTextBox.Location = new System.Drawing.Point(295, 4);
-            this.phanTramLoiNhuanGiayRTextBox.Name = "phanTramLoiNhuanGiayRTextBox";
-            this.phanTramLoiNhuanGiayRTextBox.Size = new System.Drawing.Size(80, 20);
-            this.phanTramLoiNhuanGiayRTextBox.TabIndex = 17;
             // 
             // tomTatChaoGiaTextBoxCtrl
             // 
@@ -260,6 +246,7 @@
             this.PageViewChiTiet.Controls.Add(this.tabThanhPhamTai123PageView);
             this.PageViewChiTiet.Controls.Add(this.tabThanhPhamGiaCongPageView);
             this.PageViewChiTiet.Controls.Add(this.tabChiPhiKhacPageView);
+            this.PageViewChiTiet.DefaultPage = this.tabInVaGiayPageView;
             this.PageViewChiTiet.Location = new System.Drawing.Point(19, 269);
             this.PageViewChiTiet.Name = "PageViewChiTiet";
             this.PageViewChiTiet.SelectedPage = this.tabInVaGiayPageView;
@@ -289,9 +276,9 @@
             // 
             // radPanel1
             // 
+            this.radPanel1.Controls.Add(this.phanTramLoiNhuanGiaySpin);
+            this.radPanel1.Controls.Add(this.phanTramLoiNhuanInSpin);
             this.radPanel1.Controls.Add(this.radLabel4);
-            this.radPanel1.Controls.Add(this.phanTramLoiNhuanInRTextBox);
-            this.radPanel1.Controls.Add(this.phanTramLoiNhuanGiayRTextBox);
             this.radPanel1.Controls.Add(this.radLabel6);
             this.radPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radPanel1.Location = new System.Drawing.Point(0, 0);
@@ -299,14 +286,30 @@
             this.radPanel1.Size = new System.Drawing.Size(757, 32);
             this.radPanel1.TabIndex = 11;
             // 
+            // phanTramLoiNhuanGiaySpin
+            // 
+            this.phanTramLoiNhuanGiaySpin.Location = new System.Drawing.Point(321, 6);
+            this.phanTramLoiNhuanGiaySpin.Name = "phanTramLoiNhuanGiaySpin";
+            this.phanTramLoiNhuanGiaySpin.Size = new System.Drawing.Size(100, 20);
+            this.phanTramLoiNhuanGiaySpin.TabIndex = 13;
+            this.phanTramLoiNhuanGiaySpin.TabStop = false;
+            // 
+            // phanTramLoiNhuanInSpin
+            // 
+            this.phanTramLoiNhuanInSpin.Location = new System.Drawing.Point(96, 6);
+            this.phanTramLoiNhuanInSpin.Name = "phanTramLoiNhuanInSpin";
+            this.phanTramLoiNhuanInSpin.Size = new System.Drawing.Size(100, 20);
+            this.phanTramLoiNhuanInSpin.TabIndex = 12;
+            this.phanTramLoiNhuanInSpin.TabStop = false;
+            // 
             // tabThanhPhamTai123PageView
             // 
             this.tabThanhPhamTai123PageView.Controls.Add(this.giaBanThanhPhamRListView);
-            this.tabThanhPhamTai123PageView.ItemSize = new System.Drawing.SizeF(79F, 28F);
+            this.tabThanhPhamTai123PageView.ItemSize = new System.Drawing.SizeF(125F, 28F);
             this.tabThanhPhamTai123PageView.Location = new System.Drawing.Point(10, 37);
             this.tabThanhPhamTai123PageView.Name = "tabThanhPhamTai123PageView";
             this.tabThanhPhamTai123PageView.Size = new System.Drawing.Size(757, 230);
-            this.tabThanhPhamTai123PageView.Text = "Thành phẩm";
+            this.tabThanhPhamTai123PageView.Text = "Thành phẩm tại 123in";
             // 
             // giaBanThanhPhamRListView
             // 
@@ -454,9 +457,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.suaRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xoaRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phanTramLoiNhuanInRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phanTramLoiNhuanGiayRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tomTatChaoGiaTextBoxCtrl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinhToanGiaRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PageViewChiTiet)).EndInit();
@@ -466,6 +467,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.phanTramLoiNhuanGiaySpin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phanTramLoiNhuanInSpin)).EndInit();
             this.tabThanhPhamTai123PageView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.giaBanThanhPhamRListView)).EndInit();
             this.tabThanhPhamGiaCongPageView.ResumeLayout(false);
@@ -500,9 +503,7 @@
         private Telerik.WinControls.UI.RadButton suaRButton;
         private Telerik.WinControls.UI.RadButton xoaRButton;
         private Telerik.WinControls.UI.RadLabel radLabel4;
-        private Telerik.WinControls.UI.RadTextBox phanTramLoiNhuanInRTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel6;
-        private Telerik.WinControls.UI.RadTextBox phanTramLoiNhuanGiayRTextBox;
         private Telerik.WinControls.UI.RadTextBoxControl tomTatChaoGiaTextBoxCtrl;
         private Telerik.WinControls.UI.RadButton tinhToanGiaRButton;
         private Telerik.WinControls.UI.RadPageView PageViewChiTiet;
@@ -521,5 +522,7 @@
         private Telerik.WinControls.UI.RadPageViewPage tabTomTatChaoGiaPageView;
         private Telerik.WinControls.UI.RadPageViewPage tomTatQuanLyPageView;
         private Telerik.WinControls.UI.RadTextBoxControl tomTatQuanLyTextBoxCtrl;
+        private Telerik.WinControls.UI.RadSpinEditor phanTramLoiNhuanGiaySpin;
+        private Telerik.WinControls.UI.RadSpinEditor phanTramLoiNhuanInSpin;
     }
 }

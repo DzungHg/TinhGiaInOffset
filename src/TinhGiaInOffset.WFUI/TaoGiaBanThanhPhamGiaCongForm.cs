@@ -7,7 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using TinhGiaInOffset.Common.Enum;
+using TinhGiaInOffset.Common;
 using TinhGiaInOffset.WFUI.Model;
+using TinhGiaInOffset.WFUI.DTOContext;
 
 namespace TinhGiaInOffset.WFUI
 {
@@ -15,6 +17,7 @@ namespace TinhGiaInOffset.WFUI
     {
         public TinhTrangForm TinhTrangForm { get; set; }
         public GiaBanThanhPhamGiaCongModel giaBanThanhPhamModel { get; set; }
+        private HangLoiNhuanOffsetGiaCongContext loiNhuanOffset = new HangLoiNhuanOffsetGiaCongContext();
         public TaoGiaBanThanhPhamGiaCongForm()
         {
             InitializeComponent();
@@ -30,7 +33,10 @@ namespace TinhGiaInOffset.WFUI
         {
             phiGiaCongRTextBox.Text = 1.ToString();
             soLuongRTextBox.Text = 1.ToString();
-            mucLoiNhuanRTextBox.Text = 30.ToString();
+
+            mucLoiNhuanRSpin.Minimum = loiNhuanOffset.LayTheoMa(ConstOffsetGiaCong.maMucLaiThanhPhamGiaCongMin).PhanTram;
+            mucLoiNhuanRSpin.Value = mucLoiNhuanRSpin.Minimum;
+            
             
         }
         private bool FormValidation()
@@ -70,7 +76,7 @@ namespace TinhGiaInOffset.WFUI
                     output = false;
             }
 
-            bool mucLoiNhuanValid = int.TryParse(mucLoiNhuanRTextBox.Text, out mucLoiNhuan);
+            bool mucLoiNhuanValid = int.TryParse(mucLoiNhuanRSpin.Text, out mucLoiNhuan);
             if (mucLoiNhuanValid == false)
                 output = false;
             else
@@ -92,7 +98,7 @@ namespace TinhGiaInOffset.WFUI
                     case TinhTrangForm.Moi:
                         var model = new GiaBanThanhPhamGiaCongModel(tenRTextBox.Text, int.Parse(soLuongRTextBox.Text),
                             donViTinhRTextBox.Text, decimal.Parse(phiGiaCongRTextBox.Text), 
-                            ghiChuRTextCtrl.Text, loaiThanhPhamDropDown.Text, int.Parse(mucLoiNhuanRTextBox.Text));
+                            ghiChuRTextCtrl.Text, loaiThanhPhamDropDown.Text, int.Parse(mucLoiNhuanRSpin.Text));
                         this.giaBanThanhPhamModel = model;
 
                         break;
@@ -104,7 +110,7 @@ namespace TinhGiaInOffset.WFUI
                         this.giaBanThanhPhamModel.ThanhTien = decimal.Parse(phiGiaCongRTextBox.Text);
                         this.giaBanThanhPhamModel.GhiChu = ghiChuRTextCtrl.Text;
                         this.giaBanThanhPhamModel.LoaiThanhPham = loaiThanhPhamDropDown.Text;
-                        this.giaBanThanhPhamModel.MucLoiNhuan = int.Parse(mucLoiNhuanRTextBox.Text);
+                        this.giaBanThanhPhamModel.MucLoiNhuan = int.Parse(mucLoiNhuanRSpin.Text);
                         break;
                 }
                 this.DialogResult = DialogResult.OK;
@@ -134,7 +140,7 @@ namespace TinhGiaInOffset.WFUI
                     donViTinhRTextBox.Text = this.giaBanThanhPhamModel.DonViTinh;
                     phiGiaCongRTextBox.Text = this.giaBanThanhPhamModel.ThanhTien.ToString();
                     ghiChuRTextCtrl.Text = this.giaBanThanhPhamModel.GhiChu;
-                    mucLoiNhuanRTextBox.Text = this.giaBanThanhPhamModel.MucLoiNhuan.ToString();
+                    mucLoiNhuanRSpin.Text = this.giaBanThanhPhamModel.MucLoiNhuan.ToString();
                     //combo
                     break;
             }

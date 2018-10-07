@@ -30,14 +30,18 @@ namespace TinhGiaInOffset.WFUI.Presentation
             var model = giaInOffsetGiaCongCont.DocTheoId(idGiaInOffset);
             //
             var tenNhaIn = nhaInOffset.DocTheoId(model.IdNhaIn).TenNhaIn;
-            View.ChiTietMayIn = $"({tenNhaIn})" + '\r' + '\n' + mayInOffset.DocTheoId(model.IdMayIn).ChiTietMayIn ;
+            var line = "------------" + '\r' + '\n';
+            View.ChiTietMayIn = $"({tenNhaIn})" + '\r' + '\n' + line + mayInOffset.DocTheoId(model.IdMayIn).ChiTietMayIn;            
             View.DienGiai = model.DienGiai;
             View.DoiMayIn = model.DoiMayIn;
             View.DonGiaBai = model.DonGiaBai;
             View.SoLuongBaoIn = model.SoLuongBaoIn;
+            View.DonGiaVuot = model.DonGiaVuot;
+            View.DonViTinhSoLuong = model.DonViTinhSoLuong;
             View.SoToChayBuHaoCoBan = model.SoToChayBuHaoCoBan;
             View.ThongTinLienHe = model.ThongTinLienHe;
             View.GhiChu = model.GhiChu;
+            View.GiaDaBaoKem = model.GiaDaBaoKem;
 
 
 

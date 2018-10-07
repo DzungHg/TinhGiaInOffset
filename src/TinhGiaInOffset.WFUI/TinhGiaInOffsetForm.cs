@@ -77,14 +77,13 @@ namespace TinhGiaInOffset.WFUI
         {
             get
             {
-                int mucLoiNhuanIn = 0;
-                int.TryParse(phanTramLoiNhuanInRTextBox.Text, out mucLoiNhuanIn);
-                return mucLoiNhuanIn;
+                return (int)phanTramLoiNhuanInSpin.Value;
+                
             }
 
             set
             {
-                phanTramLoiNhuanGiayRTextBox.Text = value.ToString();
+                phanTramLoiNhuanGiaySpin.Value = value;
             }
         }
 
@@ -92,14 +91,13 @@ namespace TinhGiaInOffset.WFUI
         {
             get
             {
-                int mucLoiNhuanGiay = 0;
-                int.TryParse(phanTramLoiNhuanGiayRTextBox.Text, out mucLoiNhuanGiay);
-                return mucLoiNhuanGiay;
+                return (int)phanTramLoiNhuanGiaySpin.Value;
             }
 
             set
             {
-                phanTramLoiNhuanGiayRTextBox.Text = value.ToString();
+                phanTramLoiNhuanGiaySpin.Value = value;
+                     
             }
         }
 
@@ -115,15 +113,29 @@ namespace TinhGiaInOffset.WFUI
                 tomTatChaoGiaTextBoxCtrl.Text = value;
             }
         }
+
+        public int MucLoiNhuanGiayMin
+        {
+            get;set;
+        }
+
+        public int MucLoiNhuanInMin
+        {
+            get; set;
+        }
         #endregion
 
         public TinhGiaInOffsetForm()
         {
             InitializeComponent();
             tinhGiaOffsetPres = new TinhGiaInOffsetPresenter(this);
-            //
-           
-           
+            //Khởi tạo các giá trị
+            tinhGiaOffsetPres.KhoiTaoGiaTriBanDau();
+            //set 2 spin
+            phanTramLoiNhuanInSpin.Minimum = this.MucLoiNhuanInMin;
+            phanTramLoiNhuanGiaySpin.Minimum = this.MucLoiNhuanGiayMin;
+
+
         }
         private void DauNoiDuLieuChiPhiBaiIn()
         {
@@ -169,8 +181,8 @@ namespace TinhGiaInOffset.WFUI
         private void ResetFormData()
         {
             ngayTinhGiaDateTime.Value = DateTime.Today;
-            phanTramLoiNhuanGiayRTextBox.Text = 30.ToString();
-            phanTramLoiNhuanInRTextBox.Text = 30.ToString();
+            phanTramLoiNhuanGiaySpin.Text = 30.ToString();
+            phanTramLoiNhuanInSpin.Text = 30.ToString();
         }
         private void phiBaiInGiaCongRListView_ColumnCreating(object sender, Telerik.WinControls.UI.ListViewColumnCreatingEventArgs e)
         {
@@ -448,7 +460,7 @@ namespace TinhGiaInOffset.WFUI
         }
         #endregion
     
-        //TODO--Làm tiếp formvalidatioin
+        
         private bool FormValidation()
         {
             bool output = true;
@@ -462,7 +474,7 @@ namespace TinhGiaInOffset.WFUI
             int phanTramInMarkup = 0;
             int phanTramGiayMarkup = 0;
 
-            bool phanTramInMarkupValid = int.TryParse(phanTramLoiNhuanInRTextBox.Text, out phanTramInMarkup);
+            bool phanTramInMarkupValid = int.TryParse(phanTramLoiNhuanInSpin.Text, out phanTramInMarkup);
             if (!phanTramInMarkupValid)
             {
                 output = false;
@@ -472,7 +484,7 @@ namespace TinhGiaInOffset.WFUI
                     output = false;
             }
 
-            bool phanTramGiayMarkupValid = int.TryParse(phanTramLoiNhuanGiayRTextBox.Text, out phanTramGiayMarkup);
+            bool phanTramGiayMarkupValid = int.TryParse(phanTramLoiNhuanGiaySpin.Text, out phanTramGiayMarkup);
             if (!phanTramInMarkupValid)
             {
                 output = false;

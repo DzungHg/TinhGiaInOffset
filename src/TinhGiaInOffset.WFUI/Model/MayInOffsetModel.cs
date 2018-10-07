@@ -59,19 +59,28 @@ namespace TinhGiaInOffset.WFUI.Model
         {
 
         }
+        
         public string ChiTietMayIn
         {
             get
             {
-                var str01 = this.MoTa + '\r' + '\n';
-                var str02 = $"Khô giấy Max: {this.KhoGiayToiDaRong} x {this.KhoGiayToiDaDai}cm" + '\r' + '\n';
-              
-                var str04 = $"Khô giấy Min: {this.KhoGiayToiThieuRong} x {this.KhoGiayToiThieuDai}cm" + '\r' + '\n';
-               
-                var str06 = $"Tốc độ: {this.TocDoToGio} tờ/giờ" + '\r' + '\n';
-                var str07 = $"Số màu: {this.SoMauIn} màu" + '\r' + '\n';
-                var str08 = $"Hãng SX: {this.HangSanXuat}" + '\r' + '\n';
-                return str01 + str02 + str04 +  str06 + str07 + str08;
+                var line = "------------" + '\r' + '\n';
+                var kq = this.MoTa + '\r' + '\n';
+                kq += $"Khổ giấy Max: {this.KhoGiayToiDaRong} x {this.KhoGiayToiDaDai}cm" + '\r' + '\n';
+                kq += $"Khổ giấy Min: {this.KhoGiayToiThieuRong} x {this.KhoGiayToiThieuDai}cm" + '\r' + '\n';
+                kq += line;
+                kq += $"Vùng in Max: {this.KhoInToiDaRong} x {this.KhoInToiDaDai}cm" + '\r' + '\n';
+                kq += $"Vùng in Min: {this.KhoInToiThieuRong} x {this.KhoInToiThieuDai}cm" + '\r' + '\n';
+                kq += line;
+                kq += $"Chừa giấy trắng bắt nhíp:" + '\r' + '\n';
+                kq += $"Tự trở {this.LeTuTro} cm, trở nhíp {this.LeBatNhip} cm" + '\r' + '\n';
+                kq += line;
+                kq += $"Giấy có thể in: {this.GiayCoTheIn}" + '\r' + '\n';
+                kq += $"Thông tin tốc độ: {this.ThongTinTocDo}" + '\r' + '\n';
+                kq +=  $"Tốc độ thường chạy: {this.TocDoToGio} tờ/giờ" + '\r' + '\n';
+                kq += $"Số màu: {this.SoMauIn} màu" + '\r' + '\n';
+                kq += $"Hãng SX: {this.HangSanXuat}" + '\r' + '\n';
+                return kq;
 
             }    
         }
