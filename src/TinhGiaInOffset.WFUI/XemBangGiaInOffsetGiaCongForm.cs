@@ -23,6 +23,21 @@ namespace TinhGiaInOffset.WFUI
             DauNoiDuLieu();
         }
         #region implement Iview....
+        public int IdGiaInOffsetChon
+        {
+            get
+            {
+                int idGiaIn = 0;
+
+                int.TryParse(giaInOffsetGiaCongListCtrl.SelectedValue.ToString(), out idGiaIn);
+                return idGiaIn;
+            }
+
+            set
+            {
+                
+            }
+        }
         public string DienGiai
         {
             get
@@ -160,7 +175,48 @@ namespace TinhGiaInOffset.WFUI
             }
         }
 
+        public int SoKemTinh
+        {
+            get
+            {
+                return int.Parse(soKemTinhRTextBox.Text);
+            }
+
+            set
+            {
+                soKemTinhRTextBox.Text = value.ToString();
+            }
+        }
+
+        public string KetQuaTinh
+        {
+            get
+            {
+                return ketQuaTinhRTextBox.Text;
+            }
+
+            set
+            {
+                ketQuaTinhRTextBox.Text = value;
+            }
+        }
+
+        public int SoMatInTinh
+        {
+            get
+            {
+                return int.Parse(soMatInTinhRTextBox.Text);
+            }
+
+            set
+            {
+                soMatInTinhRTextBox.Text = value.ToString();
+            }
+        }
+
        
+
+
 
 
         #endregion
@@ -191,7 +247,35 @@ namespace TinhGiaInOffset.WFUI
                 xemGiaInPres.TrinhBayChiTietGia(idGiaIn);
             } catch { }
         }
+        private bool FormTinhValidation()
+        {
+            bool output = true;
+            int soKem = 0;
+            int soMatIn = 0;
+            bool soKemValid = int.TryParse(soKemTinhRTextBox.Text, out soKem);
+            if (soKemValid != true)
+            {
+                output = false;
+            }
+            else
+            {
+                if (soKem <= 0)
+                    output = false;
+            }
+            bool soMatInValid = int.TryParse(soMatInTinhRTextBox.Text, out soMatIn);
+            if (soMatInValid != true)
+            {
+                output = false;
+            }
+            else
+            {
+                if (soMatIn <= 0)
+                    output = false;
+            }
 
+            return output;
+        }
+       
         private void giaInOffsetGiaCongListCtrl_SelectedValueChanged(object sender, EventArgs e)
         {
 
@@ -206,7 +290,25 @@ namespace TinhGiaInOffset.WFUI
 
         private void XemBangGiaInOffsetGiaCongForm_Load(object sender, EventArgs e)
         {
+            tieuDeFormLabel.Text = this.Text;
             tieuDeFormLabel.Left = (ClientSize.Width - tieuDeFormLabel.Width) / 2;
+        }
+
+        private void tinhPhiRButton_Click(object sender, EventArgs e)
+        {
+            if (FormTinhValidation())
+            {
+                this.KetQuaTinh = string.Format("{0:0,0.00}", xemGiaInPres.KetQuaTinh());
+            }
+            else
+            {
+                MessageBox.Show("Bạn cần điền đúng và đủ nội dung form tính");
+            }
+        }
+
+        private void resetTinhRButton_Click(object sender, EventArgs e)
+        {
+            xemGiaInPres.ResetFormTinh();
         }
     }
 }

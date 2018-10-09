@@ -241,6 +241,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "ChiPhiInKyThuatSoForm";
+            this.Load += new System.EventHandler(this.ChiPhiInKyThuatSoForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nhaInOffsetDropDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.huyButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tatCaNhaInRCheck)).EndInit();

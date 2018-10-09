@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TinhGiaInOffset.WFUI.DTOContext;
 using TinhGiaInOffset.WFUI.Model;
 using TinhGiaInOffset.WFUI.View;
+using TinhGiaInOffset.WFUI.Helpers;
 
 namespace TinhGiaInOffset.WFUI.Presentation
 {
@@ -43,9 +44,20 @@ namespace TinhGiaInOffset.WFUI.Presentation
             View.GhiChu = model.GhiChu;
             View.GiaDaBaoKem = model.GiaDaBaoKem;
 
+        }
+        public void ResetFormTinh()
+        {
+            View.SoKemTinh = 1;
+            View.SoMatInTinh = 200;
+            View.KetQuaTinh = 0.ToString();
+        }
+        public decimal KetQuaTinh()
+        {
+            decimal kq = 0;
+            if (View.IdGiaInOffsetChon > 0)
+            kq = TinhToanIn.PhiInOffset(View.IdGiaInOffsetChon, View.SoMatInTinh, View.SoKemTinh);
 
-
-
+            return kq;
         }
     }
 }

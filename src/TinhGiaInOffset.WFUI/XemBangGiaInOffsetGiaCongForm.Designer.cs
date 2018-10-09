@@ -51,10 +51,18 @@
             this.soLuongBaoInRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.giaInOffsetGiaCongListCtrl = new Telerik.WinControls.UI.RadListControl();
-            this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
+            this.ChiTietPageView = new Telerik.WinControls.UI.RadPageView();
             this.radPageViewPage1 = new Telerik.WinControls.UI.RadPageViewPage();
             this.radPageViewPage2 = new Telerik.WinControls.UI.RadPageViewPage();
             this.ghiChuRTextCtrl = new Telerik.WinControls.UI.RadTextBoxControl();
+            this.tabTinhPhiInPage = new Telerik.WinControls.UI.RadPageViewPage();
+            this.tinhPhiRButton = new Telerik.WinControls.UI.RadButton();
+            this.ketQuaTinhRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
+            this.soKemTinhRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.resetTinhRButton = new Telerik.WinControls.UI.RadButton();
+            this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
+            this.soMatInTinhRTextBox = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dongFormButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietMayInTextCtrl)).BeginInit();
@@ -78,11 +86,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.soLuongBaoInRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giaInOffsetGiaCongListCtrl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
-            this.radPageView1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ChiTietPageView)).BeginInit();
+            this.ChiTietPageView.SuspendLayout();
             this.radPageViewPage1.SuspendLayout();
             this.radPageViewPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ghiChuRTextCtrl)).BeginInit();
+            this.tabTinhPhiInPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tinhPhiRButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ketQuaTinhRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soKemTinhRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resetTinhRButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soMatInTinhRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,7 +108,7 @@
             this.dongFormButton.Location = new System.Drawing.Point(280, 409);
             this.dongFormButton.Name = "dongFormButton";
             this.dongFormButton.Size = new System.Drawing.Size(110, 24);
-            this.dongFormButton.TabIndex = 56;
+            this.dongFormButton.TabIndex = 50;
             this.dongFormButton.Text = "Đóng";
             this.dongFormButton.Click += new System.EventHandler(this.dongFormButton_Click);
             // 
@@ -277,16 +293,17 @@
             this.giaInOffsetGiaCongListCtrl.TabIndex = 0;
             this.giaInOffsetGiaCongListCtrl.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.giaInOffsetGiaCongListCtrl_SelectedIndexChanged);
             // 
-            // radPageView1
+            // ChiTietPageView
             // 
-            this.radPageView1.Controls.Add(this.radPageViewPage1);
-            this.radPageView1.Controls.Add(this.radPageViewPage2);
-            this.radPageView1.DefaultPage = this.radPageViewPage1;
-            this.radPageView1.Location = new System.Drawing.Point(404, 73);
-            this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage1;
-            this.radPageView1.Size = new System.Drawing.Size(273, 320);
-            this.radPageView1.TabIndex = 5;
+            this.ChiTietPageView.Controls.Add(this.radPageViewPage1);
+            this.ChiTietPageView.Controls.Add(this.radPageViewPage2);
+            this.ChiTietPageView.Controls.Add(this.tabTinhPhiInPage);
+            this.ChiTietPageView.DefaultPage = this.radPageViewPage1;
+            this.ChiTietPageView.Location = new System.Drawing.Point(404, 73);
+            this.ChiTietPageView.Name = "ChiTietPageView";
+            this.ChiTietPageView.SelectedPage = this.tabTinhPhiInPage;
+            this.ChiTietPageView.Size = new System.Drawing.Size(273, 320);
+            this.ChiTietPageView.TabIndex = 5;
             // 
             // radPageViewPage1
             // 
@@ -330,12 +347,89 @@
             this.ghiChuRTextCtrl.Size = new System.Drawing.Size(252, 272);
             this.ghiChuRTextCtrl.TabIndex = 73;
             // 
+            // tabTinhPhiInPage
+            // 
+            this.tabTinhPhiInPage.Controls.Add(this.radLabel12);
+            this.tabTinhPhiInPage.Controls.Add(this.soMatInTinhRTextBox);
+            this.tabTinhPhiInPage.Controls.Add(this.resetTinhRButton);
+            this.tabTinhPhiInPage.Controls.Add(this.tinhPhiRButton);
+            this.tabTinhPhiInPage.Controls.Add(this.ketQuaTinhRTextBox);
+            this.tabTinhPhiInPage.Controls.Add(this.radLabel3);
+            this.tabTinhPhiInPage.Controls.Add(this.soKemTinhRTextBox);
+            this.tabTinhPhiInPage.ItemSize = new System.Drawing.SizeF(57F, 28F);
+            this.tabTinhPhiInPage.Location = new System.Drawing.Point(10, 37);
+            this.tabTinhPhiInPage.Name = "tabTinhPhiInPage";
+            this.tabTinhPhiInPage.Size = new System.Drawing.Size(252, 272);
+            this.tabTinhPhiInPage.Text = "Tính phí";
+            // 
+            // tinhPhiRButton
+            // 
+            this.tinhPhiRButton.Location = new System.Drawing.Point(8, 129);
+            this.tinhPhiRButton.Name = "tinhPhiRButton";
+            this.tinhPhiRButton.Size = new System.Drawing.Size(110, 50);
+            this.tinhPhiRButton.TabIndex = 12;
+            this.tinhPhiRButton.Text = "Tính";
+            this.tinhPhiRButton.Click += new System.EventHandler(this.tinhPhiRButton_Click);
+            // 
+            // ketQuaTinhRTextBox
+            // 
+            this.ketQuaTinhRTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ketQuaTinhRTextBox.Location = new System.Drawing.Point(8, 185);
+            this.ketQuaTinhRTextBox.Name = "ketQuaTinhRTextBox";
+            this.ketQuaTinhRTextBox.ReadOnly = true;
+            this.ketQuaTinhRTextBox.Size = new System.Drawing.Size(230, 31);
+            this.ketQuaTinhRTextBox.TabIndex = 13;
+            this.ketQuaTinhRTextBox.Text = "0";
+            // 
+            // radLabel3
+            // 
+            this.radLabel3.Location = new System.Drawing.Point(8, 3);
+            this.radLabel3.Name = "radLabel3";
+            this.radLabel3.Size = new System.Drawing.Size(43, 18);
+            this.radLabel3.TabIndex = 68;
+            this.radLabel3.Text = "Số kẽm";
+            // 
+            // soKemTinhRTextBox
+            // 
+            this.soKemTinhRTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.soKemTinhRTextBox.Location = new System.Drawing.Point(8, 27);
+            this.soKemTinhRTextBox.Name = "soKemTinhRTextBox";
+            this.soKemTinhRTextBox.Size = new System.Drawing.Size(135, 31);
+            this.soKemTinhRTextBox.TabIndex = 11;
+            this.soKemTinhRTextBox.Text = "1";
+            // 
+            // resetTinhRButton
+            // 
+            this.resetTinhRButton.Location = new System.Drawing.Point(8, 239);
+            this.resetTinhRButton.Name = "resetTinhRButton";
+            this.resetTinhRButton.Size = new System.Drawing.Size(110, 24);
+            this.resetTinhRButton.TabIndex = 14;
+            this.resetTinhRButton.Text = "Reset";
+            this.resetTinhRButton.Click += new System.EventHandler(this.resetTinhRButton_Click);
+            // 
+            // radLabel12
+            // 
+            this.radLabel12.Location = new System.Drawing.Point(8, 64);
+            this.radLabel12.Name = "radLabel12";
+            this.radLabel12.Size = new System.Drawing.Size(54, 18);
+            this.radLabel12.TabIndex = 70;
+            this.radLabel12.Text = "Số mặt in";
+            // 
+            // soMatInTinhRTextBox
+            // 
+            this.soMatInTinhRTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.soMatInTinhRTextBox.Location = new System.Drawing.Point(8, 88);
+            this.soMatInTinhRTextBox.Name = "soMatInTinhRTextBox";
+            this.soMatInTinhRTextBox.Size = new System.Drawing.Size(135, 31);
+            this.soMatInTinhRTextBox.TabIndex = 69;
+            this.soMatInTinhRTextBox.Text = "500";
+            // 
             // XemBangGiaInOffsetGiaCongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 455);
-            this.Controls.Add(this.radPageView1);
+            this.Controls.Add(this.ChiTietPageView);
             this.Controls.Add(this.giaInOffsetGiaCongListCtrl);
             this.Controls.Add(this.thongTinLienHeRTextCtrl);
             this.Controls.Add(this.radLabel2);
@@ -374,12 +468,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.soLuongBaoInRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.giaInOffsetGiaCongListCtrl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).EndInit();
-            this.radPageView1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ChiTietPageView)).EndInit();
+            this.ChiTietPageView.ResumeLayout(false);
             this.radPageViewPage1.ResumeLayout(false);
             this.radPageViewPage1.PerformLayout();
             this.radPageViewPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ghiChuRTextCtrl)).EndInit();
+            this.tabTinhPhiInPage.ResumeLayout(false);
+            this.tabTinhPhiInPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tinhPhiRButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ketQuaTinhRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soKemTinhRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resetTinhRButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soMatInTinhRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -411,9 +514,17 @@
         private Telerik.WinControls.UI.RadTextBox soLuongBaoInRTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Telerik.WinControls.UI.RadListControl giaInOffsetGiaCongListCtrl;
-        private Telerik.WinControls.UI.RadPageView radPageView1;
+        private Telerik.WinControls.UI.RadPageView ChiTietPageView;
         private Telerik.WinControls.UI.RadPageViewPage radPageViewPage1;
         private Telerik.WinControls.UI.RadPageViewPage radPageViewPage2;
         private Telerik.WinControls.UI.RadTextBoxControl ghiChuRTextCtrl;
+        private Telerik.WinControls.UI.RadPageViewPage tabTinhPhiInPage;
+        private Telerik.WinControls.UI.RadButton resetTinhRButton;
+        private Telerik.WinControls.UI.RadButton tinhPhiRButton;
+        private Telerik.WinControls.UI.RadTextBox ketQuaTinhRTextBox;
+        private Telerik.WinControls.UI.RadLabel radLabel3;
+        private Telerik.WinControls.UI.RadTextBox soKemTinhRTextBox;
+        private Telerik.WinControls.UI.RadLabel radLabel12;
+        private Telerik.WinControls.UI.RadTextBox soMatInTinhRTextBox;
     }
 }

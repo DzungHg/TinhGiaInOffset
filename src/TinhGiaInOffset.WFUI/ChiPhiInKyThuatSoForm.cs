@@ -203,5 +203,11 @@ namespace TinhGiaInOffset.WFUI
                 }
             }
         }
+
+        private void ChiPhiInKyThuatSoForm_Load(object sender, EventArgs e)
+        {
+            tieuDeFormLabel.Text = this.Text;
+            tieuDeFormLabel.Left = (ClientSize.Width - tieuDeFormLabel.Width) / 2;
+        }
     }
 }

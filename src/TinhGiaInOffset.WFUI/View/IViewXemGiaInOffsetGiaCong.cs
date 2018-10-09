@@ -9,7 +9,7 @@ namespace TinhGiaInOffset.WFUI.View
     public interface IViewXemGiaInOffsetGiaCong
     {
      
-    
+        int IdGiaInOffsetChon { get; set; }
         string DienGiai { get; set; }
       
        
@@ -23,5 +23,9 @@ namespace TinhGiaInOffset.WFUI.View
         bool GiaDaBaoKem { get; set; }
         string ThongTinLienHe { get; set; }
         string GhiChu { get; set; }
+        //Tính toán
+        int SoKemTinh { get; set; }
+        int SoMatInTinh { get; set; }
+        string KetQuaTinh { get; set; }
     }
 }

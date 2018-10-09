@@ -31,6 +31,7 @@ namespace TinhGiaInOffset.WFUI
         private void themTinhGiaOffsetRButton_Click(object sender, EventArgs e)
         {
             var frm = new TinhGiaInOffsetForm();
+            frm.Text = "Tính Giá In Offset Gia Công";
             frm.TinhTrangForm = Common.Enum.TinhTrangForm.Moi;
             frm.MaximizeBox = false;
             frm.StartPosition = FormStartPosition.CenterScreen;
@@ -41,6 +42,7 @@ namespace TinhGiaInOffset.WFUI
         private void xemBangGiaInOffsetGiaCongRButton_Click(object sender, EventArgs e)
         {
             var frm = new XemBangGiaInOffsetGiaCongForm();
+            frm.Text = "Bảng Giá In Offset Gia Công";
             frm.MaximizeBox = false;
             frm.MinimizeBox = false;
             frm.StartPosition = FormStartPosition.CenterParent;
@@ -50,6 +52,7 @@ namespace TinhGiaInOffset.WFUI
         private void phiInNhanhRButton_Click(object sender, EventArgs e)
         {
             var frm = new ChiPhiInKyThuatSoForm();
+            frm.Text = "Chi Phí In Kỹ Thuật Số";
             frm.MaximizeBox = false;
             frm.MinimizeBox = false;
             frm.StartPosition = FormStartPosition.CenterParent;

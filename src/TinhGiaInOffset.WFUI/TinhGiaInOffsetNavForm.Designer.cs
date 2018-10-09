@@ -52,7 +52,7 @@
             this.radMenuItem2});
             this.radMenu1.Location = new System.Drawing.Point(0, 0);
             this.radMenu1.Name = "radMenu1";
-            this.radMenu1.Size = new System.Drawing.Size(474, 20);
+            this.radMenu1.Size = new System.Drawing.Size(484, 20);
             this.radMenu1.TabIndex = 0;
             // 
             // radMenuItem1
@@ -83,7 +83,7 @@
             // 
             // themTinhGiaOffsetRButton
             // 
-            this.themTinhGiaOffsetRButton.Location = new System.Drawing.Point(128, 26);
+            this.themTinhGiaOffsetRButton.Location = new System.Drawing.Point(247, 26);
             this.themTinhGiaOffsetRButton.Name = "themTinhGiaOffsetRButton";
             this.themTinhGiaOffsetRButton.Size = new System.Drawing.Size(110, 55);
             this.themTinhGiaOffsetRButton.TabIndex = 0;
@@ -92,7 +92,7 @@
             // 
             // thoatRButton
             // 
-            this.thoatRButton.Location = new System.Drawing.Point(360, 26);
+            this.thoatRButton.Location = new System.Drawing.Point(363, 26);
             this.thoatRButton.Name = "thoatRButton";
             this.thoatRButton.Size = new System.Drawing.Size(110, 55);
             this.thoatRButton.TabIndex = 1;
@@ -101,11 +101,11 @@
             // 
             // xemBangGiaInOffsetGiaCongRButton
             // 
-            this.xemBangGiaInOffsetGiaCongRButton.Location = new System.Drawing.Point(244, 26);
+            this.xemBangGiaInOffsetGiaCongRButton.Location = new System.Drawing.Point(131, 26);
             this.xemBangGiaInOffsetGiaCongRButton.Name = "xemBangGiaInOffsetGiaCongRButton";
             this.xemBangGiaInOffsetGiaCongRButton.Size = new System.Drawing.Size(110, 55);
             this.xemBangGiaInOffsetGiaCongRButton.TabIndex = 1;
-            this.xemBangGiaInOffsetGiaCongRButton.Text = "Xem giá in gia công Offset";
+            this.xemBangGiaInOffsetGiaCongRButton.Text = "Giá in gia công Offset";
             this.xemBangGiaInOffsetGiaCongRButton.TextWrap = true;
             this.xemBangGiaInOffsetGiaCongRButton.Click += new System.EventHandler(this.xemBangGiaInOffsetGiaCongRButton_Click);
             // 
@@ -123,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 93);
+            this.ClientSize = new System.Drawing.Size(484, 93);
             this.Controls.Add(this.themTinhGiaOffsetRButton);
             this.Controls.Add(this.phiInNhanhRButton);
             this.Controls.Add(this.xemBangGiaInOffsetGiaCongRButton);
