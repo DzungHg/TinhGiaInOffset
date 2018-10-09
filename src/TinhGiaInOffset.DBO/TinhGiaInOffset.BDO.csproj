@@ -44,6 +44,7 @@
     <Compile Include="HangLoiNhuanOffsetGiaCongBDO.cs" />
     <Compile Include="MayInOffsetBDO.cs" />
     <Compile Include="NhaInOffsetBDO.cs" />
+    <Compile Include="PhiMayInKyThuatSoBDO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

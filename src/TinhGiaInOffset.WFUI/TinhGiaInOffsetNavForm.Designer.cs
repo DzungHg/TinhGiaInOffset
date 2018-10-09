@@ -36,10 +36,12 @@
             this.themTinhGiaOffsetRButton = new Telerik.WinControls.UI.RadButton();
             this.thoatRButton = new Telerik.WinControls.UI.RadButton();
             this.xemBangGiaInOffsetGiaCongRButton = new Telerik.WinControls.UI.RadButton();
+            this.phiInNhanhRButton = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.themTinhGiaOffsetRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thoatRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xemBangGiaInOffsetGiaCongRButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phiInNhanhRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,16 +83,16 @@
             // 
             // themTinhGiaOffsetRButton
             // 
-            this.themTinhGiaOffsetRButton.Location = new System.Drawing.Point(12, 26);
+            this.themTinhGiaOffsetRButton.Location = new System.Drawing.Point(128, 26);
             this.themTinhGiaOffsetRButton.Name = "themTinhGiaOffsetRButton";
             this.themTinhGiaOffsetRButton.Size = new System.Drawing.Size(110, 55);
             this.themTinhGiaOffsetRButton.TabIndex = 0;
-            this.themTinhGiaOffsetRButton.Text = "Tính giá Mới";
+            this.themTinhGiaOffsetRButton.Text = "Tính giá Offset";
             this.themTinhGiaOffsetRButton.Click += new System.EventHandler(this.themTinhGiaOffsetRButton_Click);
             // 
             // thoatRButton
             // 
-            this.thoatRButton.Location = new System.Drawing.Point(244, 26);
+            this.thoatRButton.Location = new System.Drawing.Point(360, 26);
             this.thoatRButton.Name = "thoatRButton";
             this.thoatRButton.Size = new System.Drawing.Size(110, 55);
             this.thoatRButton.TabIndex = 1;
@@ -99,7 +101,7 @@
             // 
             // xemBangGiaInOffsetGiaCongRButton
             // 
-            this.xemBangGiaInOffsetGiaCongRButton.Location = new System.Drawing.Point(128, 26);
+            this.xemBangGiaInOffsetGiaCongRButton.Location = new System.Drawing.Point(244, 26);
             this.xemBangGiaInOffsetGiaCongRButton.Name = "xemBangGiaInOffsetGiaCongRButton";
             this.xemBangGiaInOffsetGiaCongRButton.Size = new System.Drawing.Size(110, 55);
             this.xemBangGiaInOffsetGiaCongRButton.TabIndex = 1;
@@ -107,14 +109,25 @@
             this.xemBangGiaInOffsetGiaCongRButton.TextWrap = true;
             this.xemBangGiaInOffsetGiaCongRButton.Click += new System.EventHandler(this.xemBangGiaInOffsetGiaCongRButton_Click);
             // 
+            // phiInNhanhRButton
+            // 
+            this.phiInNhanhRButton.Location = new System.Drawing.Point(12, 26);
+            this.phiInNhanhRButton.Name = "phiInNhanhRButton";
+            this.phiInNhanhRButton.Size = new System.Drawing.Size(110, 55);
+            this.phiInNhanhRButton.TabIndex = 2;
+            this.phiInNhanhRButton.Text = "Phí in Nhanh";
+            this.phiInNhanhRButton.TextWrap = true;
+            this.phiInNhanhRButton.Click += new System.EventHandler(this.phiInNhanhRButton_Click);
+            // 
             // TinhGiaInOffsetNavForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 93);
+            this.Controls.Add(this.themTinhGiaOffsetRButton);
+            this.Controls.Add(this.phiInNhanhRButton);
             this.Controls.Add(this.xemBangGiaInOffsetGiaCongRButton);
             this.Controls.Add(this.thoatRButton);
-            this.Controls.Add(this.themTinhGiaOffsetRButton);
             this.Controls.Add(this.radMenu1);
             this.MaximizeBox = false;
             this.Name = "TinhGiaInOffsetNavForm";
@@ -127,6 +140,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.themTinhGiaOffsetRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thoatRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xemBangGiaInOffsetGiaCongRButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phiInNhanhRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -143,5 +157,6 @@
         private Telerik.WinControls.UI.RadButton themTinhGiaOffsetRButton;
         private Telerik.WinControls.UI.RadButton thoatRButton;
         private Telerik.WinControls.UI.RadButton xemBangGiaInOffsetGiaCongRButton;
+        private Telerik.WinControls.UI.RadButton phiInNhanhRButton;
     }
 }

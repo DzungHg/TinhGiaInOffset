@@ -46,5 +46,14 @@ namespace TinhGiaInOffset.WFUI
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.Show();
         }
+
+        private void phiInNhanhRButton_Click(object sender, EventArgs e)
+        {
+            var frm = new ChiPhiInKyThuatSoForm();
+            frm.MaximizeBox = false;
+            frm.MinimizeBox = false;
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.Show();
+        }
     }
 }

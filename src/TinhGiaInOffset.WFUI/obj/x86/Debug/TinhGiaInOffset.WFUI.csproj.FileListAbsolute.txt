@@ -78,3 +78,4 @@ F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffs
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.XemBangGiaInOffsetGiaCongForm.resources
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.BDO.dll
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.BDO.pdb
+F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.ChiPhiInKyThuatSoForm.resources

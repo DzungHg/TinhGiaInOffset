@@ -67,17 +67,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiPhiInKyThuatSoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiPhiInKyThuatSoForm.Designer.cs">
+      <DependentUpon>ChiPhiInKyThuatSoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DTOContext\GiaInOffsetGiaCongContext.cs" />
+    <Compile Include="DTOContext\PhiMayInKyThuatSoContext.cs" />
     <Compile Include="DTOContext\MayInOffsetContext.cs" />
     <Compile Include="DTOContext\HangLoiNhuanOffsetGiaCongContext.cs" />
     <Compile Include="DTOContext\NhaInOffsetContext.cs" />
+    <Compile Include="Helpers\ITinhPhiInKyThuatSo.cs" />
+    <Compile Include="Helpers\TinhPhiInKyThuatSo.cs" />
     <Compile Include="Model\BaiInOffsetGiaCongModel.cs" />
     <Compile Include="Model\ChiPhiOffsetKhacModel.cs" />
     <Compile Include="Model\GiaBanThanhPhamModel.cs" />
     <Compile Include="Model\GiaBanThanhPhamGiaCongModel.cs" />
     <Compile Include="Model\GiaBanThanhPhamTaiChoModel.cs" />
     <Compile Include="Model\HangLoiNhuanOffsetGiaCongModel.cs" />
+    <Compile Include="Model\PhiMayInKyThuatSoModel.cs" />
     <Compile Include="Presentation\BaiInOffsetGiaCongPresenter.cs" />
+    <Compile Include="Presentation\ChiPhiInKyThuatSoPresenter.cs" />
     <Compile Include="Presentation\QuanLyGiaInOffsetGiaCongPresenter.cs" />
     <Compile Include="Presentation\TaoMayInOffsetPresenter.cs" />
     <Compile Include="Presentation\TinhGiaInOffsetPresenter.cs" />
@@ -143,6 +154,7 @@
       <DependentUpon>TinhGiaInOffsetNavForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\IViewBaiInOffsetGiaCong.cs" />
+    <Compile Include="View\IViewChiPhiInKyThuatSo.cs" />
     <Compile Include="View\IViewXemGiaInOffsetGiaCong.cs" />
     <Compile Include="View\IViewTaoMayInOffset.cs" />
     <Compile Include="View\IViewTinhGiaInOffset.cs" />
@@ -152,6 +164,9 @@
     <Compile Include="XemBangGiaInOffsetGiaCongForm.Designer.cs">
       <DependentUpon>XemBangGiaInOffsetGiaCongForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChiPhiInKyThuatSoForm.resx">
+      <DependentUpon>ChiPhiInKyThuatSoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QuanLyGiaInOffsetGiaCongForm.resx">
       <DependentUpon>QuanLyGiaInOffsetGiaCongForm.cs</DependentUpon>

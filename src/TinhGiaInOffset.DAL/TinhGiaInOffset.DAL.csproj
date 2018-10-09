@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="GiaInOffsetGiaCongDAO.cs" />
     <Compile Include="HangLoiNhuanOffsetGiaCongDAO.cs" />
+    <Compile Include="IRespos\IPhiMayInKyThuatSo.cs" />
+    <Compile Include="PhiMayInKyThuatSoDAO.cs" />
     <Compile Include="MayInOffsetDAO.cs" />
     <Compile Include="IRespos\IGiaInOffsetGiaCong.cs" />
     <Compile Include="IRespos\IMayInOffset.cs" />
