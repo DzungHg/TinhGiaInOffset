@@ -39,7 +39,7 @@ namespace TinhGiaInOffset.WFUI.Presentation
             if (this.BaiInOffsetGiaCongBaoGom.Count > 0)
                 foreach (var baiIn in this.BaiInOffsetGiaCongBaoGom)
                 {
-                    kq += TinhToanIn.PhiInOffset(baiIn.IdGiaInOffsetGiaCong, baiIn.SoMatCanIn, baiIn.SoKemIn);
+                    kq += baiIn.PhiInOffsetGiaCong();
                 }
 
             return kq;
@@ -50,8 +50,8 @@ namespace TinhGiaInOffset.WFUI.Presentation
             if (this.BaiInOffsetGiaCongBaoGom.Count > 0)
                 foreach (var baiIn in this.BaiInOffsetGiaCongBaoGom)
                 {
-                    if (!baiIn.GiayDaCoLoiNhuan)
-                        kq += TinhToanIn.TienGiayIn(baiIn.DonGiaGiayTheoTo, baiIn.SoLuongToGiay);
+                    if (baiIn.GiayDaCoLoiNhuan != false)
+                        kq += baiIn.PhiGiayTheoBai();
                 }
 
             return kq;
@@ -63,7 +63,7 @@ namespace TinhGiaInOffset.WFUI.Presentation
                 foreach (var baiIn in this.BaiInOffsetGiaCongBaoGom)
                 {
                     if (baiIn.GiayDaCoLoiNhuan)
-                        kq += TinhToanIn.TienGiayIn(baiIn.DonGiaGiayTheoTo, baiIn.SoLuongToGiay);
+                        kq += baiIn.PhiGiayTheoBai();
                 }
 
             return kq;
@@ -243,9 +243,9 @@ namespace TinhGiaInOffset.WFUI.Presentation
             var strTam = "";
             foreach (var baiIn in this.BaiInOffsetGiaCongBaoGom)
             {
-                strTam += $"----{baiIn.TenBaiIn}; Số mặt in: {baiIn.SoMatCanIn}; Số kẽm: {baiIn.SoKemIn}; Bảng giá in:{baiIn.TenGiaInOffsetGiaCong};" +
+                strTam += $"----{baiIn.TenBaiIn}; Số mặt in: {baiIn.SoMatIn}; Số kẽm: {baiIn.SoKemIn}; Bảng giá in:{baiIn.TenGiaInOffsetGiaCong};" +
                     $"Nhà in offset: {baiIn.TenGiaInOffsetGiaCong}" + '\r' + '\n';
-                strTam += $"-----Giấy: {baiIn.TenGiay}; Đơn giá: {baiIn.DonGiaGiayTheoTo} Số Tờ: {baiIn.SoLuongToGiay} tờ;" + '\r' + '\n';
+                strTam += $"-----Giấy: {baiIn.TenGiay}; Đơn giá: {baiIn.DonGiaGiayTheoTo} Số Tờ: {baiIn.SoToChayLyThuyet} tờ;" + '\r' + '\n';
             }
             kq += strTam;
             kq += string.Format("---Tổng tiền in: {0:0,0.00đ}" + '\r' + '\n', this.GiaTienIn_Ban());

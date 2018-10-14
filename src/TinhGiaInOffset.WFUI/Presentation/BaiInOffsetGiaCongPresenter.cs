@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TinhGiaInOffset.WFUI.View;
-
+using TinhGiaInOffset.Common.Enum;
 using TinhGiaInOffset.WFUI.DTOContext;
 using TinhGiaInOffset.WFUI.Model;
 
@@ -34,12 +34,12 @@ namespace TinhGiaInOffset.WFUI.Presentation
             return kq;
         }
         public BaiInOffsetGiaCongModel ThemBaiIn(string tenBaiIn, string dienGiai, int idGiaInOffsetGiaCong, string tenGiaInOffsetGiaCong,
-            int soMatCanIn, int soKem, int soToBuHaoThucCan, string kieuInOffset, string tenGiay, string khoGiay, int donGiaGiayTheoTo,
-            int soLuongToGiay, bool giayDaCoLoiNhuan, bool inTheoLo)
+            int soMatCanIn, int soKem, int soToBuHaoThucCan, KieuInOffset kieuInOffset, string tenGiay, string khoGiay, int donGiaGiayTheoTo,
+            int soLuongToGiay, bool giayDaCoLoiNhuan, bool baiInNhanBan, int soLuongBaiNhanBan)
         {
             var model = new BaiInOffsetGiaCongModel(tenBaiIn,dienGiai,  idGiaInOffsetGiaCong, tenGiaInOffsetGiaCong, this.LayTenNhaInOffset(View.IdGiaInOffsetGiaCong),
              soMatCanIn,  soKem, soToBuHaoThucCan,  kieuInOffset,  tenGiay,  khoGiay,  donGiaGiayTheoTo,
-             soLuongToGiay,  giayDaCoLoiNhuan, inTheoLo);
+             soLuongToGiay,  giayDaCoLoiNhuan, baiInNhanBan, soLuongBaiNhanBan);
 
             return model;
         }
@@ -74,12 +74,12 @@ namespace TinhGiaInOffset.WFUI.Presentation
             View.DienGiai = "";
             View.TenGiay = "Couche";
             View.DonGiaGiayTheoTo = 1;
-            View.SoLuongToGiay = 500;
-            View.SoMatCanIn = 500;
-            View.SoKemIn = 1;
-            View.SoToChayBuHaoThucCan = 50;
+            View.SoToChayLyThuyet = 500;
+            View.KieuIn = KieuInOffset.InMotMat;
+            View.SoToChayBuHao = 50;
             View.KhoGiayChay = this.KhoMayInLonNhat(View.IdGiaInOffsetGiaCong);
-            View.InTheoLo = true;
+            View.BaiNhanBan = false;
+            View.SoBaiNhanBan = 1;
         }
 
     }

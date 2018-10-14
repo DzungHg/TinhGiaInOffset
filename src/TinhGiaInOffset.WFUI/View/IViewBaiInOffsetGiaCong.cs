@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TinhGiaInOffset.Common.Enum;
 
 namespace TinhGiaInOffset.WFUI.View
 {
@@ -12,17 +13,18 @@ namespace TinhGiaInOffset.WFUI.View
         string DienGiai { get; set; }
         int IdGiaInOffsetGiaCong { get; set; }
         string TenGiaInOffsetGiaCong { get; set; }
-        
-        int SoMatCanIn { get; set; }
+        int SoLuotIn { get; set; }
+        int SoBaiNhanBan { get; set; }
+        int SoMatIn { get; set; }
         int SoKemIn { get; set; }
-        int SoToChayBuHaoThucCan { get; set; }
-        string KieuInOffset { get; set; }
+        int SoToChayBuHao { get; set; }
+        KieuInOffset KieuIn { get; set; }
         string TenGiay { get; set; }
         string KhoGiayChay { get; set; }
         int DonGiaGiayTheoTo { get; set; }
-        int SoLuongToGiay { get; set; }
+        int SoToChayLyThuyet { get; set; }
         bool GiayDaCoLoiNhuan { get; set; }
 
-        bool InTheoLo { get; set; }
+        bool BaiNhanBan { get; set; }
     }
 }

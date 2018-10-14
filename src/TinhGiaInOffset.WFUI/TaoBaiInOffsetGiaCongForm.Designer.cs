@@ -34,7 +34,7 @@
             this.tieuDeFormLabel = new Telerik.WinControls.UI.RadLabel();
             this.huyButton = new Telerik.WinControls.UI.RadButton();
             this.taoGiaButton = new Telerik.WinControls.UI.RadButton();
-            this.soToGiayRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.soToChayLyThuyetRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.khoGiayRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.tenGiayRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
@@ -49,10 +49,10 @@
             this.tenBaiInOffsetRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
-            this.inTheoLoCheck = new Telerik.WinControls.UI.RadCheckBox();
+            this.baiInNhanBanCheck = new Telerik.WinControls.UI.RadCheckBox();
             this.soKemRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel8 = new Telerik.WinControls.UI.RadLabel();
-            this.soToChayBuHaoThucCanRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.soToChayBuHaoRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.kieuInOffsetDropDown = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
@@ -62,13 +62,14 @@
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             this.thongBaoRLabel = new Telerik.WinControls.UI.RadLabel();
             this.tenNhaInOffsetRLabel = new Telerik.WinControls.UI.RadLabel();
+            this.soBaiInNhanBanRTextBox = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giaOffsetGiaCongDropDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietBangGiaTextCtrl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tieuDeFormLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.huyButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taoGiaButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soToGiayRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soToChayLyThuyetRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoGiayRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenGiayRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
@@ -85,10 +86,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
             this.radGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inTheoLoCheck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baiInNhanBanCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soKemRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soToChayBuHaoThucCanRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soToChayBuHaoRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kieuInOffsetDropDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
@@ -98,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thongBaoRLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenNhaInOffsetRLabel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soBaiInNhanBanRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,12 +155,12 @@
             this.taoGiaButton.Text = "Tạo";
             this.taoGiaButton.Click += new System.EventHandler(this.taoGiaButton_Click);
             // 
-            // soToGiayRTextBox
+            // soToChayLyThuyetRTextBox
             // 
-            this.soToGiayRTextBox.Location = new System.Drawing.Point(79, 98);
-            this.soToGiayRTextBox.Name = "soToGiayRTextBox";
-            this.soToGiayRTextBox.Size = new System.Drawing.Size(135, 20);
-            this.soToGiayRTextBox.TabIndex = 24;
+            this.soToChayLyThuyetRTextBox.Location = new System.Drawing.Point(79, 98);
+            this.soToChayLyThuyetRTextBox.Name = "soToChayLyThuyetRTextBox";
+            this.soToChayLyThuyetRTextBox.Size = new System.Drawing.Size(135, 20);
+            this.soToChayLyThuyetRTextBox.TabIndex = 24;
             // 
             // khoGiayRTextBox
             // 
@@ -187,26 +189,28 @@
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.Controls.Add(this.giayDaGomLoiNhuanRCheck);
             this.radGroupBox1.Controls.Add(this.radLabel6);
+            this.radGroupBox1.Controls.Add(this.soToChayBuHaoRTextBox);
+            this.radGroupBox1.Controls.Add(this.radLabel9);
             this.radGroupBox1.Controls.Add(this.donGiaGiayRTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel3);
             this.radGroupBox1.Controls.Add(this.radLabel2);
             this.radGroupBox1.Controls.Add(this.tenGiayRTextBox);
-            this.radGroupBox1.Controls.Add(this.soToGiayRTextBox);
+            this.radGroupBox1.Controls.Add(this.soToChayLyThuyetRTextBox);
             this.radGroupBox1.Controls.Add(this.radLabel1);
             this.radGroupBox1.Controls.Add(this.khoGiayRTextBox);
-            this.radGroupBox1.HeaderText = "Giấy";
-            this.radGroupBox1.Location = new System.Drawing.Point(483, 203);
+            this.radGroupBox1.HeaderText = "Giấy theo bài";
+            this.radGroupBox1.Location = new System.Drawing.Point(483, 193);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(230, 163);
+            this.radGroupBox1.Size = new System.Drawing.Size(230, 184);
             this.radGroupBox1.TabIndex = 20;
-            this.radGroupBox1.Text = "Giấy";
+            this.radGroupBox1.Text = "Giấy theo bài";
             // 
             // giayDaGomLoiNhuanRCheck
             // 
-            this.giayDaGomLoiNhuanRCheck.Location = new System.Drawing.Point(58, 124);
+            this.giayDaGomLoiNhuanRCheck.Location = new System.Drawing.Point(26, 155);
             this.giayDaGomLoiNhuanRCheck.Name = "giayDaGomLoiNhuanRCheck";
             this.giayDaGomLoiNhuanRCheck.Size = new System.Drawing.Size(156, 18);
-            this.giayDaGomLoiNhuanRCheck.TabIndex = 14;
+            this.giayDaGomLoiNhuanRCheck.TabIndex = 26;
             this.giayDaGomLoiNhuanRCheck.Text = "Giấy đã bao gồm lợi nhuận";
             // 
             // radLabel6
@@ -242,15 +246,15 @@
             // 
             // soMatInRTextBox
             // 
-            this.soMatInRTextBox.Location = new System.Drawing.Point(105, 127);
+            this.soMatInRTextBox.Location = new System.Drawing.Point(105, 74);
             this.soMatInRTextBox.Name = "soMatInRTextBox";
+            this.soMatInRTextBox.ReadOnly = true;
             this.soMatInRTextBox.Size = new System.Drawing.Size(135, 20);
             this.soMatInRTextBox.TabIndex = 15;
-            this.soMatInRTextBox.Text = "12";
             // 
             // radLabel5
             // 
-            this.radLabel5.Location = new System.Drawing.Point(22, 127);
+            this.radLabel5.Location = new System.Drawing.Point(22, 74);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(54, 18);
             this.radLabel5.TabIndex = 58;
@@ -274,77 +278,71 @@
             // radGroupBox2
             // 
             this.radGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox2.Controls.Add(this.inTheoLoCheck);
             this.radGroupBox2.Controls.Add(this.soKemRTextBox);
             this.radGroupBox2.Controls.Add(this.radLabel8);
-            this.radGroupBox2.Controls.Add(this.soToChayBuHaoThucCanRTextBox);
-            this.radGroupBox2.Controls.Add(this.radLabel9);
             this.radGroupBox2.Controls.Add(this.kieuInOffsetDropDown);
             this.radGroupBox2.Controls.Add(this.radLabel5);
             this.radGroupBox2.Controls.Add(this.radLabel11);
             this.radGroupBox2.Controls.Add(this.soMatInRTextBox);
-            this.radGroupBox2.HeaderText = "In";
-            this.radGroupBox2.Location = new System.Drawing.Point(229, 203);
+            this.radGroupBox2.HeaderText = "In theo bài";
+            this.radGroupBox2.Location = new System.Drawing.Point(229, 193);
             this.radGroupBox2.Name = "radGroupBox2";
-            this.radGroupBox2.Size = new System.Drawing.Size(248, 163);
+            this.radGroupBox2.Size = new System.Drawing.Size(248, 118);
             this.radGroupBox2.TabIndex = 10;
-            this.radGroupBox2.Text = "In";
+            this.radGroupBox2.Text = "In theo bài";
             // 
-            // inTheoLoCheck
+            // baiInNhanBanCheck
             // 
-            this.inTheoLoCheck.Location = new System.Drawing.Point(22, 21);
-            this.inTheoLoCheck.Name = "inTheoLoCheck";
-            this.inTheoLoCheck.Size = new System.Drawing.Size(68, 18);
-            this.inTheoLoCheck.TabIndex = 11;
-            this.inTheoLoCheck.Text = "In theo lô";
-            this.inTheoLoCheck.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.inTheoLoCheck_ToggleStateChanged);
+            this.baiInNhanBanCheck.Location = new System.Drawing.Point(229, 319);
+            this.baiInNhanBanCheck.Name = "baiInNhanBanCheck";
+            this.baiInNhanBanCheck.Size = new System.Drawing.Size(85, 18);
+            this.baiInNhanBanCheck.TabIndex = 11;
+            this.baiInNhanBanCheck.Text = "Bài nhân bản";
+            this.baiInNhanBanCheck.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.inTheoLoCheck_ToggleStateChanged);
             // 
             // soKemRTextBox
             // 
-            this.soKemRTextBox.Location = new System.Drawing.Point(105, 74);
+            this.soKemRTextBox.Location = new System.Drawing.Point(105, 47);
             this.soKemRTextBox.Name = "soKemRTextBox";
             this.soKemRTextBox.ReadOnly = true;
             this.soKemRTextBox.Size = new System.Drawing.Size(135, 20);
             this.soKemRTextBox.TabIndex = 13;
-            this.soKemRTextBox.Text = "14";
             // 
             // radLabel8
             // 
-            this.radLabel8.Location = new System.Drawing.Point(22, 48);
+            this.radLabel8.Location = new System.Drawing.Point(22, 23);
             this.radLabel8.Name = "radLabel8";
             this.radLabel8.Size = new System.Drawing.Size(40, 18);
             this.radLabel8.TabIndex = 14;
             this.radLabel8.Text = "Kiểu in";
             // 
-            // soToChayBuHaoThucCanRTextBox
+            // soToChayBuHaoRTextBox
             // 
-            this.soToChayBuHaoThucCanRTextBox.Location = new System.Drawing.Point(105, 100);
-            this.soToChayBuHaoThucCanRTextBox.Name = "soToChayBuHaoThucCanRTextBox";
-            this.soToChayBuHaoThucCanRTextBox.Size = new System.Drawing.Size(135, 20);
-            this.soToChayBuHaoThucCanRTextBox.TabIndex = 14;
-            this.soToChayBuHaoThucCanRTextBox.Text = "15";
+            this.soToChayBuHaoRTextBox.Location = new System.Drawing.Point(79, 124);
+            this.soToChayBuHaoRTextBox.Name = "soToChayBuHaoRTextBox";
+            this.soToChayBuHaoRTextBox.Size = new System.Drawing.Size(135, 20);
+            this.soToChayBuHaoRTextBox.TabIndex = 25;
             // 
             // radLabel9
             // 
-            this.radLabel9.Location = new System.Drawing.Point(22, 103);
+            this.radLabel9.Location = new System.Drawing.Point(26, 126);
             this.radLabel9.Name = "radLabel9";
-            this.radLabel9.Size = new System.Drawing.Size(71, 18);
+            this.radLabel9.Size = new System.Drawing.Size(41, 18);
             this.radLabel9.TabIndex = 57;
-            this.radLabel9.Text = "Số tờ bù hao";
+            this.radLabel9.Text = "Bù hao";
             // 
             // kieuInOffsetDropDown
             // 
             this.kieuInOffsetDropDown.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.kieuInOffsetDropDown.Location = new System.Drawing.Point(105, 48);
+            this.kieuInOffsetDropDown.Location = new System.Drawing.Point(105, 23);
             this.kieuInOffsetDropDown.Name = "kieuInOffsetDropDown";
             this.kieuInOffsetDropDown.Size = new System.Drawing.Size(135, 20);
             this.kieuInOffsetDropDown.TabIndex = 12;
-            this.kieuInOffsetDropDown.Text = "13";
             this.kieuInOffsetDropDown.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.kieuInOffsetDropDown_SelectedIndexChanged);
             // 
             // radLabel11
             // 
-            this.radLabel11.Location = new System.Drawing.Point(22, 76);
+            this.radLabel11.Location = new System.Drawing.Point(22, 49);
             this.radLabel11.Name = "radLabel11";
             this.radLabel11.Size = new System.Drawing.Size(43, 18);
             this.radLabel11.TabIndex = 12;
@@ -387,7 +385,7 @@
             // thongBaoRLabel
             // 
             this.thongBaoRLabel.ForeColor = System.Drawing.Color.Red;
-            this.thongBaoRLabel.Location = new System.Drawing.Point(229, 373);
+            this.thongBaoRLabel.Location = new System.Drawing.Point(239, 145);
             this.thongBaoRLabel.Name = "thongBaoRLabel";
             this.thongBaoRLabel.Size = new System.Drawing.Size(9, 18);
             this.thongBaoRLabel.TabIndex = 66;
@@ -401,11 +399,20 @@
             this.tenNhaInOffsetRLabel.TabIndex = 67;
             this.tenNhaInOffsetRLabel.Text = "Tên nhà in offset";
             // 
+            // soBaiInNhanBanRTextBox
+            // 
+            this.soBaiInNhanBanRTextBox.Location = new System.Drawing.Point(334, 319);
+            this.soBaiInNhanBanRTextBox.Name = "soBaiInNhanBanRTextBox";
+            this.soBaiInNhanBanRTextBox.Size = new System.Drawing.Size(135, 20);
+            this.soBaiInNhanBanRTextBox.TabIndex = 12;
+            // 
             // TaoBaiInOffsetGiaCongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 455);
+            this.Controls.Add(this.soBaiInNhanBanRTextBox);
+            this.Controls.Add(this.baiInNhanBanCheck);
             this.Controls.Add(this.tenNhaInOffsetRLabel);
             this.Controls.Add(this.thongBaoRLabel);
             this.Controls.Add(this.radLabel13);
@@ -435,7 +442,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tieuDeFormLabel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.huyButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taoGiaButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soToGiayRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soToChayLyThuyetRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoGiayRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenGiayRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
@@ -454,10 +461,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).EndInit();
             this.radGroupBox2.ResumeLayout(false);
             this.radGroupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inTheoLoCheck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baiInNhanBanCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soKemRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soToChayBuHaoThucCanRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soToChayBuHaoRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kieuInOffsetDropDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
@@ -467,6 +474,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thongBaoRLabel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenNhaInOffsetRLabel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soBaiInNhanBanRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -481,7 +489,7 @@
         private Telerik.WinControls.UI.RadLabel tieuDeFormLabel;
         private Telerik.WinControls.UI.RadButton huyButton;
         private Telerik.WinControls.UI.RadButton taoGiaButton;
-        private Telerik.WinControls.UI.RadTextBox soToGiayRTextBox;
+        private Telerik.WinControls.UI.RadTextBox soToChayLyThuyetRTextBox;
         private Telerik.WinControls.UI.RadTextBox khoGiayRTextBox;
         private Telerik.WinControls.UI.RadTextBox tenGiayRTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel1;
@@ -496,7 +504,7 @@
         private Telerik.WinControls.UI.RadTextBox tenBaiInOffsetRTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel7;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox2;
-        private Telerik.WinControls.UI.RadTextBox soToChayBuHaoThucCanRTextBox;
+        private Telerik.WinControls.UI.RadTextBox soToChayBuHaoRTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel9;
         private Telerik.WinControls.UI.RadTextBox soKemRTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel11;
@@ -505,9 +513,10 @@
         private Telerik.WinControls.UI.RadLabel radLabel12;
         private Telerik.WinControls.UI.RadCalculatorDropDown mayTinhRCal;
         private Telerik.WinControls.UI.RadLabel radLabel13;
-        private Telerik.WinControls.UI.RadCheckBox inTheoLoCheck;
+        private Telerik.WinControls.UI.RadCheckBox baiInNhanBanCheck;
         private Telerik.WinControls.UI.RadLabel radLabel8;
         private Telerik.WinControls.UI.RadLabel thongBaoRLabel;
         private Telerik.WinControls.UI.RadLabel tenNhaInOffsetRLabel;
+        private Telerik.WinControls.UI.RadTextBox soBaiInNhanBanRTextBox;
     }
 }

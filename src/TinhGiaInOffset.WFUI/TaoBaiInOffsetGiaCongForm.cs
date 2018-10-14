@@ -79,7 +79,7 @@ namespace TinhGiaInOffset.WFUI
             set { TenGiaInOffsetGiaCong = value; }
         }
 
-        public int SoMatCanIn
+        public int SoMatIn
         {
             get
             {
@@ -109,31 +109,42 @@ namespace TinhGiaInOffset.WFUI
             }
         }
 
-        public int SoToChayBuHaoThucCan
+        public int SoToChayBuHao
         {
             get
             {
                 int soToBu = 0;
-                int.TryParse(soToChayBuHaoThucCanRTextBox.Text, out soToBu);
+                int.TryParse(soToChayBuHaoRTextBox.Text, out soToBu);
                 return soToBu;
             }
 
             set
             {
-                soToChayBuHaoThucCanRTextBox.Text = value.ToString();
+                soToChayBuHaoRTextBox.Text = value.ToString();
             }
         }
 
-        public string KieuInOffset
+        public KieuInOffset KieuIn
         {
             get
             {
-                return kieuInOffsetDropDown.Text;
+                KieuInOffset kieuIn;
+                Enum.TryParse<KieuInOffset>(kieuInOffsetDropDown.SelectedValue.ToString(), out kieuIn);
+                return kieuIn;
             }
 
             set
             {
-                kieuInOffsetDropDown.Text = value;
+                int index = 0;
+                foreach (var item in kieuInOffsetDropDown.Items)
+                {
+                    if ((KieuInOffset)item.DataBoundItem == value)
+                    {
+                        index = item.RowIndex;
+                        break;
+                    }
+                }
+                kieuInOffsetDropDown.SelectedIndex = index;
             }
         }
 
@@ -178,18 +189,18 @@ namespace TinhGiaInOffset.WFUI
             }
         }
 
-        public int SoLuongToGiay
+        public int SoToChayLyThuyet
         {
             get
             {
                 int soLuong = 0;
-                int.TryParse(soToGiayRTextBox.Text, out soLuong);
+                int.TryParse(soToChayLyThuyetRTextBox.Text, out soLuong);
                 return soLuong;
             }
 
             set
             {
-                soToGiayRTextBox.Text = value.ToString();
+                soToChayLyThuyetRTextBox.Text = value.ToString();
             }
         }
 
@@ -205,20 +216,38 @@ namespace TinhGiaInOffset.WFUI
                 giayDaGomLoiNhuanRCheck.Checked = value;
             }
         }
-        public bool InTheoLo
+        public bool BaiNhanBan
         {
             get
             {
-                return inTheoLoCheck.Checked;
+                return baiInNhanBanCheck.Checked;
             }
 
             set
             {
-                inTheoLoCheck.Checked = value;
+                baiInNhanBanCheck.Checked = value;
             }
         }
 
-     
+        public int SoLuotIn
+        {
+            get;set;
+        }
+
+        public int SoBaiNhanBan
+        {
+            get
+            {
+                return int.Parse(soBaiInNhanBanRTextBox.Text);
+            }
+
+            set
+            {
+                soBaiInNhanBanRTextBox.Text = value.ToString();
+            }
+        }
+
+
         #endregion
         public TaoBaiInOffsetGiaCongForm()
         {
@@ -249,13 +278,15 @@ namespace TinhGiaInOffset.WFUI
             {
                 tenChiPhiRTextBox.Text = $"{bangGiaOffsetGiaCongDropDown.Text}/ ";
             }*/
-
+            
             try
             {
                 var idGiaIn = ((GiaInOffsetGiaCongModel)giaOffsetGiaCongDropDown.SelectedValue).Id;
-
+                //MessageBox.Show(idGiaIn.ToString()); đúng
                 chiTietBangGiaTextCtrl.Text = baiInOffsetGiaCongPres.ChiTietGiaInGiaCong(idGiaIn);
                 tenNhaInOffsetRLabel.Text = baiInOffsetGiaCongPres.LayTenNhaInOffset(idGiaIn);
+                //Khổ tờ giấy chạy
+                this.KhoGiayChay = baiInOffsetGiaCongPres.KhoMayInLonNhat(idGiaIn);
             } catch { }
 
                    
@@ -265,19 +296,26 @@ namespace TinhGiaInOffset.WFUI
             baiInOffsetGiaCongPres.ResetViewData();
 
         }
-        private void TatMoControlsTheoInTheoLo()
+        private void RangBuocDuLieuInTheoKieuIn()
         {
-            if (this.InTheoLo)
+            switch (this.KieuIn)
             {
-                kieuInOffsetDropDown.Enabled = false;
-                kieuInOffsetDropDown.Visible = false;
-                soKemRTextBox.ReadOnly = false;
-            }
-            else
-            {
-                kieuInOffsetDropDown.Enabled = true;
-                kieuInOffsetDropDown.Visible = true;
-                soKemRTextBox.ReadOnly = true;
+                case KieuInOffset.InAB:
+                    this.SoKemIn = 2;
+                    this.SoMatIn = 2;
+                    this.SoLuotIn = 2;
+                    break;
+                case KieuInOffset.InMotMat:
+                    this.SoKemIn = 1;
+                    this.SoMatIn = 1;
+                    this.SoLuotIn = 1;
+                    break;
+                case KieuInOffset.InTuTroNhip:
+                case KieuInOffset.InTuTroTayKe:                
+                    this.SoKemIn = 1;
+                    this.SoMatIn = 2;
+                    this.SoLuotIn = 2;
+                    break;                                    
             }
 
         }
@@ -312,6 +350,7 @@ namespace TinhGiaInOffset.WFUI
             int soMatIn = 0;
             int soKemIn = 0;
             int soToChayBuHaoThucCan;
+            int soBaiInNhanBan;
 
             bool donGiaGiayValid = int.TryParse(donGiaGiayRTextBox.Text, out donGiaGiay);
             if (!donGiaGiayValid)
@@ -324,7 +363,7 @@ namespace TinhGiaInOffset.WFUI
                     lois.Add("Trị giá đơn giá");
             }
 
-            bool soToValid = int.TryParse(soToGiayRTextBox.Text, out soTo);
+            bool soToValid = int.TryParse(soToChayLyThuyetRTextBox.Text, out soTo);
             if (!soToValid)
             {
                 lois.Add("Số tờ giấy");
@@ -357,7 +396,7 @@ namespace TinhGiaInOffset.WFUI
                 if (soKemIn < 1)
                     lois.Add("Số lượng kẽm"); ;
             }
-            bool soToChayBuHaoThucCanValid = int.TryParse(soToChayBuHaoThucCanRTextBox.Text, out soToChayBuHaoThucCan);
+            bool soToChayBuHaoThucCanValid = int.TryParse(soToChayBuHaoRTextBox.Text, out soToChayBuHaoThucCan);
             if (!soToChayBuHaoThucCanValid)
             {
                lois.Add("Số tờ chạy bù hao"); ;
@@ -367,6 +406,27 @@ namespace TinhGiaInOffset.WFUI
                 if (soToChayBuHaoThucCan < 50)
                     lois.Add("Số lượng tờ chạy bù hao"); ;
             }
+
+            bool soBaiInNhanBanValid = int.TryParse(soBaiInNhanBanRTextBox.Text, out soBaiInNhanBan);
+            if (!soBaiInNhanBanValid)
+            {
+                lois.Add("Số bài in nhân bản?"); ;
+            }
+            else
+            {
+                if (this.BaiNhanBan == false)
+                {
+                    this.SoBaiNhanBan = 1;
+                }
+
+                if (soBaiInNhanBan < 1)
+                    lois.Add("Số lượng bài in nhân bản");
+                
+
+            }
+
+
+
             var msg = "";
             if (lois.Count > 0)
             {
@@ -399,24 +459,26 @@ namespace TinhGiaInOffset.WFUI
                             int.Parse(soToGiayRTextBox.Text), giayDaGomLoiNhuanRCheck.Checked);*/
 
                         this.BaiInInOffsetGiaCong = baiInOffsetGiaCongPres.ThemBaiIn(this.TenBaiIn, this.DienGiai, this.IdGiaInOffsetGiaCong,
-                            this.TenGiaInOffsetGiaCong, this.SoMatCanIn, this.SoKemIn, this.SoToChayBuHaoThucCan, this.KieuInOffset,
-                            this.TenGiay, this.KhoGiayChay, this.DonGiaGiayTheoTo, this.SoLuongToGiay, this.GiayDaCoLoiNhuan, this.InTheoLo);    
+                            this.TenGiaInOffsetGiaCong, this.SoMatIn, this.SoKemIn, this.SoToChayBuHao, this.KieuIn,
+                            this.TenGiay, this.KhoGiayChay, this.DonGiaGiayTheoTo, this.SoToChayLyThuyet, this.GiayDaCoLoiNhuan,
+                            this.BaiNhanBan, this.SoBaiNhanBan);    
                         
                         break;
                     case TinhTrangForm.Sua:
-                        this.BaiInInOffsetGiaCong.TenBaiIn = tenBaiInOffsetRTextBox.Text;
+                        this.BaiInInOffsetGiaCong.TenBaiIn = this.TenBaiIn;
                         this.BaiInInOffsetGiaCong.IdGiaInOffsetGiaCong = modelGiaInOffset.Id;
                         this.BaiInInOffsetGiaCong.TenGiaInOffsetGiaCong = modelGiaInOffset.TenGia;
-                        this.BaiInInOffsetGiaCong.SoMatCanIn = int.Parse(soMatInRTextBox.Text);
-                        this.BaiInInOffsetGiaCong.SoKemIn = int.Parse(soKemRTextBox.Text);
-                        this.BaiInInOffsetGiaCong.SoToChayBuHaoThucCan = int.Parse(soToChayBuHaoThucCanRTextBox.Text);
-                        this.BaiInInOffsetGiaCong.KieuInOffset = kieuInOffsetDropDown.Text;
-                        this.BaiInInOffsetGiaCong.TenGiay = tenGiayRTextBox.Text;
-                        this.BaiInInOffsetGiaCong.KhoGiayChay = khoGiayRTextBox.Text;
-                        this.BaiInInOffsetGiaCong.DonGiaGiayTheoTo = int.Parse(donGiaGiayRTextBox.Text);
-                        this.BaiInInOffsetGiaCong.SoLuongToGiay = int.Parse(soToGiayRTextBox.Text);
-                        this.BaiInInOffsetGiaCong.GiayDaCoLoiNhuan = giayDaGomLoiNhuanRCheck.Checked;
-                        this.BaiInInOffsetGiaCong.InTheoLo = inTheoLoCheck.Checked;
+                        this.BaiInInOffsetGiaCong.SoMatIn = this.SoMatIn;
+                        this.BaiInInOffsetGiaCong.SoKemIn = this.SoKemIn;
+                        this.BaiInInOffsetGiaCong.SoToChayBuHao = this.SoToChayBuHao;
+                        this.BaiInInOffsetGiaCong.KieuIn = this.KieuIn;
+                        this.BaiInInOffsetGiaCong.TenGiay = this.TenGiay;
+                        this.BaiInInOffsetGiaCong.KhoGiayChay = this.KhoGiayChay;
+                        this.BaiInInOffsetGiaCong.DonGiaGiayTheoTo = this.DonGiaGiayTheoTo;
+                        this.BaiInInOffsetGiaCong.SoToChayLyThuyet = this.SoToChayLyThuyet;
+                        this.BaiInInOffsetGiaCong.GiayDaCoLoiNhuan = this.GiayDaCoLoiNhuan;
+                        this.BaiInInOffsetGiaCong.BaiNhanBan = this.BaiNhanBan;
+                        this.BaiInInOffsetGiaCong.SoBaiNhanBan = this.SoBaiNhanBan;
 
                         break;
                 }
@@ -437,22 +499,27 @@ namespace TinhGiaInOffset.WFUI
             {
                 case TinhTrangForm.Moi:
                     ResetFormData();
+                    //Bẩy 
+                    var currentState = this.BaiNhanBan;
+                    this.BaiNhanBan = !currentState;
+                    this.BaiNhanBan = currentState;
                     break;
                 case TinhTrangForm.Sua:
                    
                     this.TenBaiIn = this.BaiInInOffsetGiaCong.TenBaiIn;
                     this.DienGiai = this.BaiInInOffsetGiaCong.DienGiai;
                     this.IdGiaInOffsetGiaCong = this.BaiInInOffsetGiaCong.IdGiaInOffsetGiaCong;
-                    this.SoMatCanIn = this.BaiInInOffsetGiaCong.SoMatCanIn;
+                    this.SoMatIn = this.BaiInInOffsetGiaCong.SoMatIn;
                     this.SoKemIn = this.BaiInInOffsetGiaCong.SoKemIn;
-                    this.SoToChayBuHaoThucCan = this.BaiInInOffsetGiaCong.SoToChayBuHaoThucCan;
+                    this.SoToChayBuHao = this.BaiInInOffsetGiaCong.SoToChayBuHao;
                     this.TenGiay = this.BaiInInOffsetGiaCong.TenGiay;
                     this.KhoGiayChay = this.BaiInInOffsetGiaCong.KhoGiayChay;
                     this.DonGiaGiayTheoTo = this.BaiInInOffsetGiaCong.DonGiaGiayTheoTo;
-                    this.SoLuongToGiay = this.BaiInInOffsetGiaCong.SoLuongToGiay;
+                    this.SoToChayLyThuyet = this.BaiInInOffsetGiaCong.SoToChayLyThuyet;
                     this.GiayDaCoLoiNhuan = this.BaiInInOffsetGiaCong.GiayDaCoLoiNhuan;
-                    this.KieuInOffset = this.BaiInInOffsetGiaCong.KieuInOffset;
-                    this.InTheoLo = this.BaiInInOffsetGiaCong.InTheoLo;
+                    this.KieuIn = this.BaiInInOffsetGiaCong.KieuIn;
+                    this.BaiNhanBan = this.BaiInInOffsetGiaCong.BaiNhanBan;
+                    this.SoBaiNhanBan = this.BaiInInOffsetGiaCong.SoBaiNhanBan;
                     break;
             }
             tieuDeFormLabel.Left = (ClientSize.Width - tieuDeFormLabel.Width) / 2;
@@ -460,26 +527,33 @@ namespace TinhGiaInOffset.WFUI
 
         private void kieuInOffsetDropDown_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
-            KieuInOffset kieuIn;
+            RangBuocDuLieuInTheoKieuIn();
+            /*KieuInOffset kieuIn;
             Enum.TryParse<KieuInOffset>(kieuInOffsetDropDown.SelectedValue.ToString(), out kieuIn);
            // MessageBox.Show(kieuIn.ToString());//OK
            switch (kieuIn)
             {
                                    
-                case Common.Enum.KieuInOffset.InAB:
+                case KieuInOffset.InAB:
                     soKemRTextBox.Text = 2.ToString();
                     break;
-                case Common.Enum.KieuInOffset.InMotMat:
-                case Common.Enum.KieuInOffset.InTuTroNhip:
-                case Common.Enum.KieuInOffset.InTuTroTayKe:
+                case KieuInOffset.InMotMat:
+                case KieuInOffset.InTuTroNhip:
+                case KieuInOffset.InTuTroTayKe:
                     soKemRTextBox.Text = 1.ToString();
                     break;
             }
+            */
         }
 
         private void inTheoLoCheck_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
         {
-            TatMoControlsTheoInTheoLo();
+            //TatMoControlsTheoInTheoLo();
+            soBaiInNhanBanRTextBox.Enabled = baiInNhanBanCheck.Checked;
+            if (this.BaiNhanBan == false)
+            {
+                this.SoBaiNhanBan = 1;
+            }
         }
     }
 }
