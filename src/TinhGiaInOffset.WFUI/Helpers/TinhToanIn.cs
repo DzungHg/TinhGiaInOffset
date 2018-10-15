@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TinhGiaInOffset.WFUI.Model;
 using TinhGiaInOffset.WFUI.DTOContext;
+using TinhGiaInOffset.Common.Enum;
 
 
 namespace TinhGiaInOffset.WFUI.Helpers
@@ -54,6 +55,36 @@ namespace TinhGiaInOffset.WFUI.Helpers
 
             ketQua = phiKemIn + phiInSoLuongVuot;
             return ketQua;
+        }
+        public static decimal PhiInOffsetGiaCong(QuyCachInOffset quyCachIn, int tongToChayTheoBai, int nhanBan)
+        {
+            if (quyCachIn == null)
+                return 0;
+            //
+            decimal kq = 0;
+            int tongSoMatIn = 0;
+
+            switch (quyCachIn.KieuIn)
+            {
+                case KieuInOffset.InMotMat:
+                    tongSoMatIn = tongToChayTheoBai * quyCachIn.SoMatIn;
+                    kq = TinhToanIn.PhiInOffsetMotKem(quyCachIn.IdGiaInOffsetGiaCong, tongSoMatIn);
+                    break;
+                case KieuInOffset.InTuTroNhip:
+                case KieuInOffset.InTuTroTayKe:
+                    tongSoMatIn = tongToChayTheoBai * quyCachIn.SoMatIn;
+                    kq = TinhToanIn.PhiInOffsetMotKem(quyCachIn.IdGiaInOffsetGiaCong, tongSoMatIn);
+                    break;
+                case KieuInOffset.InAB:
+                    tongSoMatIn = tongToChayTheoBai / quyCachIn.SoMatIn;
+                    kq = TinhToanIn.PhiInOffsetMotKem(quyCachIn.IdGiaInOffsetGiaCong, tongSoMatIn) * quyCachIn.SoKemIn;
+                    break;
+            }
+            //nhân bản
+            
+                kq *= nhanBan;
+            
+            return kq;
         }
         public static decimal TienGiayIn(int donGiaGiay, int soToGiay)
         {

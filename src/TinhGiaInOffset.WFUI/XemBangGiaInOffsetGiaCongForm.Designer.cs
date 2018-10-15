@@ -56,13 +56,15 @@
             this.radPageViewPage2 = new Telerik.WinControls.UI.RadPageViewPage();
             this.ghiChuRTextCtrl = new Telerik.WinControls.UI.RadTextBoxControl();
             this.tabTinhPhiInPage = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
+            this.kieuInOffsetDropDown = new Telerik.WinControls.UI.RadDropDownList();
+            this.soNhanBanTinhRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
+            this.soToChayTinhRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.resetTinhRButton = new Telerik.WinControls.UI.RadButton();
             this.tinhPhiRButton = new Telerik.WinControls.UI.RadButton();
             this.ketQuaTinhRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
-            this.soKemTinhRTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.resetTinhRButton = new Telerik.WinControls.UI.RadButton();
-            this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
-            this.soMatInTinhRTextBox = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dongFormButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietMayInTextCtrl)).BeginInit();
@@ -92,13 +94,16 @@
             this.radPageViewPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ghiChuRTextCtrl)).BeginInit();
             this.tabTinhPhiInPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kieuInOffsetDropDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soNhanBanTinhRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soToChayTinhRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resetTinhRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinhPhiRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ketQuaTinhRTextBox)).BeginInit();
+            this.ketQuaTinhRTextBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soKemTinhRTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resetTinhRButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soMatInTinhRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,11 +194,11 @@
             // 
             // radLabel9
             // 
-            this.radLabel9.Location = new System.Drawing.Point(3, 141);
+            this.radLabel9.Location = new System.Drawing.Point(10, 90);
             this.radLabel9.Name = "radLabel9";
-            this.radLabel9.Size = new System.Drawing.Size(86, 18);
+            this.radLabel9.Size = new System.Drawing.Size(55, 18);
             this.radLabel9.TabIndex = 68;
-            this.radLabel9.Text = "Số lượng bao in";
+            this.radLabel9.Text = "Nhân bản";
             // 
             // radLabel8
             // 
@@ -301,7 +306,7 @@
             this.ChiTietPageView.DefaultPage = this.radPageViewPage1;
             this.ChiTietPageView.Location = new System.Drawing.Point(404, 73);
             this.ChiTietPageView.Name = "ChiTietPageView";
-            this.ChiTietPageView.SelectedPage = this.tabTinhPhiInPage;
+            this.ChiTietPageView.SelectedPage = this.radPageViewPage1;
             this.ChiTietPageView.Size = new System.Drawing.Size(273, 320);
             this.ChiTietPageView.TabIndex = 5;
             // 
@@ -321,7 +326,6 @@
             this.radPageViewPage1.Controls.Add(this.radLabel10);
             this.radPageViewPage1.Controls.Add(this.radLabel8);
             this.radPageViewPage1.Controls.Add(this.donViTinhTheoSoLuongRTextBox);
-            this.radPageViewPage1.Controls.Add(this.radLabel9);
             this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(70F, 28F);
             this.radPageViewPage1.Location = new System.Drawing.Point(10, 37);
             this.radPageViewPage1.Name = "radPageViewPage1";
@@ -349,80 +353,99 @@
             // 
             // tabTinhPhiInPage
             // 
+            this.tabTinhPhiInPage.Controls.Add(this.radLabel13);
+            this.tabTinhPhiInPage.Controls.Add(this.kieuInOffsetDropDown);
+            this.tabTinhPhiInPage.Controls.Add(this.soNhanBanTinhRTextBox);
             this.tabTinhPhiInPage.Controls.Add(this.radLabel12);
-            this.tabTinhPhiInPage.Controls.Add(this.soMatInTinhRTextBox);
+            this.tabTinhPhiInPage.Controls.Add(this.soToChayTinhRTextBox);
             this.tabTinhPhiInPage.Controls.Add(this.resetTinhRButton);
             this.tabTinhPhiInPage.Controls.Add(this.tinhPhiRButton);
             this.tabTinhPhiInPage.Controls.Add(this.ketQuaTinhRTextBox);
-            this.tabTinhPhiInPage.Controls.Add(this.radLabel3);
-            this.tabTinhPhiInPage.Controls.Add(this.soKemTinhRTextBox);
+            this.tabTinhPhiInPage.Controls.Add(this.radLabel9);
             this.tabTinhPhiInPage.ItemSize = new System.Drawing.SizeF(57F, 28F);
             this.tabTinhPhiInPage.Location = new System.Drawing.Point(10, 37);
             this.tabTinhPhiInPage.Name = "tabTinhPhiInPage";
             this.tabTinhPhiInPage.Size = new System.Drawing.Size(252, 272);
             this.tabTinhPhiInPage.Text = "Tính phí";
             // 
-            // tinhPhiRButton
+            // radLabel13
             // 
-            this.tinhPhiRButton.Location = new System.Drawing.Point(8, 129);
-            this.tinhPhiRButton.Name = "tinhPhiRButton";
-            this.tinhPhiRButton.Size = new System.Drawing.Size(110, 50);
-            this.tinhPhiRButton.TabIndex = 12;
-            this.tinhPhiRButton.Text = "Tính";
-            this.tinhPhiRButton.Click += new System.EventHandler(this.tinhPhiRButton_Click);
+            this.radLabel13.Location = new System.Drawing.Point(10, 17);
+            this.radLabel13.Name = "radLabel13";
+            this.radLabel13.Size = new System.Drawing.Size(40, 18);
+            this.radLabel13.TabIndex = 72;
+            this.radLabel13.Text = "Kiểu in";
             // 
-            // ketQuaTinhRTextBox
+            // kieuInOffsetDropDown
             // 
-            this.ketQuaTinhRTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ketQuaTinhRTextBox.Location = new System.Drawing.Point(8, 185);
-            this.ketQuaTinhRTextBox.Name = "ketQuaTinhRTextBox";
-            this.ketQuaTinhRTextBox.ReadOnly = true;
-            this.ketQuaTinhRTextBox.Size = new System.Drawing.Size(230, 31);
-            this.ketQuaTinhRTextBox.TabIndex = 13;
-            this.ketQuaTinhRTextBox.Text = "0";
+            this.kieuInOffsetDropDown.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.kieuInOffsetDropDown.Location = new System.Drawing.Point(93, 17);
+            this.kieuInOffsetDropDown.Name = "kieuInOffsetDropDown";
+            this.kieuInOffsetDropDown.Size = new System.Drawing.Size(135, 20);
+            this.kieuInOffsetDropDown.TabIndex = 41;
             // 
-            // radLabel3
+            // soNhanBanTinhRTextBox
             // 
-            this.radLabel3.Location = new System.Drawing.Point(8, 3);
-            this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(43, 18);
-            this.radLabel3.TabIndex = 68;
-            this.radLabel3.Text = "Số kẽm";
+            this.soNhanBanTinhRTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.soNhanBanTinhRTextBox.Location = new System.Drawing.Point(93, 80);
+            this.soNhanBanTinhRTextBox.Name = "soNhanBanTinhRTextBox";
+            this.soNhanBanTinhRTextBox.Size = new System.Drawing.Size(135, 31);
+            this.soNhanBanTinhRTextBox.TabIndex = 43;
+            this.soNhanBanTinhRTextBox.Text = "1";
             // 
-            // soKemTinhRTextBox
+            // radLabel12
             // 
-            this.soKemTinhRTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.soKemTinhRTextBox.Location = new System.Drawing.Point(8, 27);
-            this.soKemTinhRTextBox.Name = "soKemTinhRTextBox";
-            this.soKemTinhRTextBox.Size = new System.Drawing.Size(135, 31);
-            this.soKemTinhRTextBox.TabIndex = 11;
-            this.soKemTinhRTextBox.Text = "1";
+            this.radLabel12.Location = new System.Drawing.Point(10, 53);
+            this.radLabel12.Name = "radLabel12";
+            this.radLabel12.Size = new System.Drawing.Size(59, 18);
+            this.radLabel12.TabIndex = 70;
+            this.radLabel12.Text = "Số tờ chạy";
+            // 
+            // soToChayTinhRTextBox
+            // 
+            this.soToChayTinhRTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.soToChayTinhRTextBox.Location = new System.Drawing.Point(93, 43);
+            this.soToChayTinhRTextBox.Name = "soToChayTinhRTextBox";
+            this.soToChayTinhRTextBox.Size = new System.Drawing.Size(135, 31);
+            this.soToChayTinhRTextBox.TabIndex = 42;
+            this.soToChayTinhRTextBox.Text = "500";
             // 
             // resetTinhRButton
             // 
             this.resetTinhRButton.Location = new System.Drawing.Point(8, 239);
             this.resetTinhRButton.Name = "resetTinhRButton";
             this.resetTinhRButton.Size = new System.Drawing.Size(110, 24);
-            this.resetTinhRButton.TabIndex = 14;
+            this.resetTinhRButton.TabIndex = 46;
             this.resetTinhRButton.Text = "Reset";
             this.resetTinhRButton.Click += new System.EventHandler(this.resetTinhRButton_Click);
             // 
-            // radLabel12
+            // tinhPhiRButton
             // 
-            this.radLabel12.Location = new System.Drawing.Point(8, 64);
-            this.radLabel12.Name = "radLabel12";
-            this.radLabel12.Size = new System.Drawing.Size(54, 18);
-            this.radLabel12.TabIndex = 70;
-            this.radLabel12.Text = "Số mặt in";
+            this.tinhPhiRButton.Location = new System.Drawing.Point(8, 129);
+            this.tinhPhiRButton.Name = "tinhPhiRButton";
+            this.tinhPhiRButton.Size = new System.Drawing.Size(110, 50);
+            this.tinhPhiRButton.TabIndex = 44;
+            this.tinhPhiRButton.Text = "Tính";
+            this.tinhPhiRButton.Click += new System.EventHandler(this.tinhPhiRButton_Click);
             // 
-            // soMatInTinhRTextBox
+            // ketQuaTinhRTextBox
             // 
-            this.soMatInTinhRTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.soMatInTinhRTextBox.Location = new System.Drawing.Point(8, 88);
-            this.soMatInTinhRTextBox.Name = "soMatInTinhRTextBox";
-            this.soMatInTinhRTextBox.Size = new System.Drawing.Size(135, 31);
-            this.soMatInTinhRTextBox.TabIndex = 69;
-            this.soMatInTinhRTextBox.Text = "500";
+            this.ketQuaTinhRTextBox.Controls.Add(this.radLabel3);
+            this.ketQuaTinhRTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ketQuaTinhRTextBox.Location = new System.Drawing.Point(8, 185);
+            this.ketQuaTinhRTextBox.Name = "ketQuaTinhRTextBox";
+            this.ketQuaTinhRTextBox.ReadOnly = true;
+            this.ketQuaTinhRTextBox.Size = new System.Drawing.Size(230, 31);
+            this.ketQuaTinhRTextBox.TabIndex = 45;
+            this.ketQuaTinhRTextBox.Text = "0";
+            // 
+            // radLabel3
+            // 
+            this.radLabel3.Location = new System.Drawing.Point(114, 37);
+            this.radLabel3.Name = "radLabel3";
+            this.radLabel3.Size = new System.Drawing.Size(43, 18);
+            this.radLabel3.TabIndex = 68;
+            this.radLabel3.Text = "Số kẽm";
             // 
             // XemBangGiaInOffsetGiaCongForm
             // 
@@ -443,7 +466,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "XemBangGiaInOffsetGiaCongForm";
+            this.Text = "Xem Bảng Giá Offset Gia Công";
             this.Load += new System.EventHandler(this.XemBangGiaInOffsetGiaCongForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dongFormButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
@@ -476,13 +499,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.ghiChuRTextCtrl)).EndInit();
             this.tabTinhPhiInPage.ResumeLayout(false);
             this.tabTinhPhiInPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kieuInOffsetDropDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soNhanBanTinhRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soToChayTinhRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resetTinhRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinhPhiRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ketQuaTinhRTextBox)).EndInit();
+            this.ketQuaTinhRTextBox.ResumeLayout(false);
+            this.ketQuaTinhRTextBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soKemTinhRTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resetTinhRButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soMatInTinhRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -523,8 +550,10 @@
         private Telerik.WinControls.UI.RadButton tinhPhiRButton;
         private Telerik.WinControls.UI.RadTextBox ketQuaTinhRTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel3;
-        private Telerik.WinControls.UI.RadTextBox soKemTinhRTextBox;
+        private Telerik.WinControls.UI.RadTextBox soNhanBanTinhRTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel12;
-        private Telerik.WinControls.UI.RadTextBox soMatInTinhRTextBox;
+        private Telerik.WinControls.UI.RadTextBox soToChayTinhRTextBox;
+        private Telerik.WinControls.UI.RadLabel radLabel13;
+        private Telerik.WinControls.UI.RadDropDownList kieuInOffsetDropDown;
     }
 }

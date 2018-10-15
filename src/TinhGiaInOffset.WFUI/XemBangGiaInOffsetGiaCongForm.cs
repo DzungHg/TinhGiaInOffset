@@ -9,6 +9,7 @@ using Telerik.WinControls;
 using TinhGiaInOffset.WFUI.View;
 using TinhGiaInOffset.WFUI.Presentation;
 using TinhGiaInOffset.WFUI.Model;
+using TinhGiaInOffset.Common.Enum;
 
 
 namespace TinhGiaInOffset.WFUI
@@ -21,6 +22,7 @@ namespace TinhGiaInOffset.WFUI
             InitializeComponent();
             xemGiaInPres = new XemGiaInOffsetGiaCongPresenter(this);
             DauNoiDuLieu();
+            DuLieuKieuInOffset();
         }
         #region implement Iview....
         public int IdGiaInOffsetChon
@@ -175,16 +177,16 @@ namespace TinhGiaInOffset.WFUI
             }
         }
 
-        public int SoKemTinh
+        public int SoNhanBan
         {
             get
             {
-                return int.Parse(soKemTinhRTextBox.Text);
+                return int.Parse(soNhanBanTinhRTextBox.Text);
             }
 
             set
             {
-                soKemTinhRTextBox.Text = value.ToString();
+                soNhanBanTinhRTextBox.Text = value.ToString();
             }
         }
 
@@ -201,20 +203,44 @@ namespace TinhGiaInOffset.WFUI
             }
         }
 
-        public int SoMatInTinh
+        public int SoToChay
         {
             get
             {
-                return int.Parse(soMatInTinhRTextBox.Text);
+                return int.Parse(soToChayTinhRTextBox.Text);
             }
 
             set
             {
-                soMatInTinhRTextBox.Text = value.ToString();
+                soToChayTinhRTextBox.Text = value.ToString();
             }
         }
 
-       
+        public KieuInOffset KieuIn
+        {
+            get
+            {
+                KieuInOffset kieuIn;
+                Enum.TryParse<KieuInOffset>(kieuInOffsetDropDown.SelectedValue.ToString(), out kieuIn);
+                return kieuIn;
+            }
+
+            set
+            {
+                int index = 0;
+                foreach (var item in kieuInOffsetDropDown.Items)
+                {
+                    if ((KieuInOffset)item.DataBoundItem == value)
+                    {
+                        index = item.RowIndex;
+                        break;
+                    }
+                }
+                kieuInOffsetDropDown.SelectedIndex = index;
+            }
+        }
+
+
 
 
 
@@ -233,7 +259,12 @@ namespace TinhGiaInOffset.WFUI
                 giaInOffsetGiaCongListCtrl.SelectedIndex = 0;
             }
         }
+        private void DuLieuKieuInOffset()
+        {
 
+            kieuInOffsetDropDown.DataSource = Enum.GetValues(typeof(KieuInOffset));
+            kieuInOffsetDropDown.SelectedIndex = 0;
+        }
         private void giaInOffsetGiaCongListCtrl_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
             //Đúng là vô đây
@@ -252,7 +283,7 @@ namespace TinhGiaInOffset.WFUI
             bool output = true;
             int soKem = 0;
             int soMatIn = 0;
-            bool soKemValid = int.TryParse(soKemTinhRTextBox.Text, out soKem);
+            bool soKemValid = int.TryParse(soNhanBanTinhRTextBox.Text, out soKem);
             if (soKemValid != true)
             {
                 output = false;
@@ -262,7 +293,7 @@ namespace TinhGiaInOffset.WFUI
                 if (soKem <= 0)
                     output = false;
             }
-            bool soMatInValid = int.TryParse(soMatInTinhRTextBox.Text, out soMatIn);
+            bool soMatInValid = int.TryParse(soToChayTinhRTextBox.Text, out soMatIn);
             if (soMatInValid != true)
             {
                 output = false;

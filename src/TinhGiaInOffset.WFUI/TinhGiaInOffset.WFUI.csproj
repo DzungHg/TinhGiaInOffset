@@ -87,6 +87,7 @@
     <Compile Include="Model\GiaBanThanhPhamTaiChoModel.cs" />
     <Compile Include="Model\HangLoiNhuanOffsetGiaCongModel.cs" />
     <Compile Include="Model\PhiMayInKyThuatSoModel.cs" />
+    <Compile Include="Model\QuyCachInOffset.cs" />
     <Compile Include="Presentation\BaiInOffsetGiaCongPresenter.cs" />
     <Compile Include="Presentation\ChiPhiInKyThuatSoPresenter.cs" />
     <Compile Include="Presentation\QuanLyGiaInOffsetGiaCongPresenter.cs" />

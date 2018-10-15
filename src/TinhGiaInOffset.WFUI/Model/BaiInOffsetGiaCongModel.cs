@@ -60,7 +60,7 @@ namespace TinhGiaInOffset.WFUI.Model
        //Procedure
        
        public decimal PhiInOffsetGiaCong()
-        {
+       {
             decimal kq = 0;
             int tongSoMatIn = 0;
             

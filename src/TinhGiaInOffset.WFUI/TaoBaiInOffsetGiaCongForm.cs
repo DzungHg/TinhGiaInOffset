@@ -500,9 +500,7 @@ namespace TinhGiaInOffset.WFUI
                 case TinhTrangForm.Moi:
                     ResetFormData();
                     //Bẩy 
-                    var currentState = this.BaiNhanBan;
-                    this.BaiNhanBan = !currentState;
-                    this.BaiNhanBan = currentState;
+                   
                     break;
                 case TinhTrangForm.Sua:
                    
@@ -523,6 +521,7 @@ namespace TinhGiaInOffset.WFUI
                     break;
             }
             tieuDeFormLabel.Left = (ClientSize.Width - tieuDeFormLabel.Width) / 2;
+            TatMoControlsInNhanBan();
         }
 
         private void kieuInOffsetDropDown_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
@@ -546,14 +545,22 @@ namespace TinhGiaInOffset.WFUI
             */
         }
 
-        private void inTheoLoCheck_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        private void TatMoControlsInNhanBan()
         {
             //TatMoControlsTheoInTheoLo();
-            soBaiInNhanBanRTextBox.Enabled = baiInNhanBanCheck.Checked;
+            soBaiInNhanBanRTextBox.Enabled = this.BaiNhanBan;
+
+            soToChayLyThuyetRTextBox.ReadOnly = this.BaiNhanBan;
+            soToChayBuHaoRTextBox.ReadOnly = soToChayLyThuyetRTextBox.ReadOnly;
             if (this.BaiNhanBan == false)
             {
                 this.SoBaiNhanBan = 1;
             }
+        }
+       
+        private void baiInNhanBanCheck_ToggleStateChanged(object sender, Telerik.WinControls.UI.StateChangedEventArgs args)
+        {
+            TatMoControlsInNhanBan();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TinhGiaInOffset.Common.Enum;
 
 namespace TinhGiaInOffset.WFUI.View
 {
@@ -24,8 +25,9 @@ namespace TinhGiaInOffset.WFUI.View
         string ThongTinLienHe { get; set; }
         string GhiChu { get; set; }
         //Tính toán
-        int SoKemTinh { get; set; }
-        int SoMatInTinh { get; set; }
+        KieuInOffset KieuIn { get; set; }
+        int SoNhanBan { get; set; }
+        int SoToChay { get; set; }
         string KetQuaTinh { get; set; }
     }
 }
