@@ -50,7 +50,7 @@ namespace TinhGiaInOffset.WFUI.Presentation
             if (this.BaiInOffsetGiaCongBaoGom.Count > 0)
                 foreach (var baiIn in this.BaiInOffsetGiaCongBaoGom)
                 {
-                    if (baiIn.GiayDaCoLoiNhuan != false)
+                    if (!baiIn.GiayDaCoLoiNhuan)
                         kq += baiIn.PhiGiayTheoBai();
                 }
 

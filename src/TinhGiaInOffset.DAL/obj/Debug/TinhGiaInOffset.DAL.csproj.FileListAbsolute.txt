@@ -2,9 +2,7 @@ D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\bin\Debug\TinhGiaInOffset.DA
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\bin\Debug\TinhGiaInOffset.DAL.pdb
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\bin\Debug\Dapper.dll
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\bin\Debug\TinhGiaInOffset.Common.dll
-D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\bin\Debug\TinhGiaInOffset.DBO.dll
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\bin\Debug\TinhGiaInOffset.Common.pdb
-D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\bin\Debug\TinhGiaInOffset.DBO.pdb
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\bin\Debug\Dapper.xml
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\obj\Debug\TinhGiaInOffset.DAL.csprojResolveAssemblyReference.cache
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\obj\Debug\TinhGiaInOffset.DAL.dll
@@ -20,3 +18,5 @@ F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\obj\Debug\TinhGiaInOffset.DA
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\obj\Debug\TinhGiaInOffset.DAL.pdb
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\bin\Debug\TinhGiaInOffset.BDO.dll
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\bin\Debug\TinhGiaInOffset.BDO.pdb
+D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\bin\Debug\TinhGiaInOffset.BDO.dll
+D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DAL\bin\Debug\TinhGiaInOffset.BDO.pdb

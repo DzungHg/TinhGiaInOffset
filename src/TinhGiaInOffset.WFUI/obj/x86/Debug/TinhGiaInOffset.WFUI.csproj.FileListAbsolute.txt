@@ -8,12 +8,10 @@ D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\Telerik.WinContro
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\Telerik.WinControls.UI.dll
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TelerikCommon.dll
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.Common.dll
-D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.DBO.dll
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.Logic.dll
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.DAL.dll
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\Dapper.dll
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.Common.pdb
-D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.DBO.pdb
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.Logic.pdb
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\AutoMapper.pdb
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\AutoMapper.xml
@@ -79,3 +77,8 @@ F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffs
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.BDO.dll
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.BDO.pdb
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.ChiPhiInKyThuatSoForm.resources
+D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.BDO.dll
+D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\bin\Debug\TinhGiaInOffset.BDO.pdb
+D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.ChiPhiInKyThuatSoForm.resources
+D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.TaoMayInOffsetForm.resources
+D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.WFUI\obj\x86\Debug\TinhGiaInOffset.WFUI.XemBangGiaInOffsetGiaCongForm.resources

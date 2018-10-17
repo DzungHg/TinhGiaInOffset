@@ -1,10 +1,10 @@
-D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\bin\Debug\TinhGiaInOffset.DBO.dll
-D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\bin\Debug\TinhGiaInOffset.DBO.pdb
 D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\obj\Debug\TinhGiaInOffset.BDO.csprojResolveAssemblyReference.cache
-D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\obj\Debug\TinhGiaInOffset.DBO.dll
-D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\obj\Debug\TinhGiaInOffset.DBO.pdb
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\obj\Debug\TinhGiaInOffset.BDO.csprojResolveAssemblyReference.cache
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\bin\Debug\TinhGiaInOffset.BDO.dll
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\bin\Debug\TinhGiaInOffset.BDO.pdb
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\obj\Debug\TinhGiaInOffset.BDO.dll
 F:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\obj\Debug\TinhGiaInOffset.BDO.pdb
+D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\bin\Debug\TinhGiaInOffset.BDO.dll
+D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\bin\Debug\TinhGiaInOffset.BDO.pdb
+D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\obj\Debug\TinhGiaInOffset.BDO.dll
+D:\GitHub02\TinhGiaInOffset\src\TinhGiaInOffset.DBO\obj\Debug\TinhGiaInOffset.BDO.pdb
