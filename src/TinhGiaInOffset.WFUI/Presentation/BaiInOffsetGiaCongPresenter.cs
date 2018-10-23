@@ -64,7 +64,7 @@ namespace TinhGiaInOffset.WFUI.Presentation
             //Lay chi tiết máy in
             var modelMayIn = mayInOffsetContext.DocTheoId(giaModel.IdMayIn);
 
-            output = $"{modelMayIn.KhoInToiDaRong} x {modelMayIn.KhoInToiDaDai}cm";
+            output = $"{modelMayIn.KhoGiayToiDaRong} x {modelMayIn.KhoGiayToiDaDai}cm";
 
             return output;
         }
