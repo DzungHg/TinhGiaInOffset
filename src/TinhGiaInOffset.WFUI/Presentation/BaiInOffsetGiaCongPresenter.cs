@@ -49,12 +49,14 @@ namespace TinhGiaInOffset.WFUI.Presentation
             var giaModel = giaInGiaCongOffset.DocTheoId(idBangGiaChon);
             //Lay chi tiết máy in
             var modelMayIn = mayInOffsetContext.DocTheoId(giaModel.IdMayIn);
+            var kq = "";
+            kq += giaModel.DienGiai + '\r' + '\n';
+            kq += "-----------" + '\r' + '\n';
+            kq += modelMayIn.ChiTietMayIn + '\r' + '\n';
+            kq += giaModel.DoiMayIn + '\r' + '\n';
+            kq += string.Format("{0:0,0.00} đ/bài" + '\r' + '\n', giaModel.DonGiaBai);
 
-            var line01 = modelMayIn.ChiTietMayIn + '\r' + '\n';
-            var line02 = giaModel.DoiMayIn + '\r' + '\n';
-            var line03 = string.Format("{0:0,0.00} đ/bài" + '\r' + '\n', giaModel.DonGiaBai);
-
-            return line01 + line02 + line03;
+            return kq;
         }
         public string KhoMayInLonNhat(int idGiaInOffsetGiaCong)
         {
