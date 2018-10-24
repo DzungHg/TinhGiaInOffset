@@ -23,6 +23,7 @@ namespace TinhGiaInOffset.WFUI
         public BaiInOffsetGiaCongModel BaiInInOffsetGiaCong { get; set; }
 
         #region implement Iview
+        public int IdBaiIn { get; set; }
         public string TenBaiIn
         {
             get
@@ -165,12 +166,12 @@ namespace TinhGiaInOffset.WFUI
         {
             get
             {
-                return khoGiayRTextBox.Text;
+                return khoToChayGiayRTextBox.Text;
             }
 
             set
             {
-                khoGiayRTextBox.Text = value;
+                khoToChayGiayRTextBox.Text = value;
             }
         }
 
@@ -247,6 +248,19 @@ namespace TinhGiaInOffset.WFUI
             }
         }
 
+        public string KhoToChayIn
+        {
+            get
+            {
+                return khoToChayInRTextBox.Text;
+            }
+
+            set
+            {
+                khoToChayInRTextBox.Text = value;
+            }
+        }
+
 
         #endregion
         public TaoBaiInOffsetGiaCongForm()
@@ -285,8 +299,8 @@ namespace TinhGiaInOffset.WFUI
                 //MessageBox.Show(idGiaIn.ToString()); đúng
                 chiTietBangGiaTextCtrl.Text = baiInOffsetGiaCongPres.ChiTietGiaInGiaCong(idGiaIn);
                 tenNhaInOffsetRLabel.Text = baiInOffsetGiaCongPres.LayTenNhaInOffset(idGiaIn);
-                //Khổ tờ giấy chạy
-                this.KhoGiayChay = baiInOffsetGiaCongPres.KhoMayInLonNhat(idGiaIn);
+                //
+                baiInOffsetGiaCongPres.DisplayWhenSelectGiaInOffset();
             } catch { }
 
                    
@@ -335,7 +349,7 @@ namespace TinhGiaInOffset.WFUI
                 
                 lois.Add("Tên giấy?");
             }
-            if (khoGiayRTextBox.Text.Trim().Length == 0)
+            if (khoToChayGiayRTextBox.Text.Trim().Length == 0)
             {
                 lois.Add("Khổ giấy?");
             }
@@ -500,7 +514,8 @@ namespace TinhGiaInOffset.WFUI
                 case TinhTrangForm.Moi:
                     ResetFormData();
                     //Bẩy 
-                   
+                    giaOffsetGiaCongDropDown.SelectedIndex = -1;
+                    giaOffsetGiaCongDropDown.SelectedIndex = 0;
                     break;
                 case TinhTrangForm.Sua:
                    

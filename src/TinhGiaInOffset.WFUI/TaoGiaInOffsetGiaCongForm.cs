@@ -7,39 +7,292 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using TinhGiaInOffset.Common.Enum;
+using TinhGiaInOffset.WFUI.View;
+using TinhGiaInOffset.WFUI.Presentation;
 using TinhGiaInOffset.WFUI.Model;
 using TinhGiaInOffset.WFUI.DTOContext;
 
 
 namespace TinhGiaInOffset.WFUI
 {
-    public partial class TaoGiaInOffsetGiaCongForm : Telerik.WinControls.UI.RadForm
+    public partial class TaoGiaInOffsetGiaCongForm : Telerik.WinControls.UI.RadForm, IViewGiaInOffsetGiaCong
     {
-        public GiaInOffsetGiaCongModel giaInSua;
+        
         public TinhTrangForm TinhTrangForm;
+        private TaoGiaInOffsetGiaCongPresenter taoGiaInPres;
         //Dữ liệu nhà in và máy in
-        private List<NhaInOffsetModel> nhaInOffsetSrc = new NhaInOffsetContext().DocTatCa();
-        private List<MayInOffsetModel> mayInOffsetSrc = new MayInOffsetContext().DocTatCa();
 
-       
+        #region implement IView....
+        public int IdGiaIn { get; set; }
+        public string TenGia
+        {
+            get
+            {
+                return tenGiaInRTextBox.Text;
+            }
+
+            set
+            {
+                tenGiaInRTextBox.Text = value;
+            }
+        }
+
+        public string DienGiai
+        {
+            get
+            {
+                return dienGiaiRTextCtrl.Text;
+            }
+
+            set
+            {
+                dienGiaiRTextCtrl.Text = value;
+            }
+        }
+
+        public int IdNhaIn
+        {
+            get
+            {
+                int idNhaIn = 0;
+                if (nhaInOffsetDropDown.SelectedValue != null)
+                {
+                    //int.TryParse(nhaInOffsetDropDown.SelectedValue.ToString(), out idNhaIn);
+                    idNhaIn = ((NhaInOffsetModel)nhaInOffsetDropDown.SelectedValue).Id;
+                }
+                return idNhaIn;
+            }
+
+            set
+            {
+                int index = 0;
+                foreach (var item in nhaInOffsetDropDown.Items)
+                {
+                    if (((NhaInOffsetModel)item.DataBoundItem).Id == value)
+                    {
+                        index = item.RowIndex;
+                        break;
+                    }
+                }
+                nhaInOffsetDropDown.SelectedIndex = index;
+            }
+        }
+
+        public int IdMayIn
+        {
+            get
+            {
+                int idMayIn = 0;
+                if (mayInOffsetDropDown.SelectedValue != null)
+                {
+                    idMayIn = ((MayInOffsetModel)mayInOffsetDropDown.SelectedValue).Id;
+                }
+                return idMayIn;
+            }
+
+            set
+            {
+                int index = 0;
+                foreach (var item in mayInOffsetDropDown.Items)
+                {
+                    if (((MayInOffsetModel)item.DataBoundItem).Id == value)
+                    {
+                        index = item.RowIndex;
+                        break;
+                    }
+                }
+                mayInOffsetDropDown.SelectedIndex = index;
+            }
+        }
+
+        public string DoiMayIn
+        {
+            get
+            {
+                return doiMayInRTextBox.Text;
+            }
+
+            set
+            {
+                doiMayInRTextBox.Text = value;
+            }
+        }
+
+        public int ToChayRong
+        {
+            get
+            {
+                return int.Parse(toChayRongRTextBox.Text);
+            }
+
+            set
+            {
+                toChayRongRTextBox.Text = value.ToString();
+            }
+        }
+
+        public int ToChayDai
+        {
+            get
+            {
+                return int.Parse(toChayDaiRTextBox.Text);
+            }
+
+            set
+            {
+                toChayDaiRTextBox.Text = value.ToString();
+            }
+        }
+
+        public int DonGiaBai
+        {
+            get
+            {
+                return int.Parse(donGiaBaiRTextBox.Text);
+            }
+
+            set
+            {
+                donGiaBaiRTextBox.Text = value.ToString();
+            }
+        }
+
+        public int SoToChayBuHaoCoBan
+        {
+            get
+            {
+                return int.Parse(soToChayBuHaoCoBanRTextBox.Text);
+            }
+
+            set
+            {
+                soToChayBuHaoCoBanRTextBox.Text = value.ToString();
+            }
+        }
+
+        public int SoLuongBaoIn
+        {
+            get
+            {
+                return int.Parse(soLuongBaoInRTextBox.Text);
+            }
+
+            set
+            {
+                soLuongBaoInRTextBox.Text = value.ToString();
+            }
+        }
+
+        public int DonGiaVuot
+        {
+            get
+            {
+                return int.Parse(donGiaVuotRTextBox.Text);
+            }
+
+            set
+            {
+                donGiaVuotRTextBox.Text = value.ToString();
+            }
+        }
+
+        public string DonViTinhSoLuong
+        {
+            get
+            {
+                return donViTinhTheoSoLuongRTextBox.Text;
+            }
+
+            set
+            {
+                donViTinhTheoSoLuongRTextBox.Text = value;
+            }
+        }
+
+        public bool GiaDaBaoKem
+        {
+            get
+            {
+                return giaDaBaoGomKemRCheck.Checked;
+            }
+
+            set
+            {
+                giaDaBaoGomKemRCheck.Checked = value;
+            }
+        }
+
+        public string ThongTinLienHe
+        {
+            get
+            {
+                return thongTinLienHeRTextCtrl.Text;
+            }
+
+            set
+            {
+                thongTinLienHeRTextCtrl.Text = value;
+            }
+        }
+
+        public string GhiChu
+        {
+            get
+            {
+                return ghiChuRTextCtrl.Text;
+            }
+
+            set
+            {
+                ghiChuRTextCtrl.Text = value;
+            }
+        }
+
+        public bool KhongSuDung
+        {
+            get
+            {
+                return khongSuDungRCheck.Checked;
+            }
+
+            set
+            {
+                khongSuDungRCheck.Checked = value;
+            }
+        }
+
+        public int ThuTuSapXep
+        {
+            get
+            {
+                return int.Parse(thuTuSapXepRTextBox.Text);
+            }
+
+            set
+            {
+                thuTuSapXepRTextBox.Text = value.ToString();
+            }
+        }
+        #endregion
 
         public TaoGiaInOffsetGiaCongForm()
         {
             InitializeComponent();
             //Đấu nối dữ liệu vô comboboxes
+            taoGiaInPres = new TaoGiaInOffsetGiaCongPresenter(this);
             DauNoiDuLieu();
         }
         private void DauNoiDuLieu()
         {
             nhaInOffsetDropDown.DataSource = null;
             nhaInOffsetDropDown.Items.Clear();
-            nhaInOffsetDropDown.DataSource = nhaInOffsetSrc;
+            nhaInOffsetDropDown.DataSource = taoGiaInPres.NhaInOffsetS();
             nhaInOffsetDropDown.DataMember = "Id";            
             nhaInOffsetDropDown.DisplayMember = "TenNhaIn";
 
             mayInOffsetDropDown.DataSource = null;
             mayInOffsetDropDown.Items.Clear();
-            mayInOffsetDropDown.DataSource = mayInOffsetSrc;
+            mayInOffsetDropDown.DataSource = taoGiaInPres.MayInOffsetS();
             mayInOffsetDropDown.DataMember = "Id";
             mayInOffsetDropDown.DisplayMember = "TenMayIn";
         }
@@ -120,6 +373,30 @@ namespace TinhGiaInOffset.WFUI
                     output = false;
             }
 
+            int toChayRong = 0;
+            bool toChayRongValid = int.TryParse(toChayRongRTextBox.Text, out toChayRong);
+            if (toChayRongValid == false)
+            {
+                output = false;
+            }
+            else
+            {
+                if (toChayRong <= 0)
+                    output = false;
+            }
+           
+            int toChayDai = 0;
+            bool toChayDaiValid = int.TryParse(toChayDaiRTextBox.Text, out toChayDai);
+            if (toChayDaiValid == false)
+            {
+                output = false;
+            }
+            else
+            {
+                if (toChayDai <= 0)
+                    output = false;
+            }
+
             return output;
         }
 
@@ -127,47 +404,14 @@ namespace TinhGiaInOffset.WFUI
         {
             if (FormValidation())
             {
-                var giaInOffsetContext = new GiaInOffsetGiaCongContext();
-
-                int idNhaIn;
-                int idMayIn;
-
-                idNhaIn = ((NhaInOffsetModel)nhaInOffsetDropDown.SelectedValue).Id;
-                idMayIn = ((MayInOffsetModel)mayInOffsetDropDown.SelectedValue).Id;
-                //int.TryParse(nhaInOffsetDropDown.SelectedValue.ToString(), out idNhaIn);
-                //int.TryParse(mayInOffsetDropDown.SelectedValue.ToString(), out idMayIn);
-
-
+               
                 switch (this.TinhTrangForm)
                 {
                     case TinhTrangForm.Moi:
-
-
-                        var model = new GiaInOffsetGiaCongModel(tenGiaInRTextBox.Text, dienGiaiRTextCtrl.Text, idNhaIn,
-                            idMayIn, doiMayInRTextBox.Text, int.Parse(donGiaBaiRTextBox.Text), int.Parse(soToChayBuHaoCoBanRTextBox.Text),
-                            int.Parse(soLuongBaoInRTextBox.Text), int.Parse(donGiaVuotRTextBox.Text), donViTinhTheoSoLuongRTextBox.Text,
-                            giaDaBaoGomKemRCheck.Checked, thongTinLienHeRTextCtrl.Text, ghiChuRTextCtrl.Text, khongSuDungRCheck.Checked,
-                            int.Parse(thuTuSapXepRTextBox.Text));
-
-                        giaInOffsetContext.Them(model);
+                        taoGiaInPres.TaoMoiGiaInOffsetGiaCong();                       
                         break;
                     case TinhTrangForm.Sua:
-                        giaInSua.TenGia = tenGiaInRTextBox.Text;
-                        giaInSua.DienGiai = dienGiaiRTextCtrl.Text;
-                        giaInSua.IdNhaIn = idNhaIn;
-                        giaInSua.IdMayIn = idMayIn;
-                        giaInSua.DoiMayIn = doiMayInRTextBox.Text;
-                        giaInSua.DonGiaBai = int.Parse(donGiaBaiRTextBox.Text);
-                        giaInSua.SoToChayBuHaoCoBan = int.Parse(soToChayBuHaoCoBanRTextBox.Text);
-                        giaInSua.SoLuongBaoIn = int.Parse(soLuongBaoInRTextBox.Text);
-                        giaInSua.DonGiaVuot = int.Parse(donGiaVuotRTextBox.Text);
-                        giaInSua.DonViTinhSoLuong = donViTinhTheoSoLuongRTextBox.Text;
-                        giaInSua.GiaDaBaoKem = giaDaBaoGomKemRCheck.Checked;
-                        giaInSua.ThongTinLienHe = thongTinLienHeRTextCtrl.Text;
-                        giaInSua.GhiChu = ghiChuRTextCtrl.Text;
-                        giaInSua.KhongSuDung = khongSuDungRCheck.Checked;
-                        giaInSua.ThuTuSapXep = int.Parse(thuTuSapXepRTextBox.Text);
-                        giaInOffsetContext.Sua(this.giaInSua);
+                        taoGiaInPres.SuaGiaInOffsetGiaCong();
                         break;
                 }//Switch
                 this.DialogResult = DialogResult.OK;
@@ -181,19 +425,13 @@ namespace TinhGiaInOffset.WFUI
 
         private void mayInOffsetDropDown_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
         {
+          
             try
             {
                 var model = (MayInOffsetModel)mayInOffsetDropDown.SelectedItem.DataBoundItem;
-                chiTietMayInTextCtrl.Text = model.ChiTietMayIn;
+                chiTietMayInTextCtrl.Text = taoGiaInPres.ChiTietMayInOffset();
                 ///mayInOffsetDropDown.SelectedValue là đối tượng
-                ///mình gắn vô để thử
-                ///
-                ///int idMayIn = 0;
-                ///int.TryParse(mayInOffsetDropDown.SelectedValue.ToString(), out idMayIn);
-                ///MessageBox.Show($"{idMayIn}");
-                ///var model2 = (MayInOffsetModel)mayInOffsetDropDown.SelectedValue;
-                ///MessageBox.Show(model2.Id.ToString());
-                ///Cuối cùng là đối tượng khác với nguyên gốc là DataMember
+                
                 
             }
             catch { }
@@ -203,48 +441,19 @@ namespace TinhGiaInOffset.WFUI
         {
             if (this.TinhTrangForm == TinhTrangForm.Sua)
             {
-                tenGiaInRTextBox.Text = this.giaInSua.TenGia;
-                dienGiaiRTextCtrl.Text = this.giaInSua.DienGiai;
-
-                doiMayInRTextBox.Text = this.giaInSua.DoiMayIn;
-                donGiaBaiRTextBox.Text =  this.giaInSua.DonGiaBai.ToString();
-                soToChayBuHaoCoBanRTextBox.Text = this.giaInSua.SoToChayBuHaoCoBan.ToString();
-                soLuongBaoInRTextBox.Text = this.giaInSua.SoLuongBaoIn.ToString();
-                donGiaVuotRTextBox.Text = this.giaInSua.DonGiaVuot.ToString();
-                donViTinhTheoSoLuongRTextBox.Text = this.giaInSua.DonViTinhSoLuong;
-                giaDaBaoGomKemRCheck.Checked = this.giaInSua.GiaDaBaoKem;
-                thongTinLienHeRTextCtrl.Text = this.giaInSua.ThongTinLienHe;
-                ghiChuRTextCtrl.Text = this.giaInSua.GhiChu;               
-                khongSuDungRCheck.Checked = this.giaInSua.KhongSuDung;
-                thuTuSapXepRTextBox.Text = this.giaInSua.ThuTuSapXep.ToString();
-                //Id printer và
-                int index = 0;
-                foreach (var item in nhaInOffsetDropDown.Items)
-                {
-                    if (((NhaInOffsetModel)item.DataBoundItem).Id == this.giaInSua.IdNhaIn)
-                    {
-                        index = item.RowIndex;
-                        break;
-                    }                    
-                }
-                nhaInOffsetDropDown.SelectedIndex = index;
-
-                foreach (var item in mayInOffsetDropDown.Items)
-                {
-                    if (((MayInOffsetModel)item.DataBoundItem).Id == this.giaInSua.IdMayIn)
-                    {
-                        index = item.RowIndex;
-                        break;
-                    }
-                }
-                mayInOffsetDropDown.SelectedIndex = index;
-
+                taoGiaInPres.DisplayChiTietGiaInOffset();
+              
                 //Nút
                 taoGiaButton.Text = "Lưu";
-                tieuDeFormLabel.Text = $"SỬA GIÁ ID [{this.giaInSua.Id}]";
+                tieuDeFormLabel.Text = $"SỬA GIÁ ID [{this.IdGiaIn}]";
 
             }
             tieuDeFormLabel.Left = (ClientSize.Width - tieuDeFormLabel.Width) / 2;
+        }
+
+        private void donViTinhTheoSoLuongRTextBox_TextChanged(object sender, EventArgs e)
+        {
+            donVi_DonGiaVuotRLabel.Text = $"đ/{this.DonViTinhSoLuong}";
         }
     }
 }

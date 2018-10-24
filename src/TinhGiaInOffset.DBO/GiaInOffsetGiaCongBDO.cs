@@ -14,6 +14,8 @@ namespace TinhGiaInOffset.BDO
         public int IdNhaIn { get; set; }
         public int IdMayIn { get; set; }
         public string DoiMayIn { get; set; }
+        public int ToChayRong { get; set; }
+        public int ToChayDai { get; set; }
         public int DonGiaBai { get; set; }
         public int SoToChayBuHaoCoBan { get; set; }
         public int SoLuongBaoIn { get; set; }

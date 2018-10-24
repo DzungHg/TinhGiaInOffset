@@ -14,6 +14,8 @@ namespace TinhGiaInOffset.WFUI.Model
         public int IdNhaIn { get; set; }
         public int IdMayIn { get; set; }
         public string DoiMayIn { get; set; }
+        public int ToChayRong { get; set; }
+        public int ToChayDai { get; set; }
         public int DonGiaBai { get; set; }
         public int SoToChayBuHaoCoBan { get; set; }
         public int SoLuongBaoIn { get; set; }
@@ -32,15 +34,17 @@ namespace TinhGiaInOffset.WFUI.Model
 
         }
         public GiaInOffsetGiaCongModel(string tenGia, string dienGiai, int idNhaIn, int idMayIn,
-            string doiMayIn, int donGiaBai, int soToChayBuHao, int soLuongBaoIn, int donGiaVuot,
-            string donViTinhSoLuong, bool giaBaoKem, string thongTinLienHe, string ghiChu,
-            bool khongSuDung, int thuTuSapXep)
+            string doiMayIn, int toChayRong, int toChayDai, int donGiaBai, int soToChayBuHao,
+            int soLuongBaoIn, int donGiaVuot, string donViTinhSoLuong, bool giaBaoKem,
+            string thongTinLienHe, string ghiChu, bool khongSuDung, int thuTuSapXep)
         {
             this.TenGia = tenGia;
             this.DienGiai = dienGiai;
             this.IdNhaIn = idNhaIn;
             this.IdMayIn = idMayIn;
             this.DoiMayIn = doiMayIn;
+            this.ToChayRong = toChayRong;
+            this.ToChayDai = toChayDai;
             this.DonGiaBai = donGiaBai;
             this.SoToChayBuHaoCoBan = soToChayBuHao;
             this.SoLuongBaoIn = soLuongBaoIn;
@@ -51,7 +55,6 @@ namespace TinhGiaInOffset.WFUI.Model
             this.GhiChu = ghiChu;
             this.KhongSuDung = khongSuDung;
             this.ThuTuSapXep = thuTuSapXep;
-        }
-      
+        }     
     }
 }

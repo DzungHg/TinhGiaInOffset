@@ -90,7 +90,9 @@
     <Compile Include="Model\QuyCachInOffset.cs" />
     <Compile Include="Presentation\BaiInOffsetGiaCongPresenter.cs" />
     <Compile Include="Presentation\ChiPhiInKyThuatSoPresenter.cs" />
+    <Compile Include="Presentation\IViewGiaInOffsetGiaCong.cs" />
     <Compile Include="Presentation\QuanLyGiaInOffsetGiaCongPresenter.cs" />
+    <Compile Include="Presentation\TaoGiaInOffsetGiaCongPresenter.cs" />
     <Compile Include="Presentation\TaoMayInOffsetPresenter.cs" />
     <Compile Include="Presentation\TinhGiaInOffsetPresenter.cs" />
     <Compile Include="Presentation\XemGiaInOffsetGiaCongPresenter.cs" />

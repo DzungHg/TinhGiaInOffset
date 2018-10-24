@@ -64,6 +64,8 @@ namespace TinhGiaInOffset.DAL
                 p.Add("@IdNhaIn", entityBDO.IdNhaIn);
                 p.Add("@IdMayIn", entityBDO.IdMayIn);
                 p.Add("@DoiMayIn", entityBDO.DoiMayIn);
+                p.Add("@ToChayRong", entityBDO.ToChayRong);
+                p.Add("@ToChayDai", entityBDO.ToChayDai);
                 p.Add("@DonGiaBai", entityBDO.DonGiaBai);
                 p.Add("@SoToChayBuHaoCoBan", entityBDO.SoToChayBuHaoCoBan);
                 p.Add("@SoLuongBaoIn", entityBDO.SoLuongBaoIn);
@@ -92,6 +94,8 @@ namespace TinhGiaInOffset.DAL
                 p.Add("@IdNhaIn", entityBDO.IdNhaIn);
                 p.Add("@IdMayIn", entityBDO.IdMayIn);
                 p.Add("@DoiMayIn", entityBDO.DoiMayIn);
+                p.Add("@ToChayRong", entityBDO.ToChayRong);
+                p.Add("@ToChayDai", entityBDO.ToChayDai);
                 p.Add("@DonGiaBai", entityBDO.DonGiaBai);
                 p.Add("@SoToChayBuHaoCoBan", entityBDO.SoToChayBuHaoCoBan);
                 p.Add("@SoLuongBaoIn", entityBDO.SoLuongBaoIn);

@@ -15,7 +15,8 @@ namespace TinhGiaInOffset.WFUI.Presentation
         private IViewBaiInOffsetGiaCong View;
         private NhaInOffsetContext nhaInOffsetContext = new NhaInOffsetContext();
         private MayInOffsetContext mayInOffsetContext = new MayInOffsetContext();
-        private GiaInOffsetGiaCongContext giaInGiaCongOffset = new GiaInOffsetGiaCongContext();
+        private GiaInOffsetGiaCongContext giaInGiaCongOffsetCont = new GiaInOffsetGiaCongContext();
+     
        
         public BaiInOffsetGiaCongPresenter(IViewBaiInOffsetGiaCong view)
         {
@@ -29,7 +30,7 @@ namespace TinhGiaInOffset.WFUI.Presentation
         public string LayTenNhaInOffset (int idBangGia)
         {
             var kq = "";
-            var bGia = giaInGiaCongOffset.DocTheoId(idBangGia);
+            var bGia = giaInGiaCongOffsetCont.DocTheoId(idBangGia);
             kq = nhaInOffsetContext.DocTheoId(bGia.IdNhaIn).TenNhaIn;
             return kq;
         }
@@ -46,11 +47,13 @@ namespace TinhGiaInOffset.WFUI.Presentation
         public string ChiTietGiaInGiaCong(int idBangGiaChon)
         {
             //Lấy bảng giá
-            var giaModel = giaInGiaCongOffset.DocTheoId(idBangGiaChon);
+            var giaModel = giaInGiaCongOffsetCont.DocTheoId(idBangGiaChon);
             //Lay chi tiết máy in
             var modelMayIn = mayInOffsetContext.DocTheoId(giaModel.IdMayIn);
             var kq = "";
             kq += giaModel.DienGiai + '\r' + '\n';
+            kq += "-----------" + '\r' + '\n';
+            kq += $"Khổ chạy: {giaModel.ToChayDai} x {giaModel.ToChayRong}cm" + '\r' + '\n';
             kq += "-----------" + '\r' + '\n';
             kq += modelMayIn.ChiTietMayIn + '\r' + '\n';
             kq += giaModel.DoiMayIn + '\r' + '\n';
@@ -62,13 +65,22 @@ namespace TinhGiaInOffset.WFUI.Presentation
         {
             var output = "";
             //Lấy bảng giá
-            var giaModel = giaInGiaCongOffset.DocTheoId(idGiaInOffsetGiaCong);
+            var giaModel = giaInGiaCongOffsetCont.DocTheoId(idGiaInOffsetGiaCong);
             //Lay chi tiết máy in
             var modelMayIn = mayInOffsetContext.DocTheoId(giaModel.IdMayIn);
 
             output = $"{modelMayIn.KhoGiayToiDaRong} x {modelMayIn.KhoGiayToiDaDai}cm";
 
             return output;
+        }
+        public void DisplayWhenSelectGiaInOffset()
+        {
+            if (View.IdGiaInOffsetGiaCong <= 0)
+                return;
+            //
+            var model = giaInGiaCongOffsetCont.DocTheoId(View.IdGiaInOffsetGiaCong);
+            View.KhoToChayIn = $"{model.ToChayRong} x {model.ToChayDai}cm ";
+            View.KhoGiayChay = $"{model.ToChayRong} x {model.ToChayDai}cm ";
         }
         public void ResetViewData()
         {
@@ -84,5 +96,34 @@ namespace TinhGiaInOffset.WFUI.Presentation
             View.SoBaiNhanBan = 1;
         }
 
+        /// <summary>
+        /// Khi lưu database mình làm sau
+        /// </summary>
+        public void DisplayBaiInOffsetGiaCong()
+        {
+            /*
+            if (View.IdBaiIn <= 0)
+                return;
+            //Chỉ display khi sửa
+            var model = baiIn
+            
+            View.TenBaiIn TenBaiIn 
+            View.DienGia DienGiai 
+            View.IdGiaInOffsetGiaCong IdGiaInOffsetGiaCong 
+            View.TenGiaInOffsetGiaCong TenGiaInOffsetGiaCong 
+            View.KhoToChayIn KhoToChayIn { get; set; }
+            View.SoLuotIn SoLuotIn { get; set; }
+            View.SoBaiNhanBan SoBaiNhanBan { get; set; }
+            View.SoMatIn SoMatIn { get; set; }
+            View.SoKemIn SoKemIn { get; set; }
+            View.SoToChayBuHao SoToChayBuHao { get; set; }
+            View.KieuIn KieuInOffset KieuIn { get; set; }
+            View.TenGiay TenGiay { get; set; }
+            View.KhoGiayChay KhoGiayChay { get; set; }
+            View.DonGiaGiayTheoTo DonGiaGiayTheoTo { get; set; }
+            View.SoToChayLyThuyet SoToChayLyThuyet { get; set; }
+            View.GiayDaCoLoiNhuan GiayDaCoLoiNhuan { get; set; }
+            */
+        }
     }
 }

@@ -61,6 +61,12 @@
             this.thuTuSapXepRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.huyButton = new Telerik.WinControls.UI.RadButton();
             this.khongSuDungRCheck = new Telerik.WinControls.UI.RadCheckBox();
+            this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
+            this.toChayRongRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel16 = new Telerik.WinControls.UI.RadLabel();
+            this.toChayDaiRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.donVi_DonGiaVuotRLabel = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel18 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.tieuDeFormLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taoGiaButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
@@ -94,6 +100,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.thuTuSapXepRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.huyButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khongSuDungRCheck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toChayRongRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toChayDaiRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donVi_DonGiaVuotRLabel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,7 +120,7 @@
             // 
             // taoGiaButton
             // 
-            this.taoGiaButton.Location = new System.Drawing.Point(408, 443);
+            this.taoGiaButton.Location = new System.Drawing.Point(408, 452);
             this.taoGiaButton.Name = "taoGiaButton";
             this.taoGiaButton.Size = new System.Drawing.Size(110, 24);
             this.taoGiaButton.TabIndex = 50;
@@ -142,17 +154,17 @@
             // 
             // giaDaBaoGomKemRCheck
             // 
-            this.giaDaBaoGomKemRCheck.Location = new System.Drawing.Point(503, 123);
+            this.giaDaBaoGomKemRCheck.Location = new System.Drawing.Point(500, 149);
             this.giaDaBaoGomKemRCheck.Name = "giaDaBaoGomKemRCheck";
             this.giaDaBaoGomKemRCheck.Size = new System.Drawing.Size(99, 18);
-            this.giaDaBaoGomKemRCheck.TabIndex = 12;
+            this.giaDaBaoGomKemRCheck.TabIndex = 14;
             this.giaDaBaoGomKemRCheck.Text = "Giá đã bao kẽm";
             // 
             // tenGiaInRTextBox
             // 
             this.tenGiaInRTextBox.Location = new System.Drawing.Point(248, 71);
             this.tenGiaInRTextBox.Name = "tenGiaInRTextBox";
-            this.tenGiaInRTextBox.Size = new System.Drawing.Size(230, 20);
+            this.tenGiaInRTextBox.Size = new System.Drawing.Size(386, 20);
             this.tenGiaInRTextBox.TabIndex = 4;
             // 
             // chiTietMayInTextCtrl
@@ -221,7 +233,7 @@
             // 
             // radLabel7
             // 
-            this.radLabel7.Location = new System.Drawing.Point(253, 233);
+            this.radLabel7.Location = new System.Drawing.Point(249, 282);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(64, 18);
             this.radLabel7.TabIndex = 7;
@@ -229,14 +241,14 @@
             // 
             // donGiaBaiRTextBox
             // 
-            this.donGiaBaiRTextBox.Location = new System.Drawing.Point(248, 258);
+            this.donGiaBaiRTextBox.Location = new System.Drawing.Point(244, 307);
             this.donGiaBaiRTextBox.Name = "donGiaBaiRTextBox";
-            this.donGiaBaiRTextBox.Size = new System.Drawing.Size(230, 20);
-            this.donGiaBaiRTextBox.TabIndex = 7;
+            this.donGiaBaiRTextBox.Size = new System.Drawing.Size(114, 20);
+            this.donGiaBaiRTextBox.TabIndex = 9;
             // 
             // radLabel8
             // 
-            this.radLabel8.Location = new System.Drawing.Point(253, 333);
+            this.radLabel8.Location = new System.Drawing.Point(249, 333);
             this.radLabel8.Name = "radLabel8";
             this.radLabel8.Size = new System.Drawing.Size(71, 18);
             this.radLabel8.TabIndex = 10;
@@ -244,14 +256,14 @@
             // 
             // donGiaVuotRTextBox
             // 
-            this.donGiaVuotRTextBox.Location = new System.Drawing.Point(248, 358);
+            this.donGiaVuotRTextBox.Location = new System.Drawing.Point(244, 358);
             this.donGiaVuotRTextBox.Name = "donGiaVuotRTextBox";
-            this.donGiaVuotRTextBox.Size = new System.Drawing.Size(230, 20);
-            this.donGiaVuotRTextBox.TabIndex = 9;
+            this.donGiaVuotRTextBox.Size = new System.Drawing.Size(114, 20);
+            this.donGiaVuotRTextBox.TabIndex = 11;
             // 
             // radLabel9
             // 
-            this.radLabel9.Location = new System.Drawing.Point(253, 283);
+            this.radLabel9.Location = new System.Drawing.Point(367, 282);
             this.radLabel9.Name = "radLabel9";
             this.radLabel9.Size = new System.Drawing.Size(86, 18);
             this.radLabel9.TabIndex = 12;
@@ -259,14 +271,14 @@
             // 
             // soLuongBaoInRTextBox
             // 
-            this.soLuongBaoInRTextBox.Location = new System.Drawing.Point(248, 308);
+            this.soLuongBaoInRTextBox.Location = new System.Drawing.Point(369, 306);
             this.soLuongBaoInRTextBox.Name = "soLuongBaoInRTextBox";
-            this.soLuongBaoInRTextBox.Size = new System.Drawing.Size(230, 20);
-            this.soLuongBaoInRTextBox.TabIndex = 8;
+            this.soLuongBaoInRTextBox.Size = new System.Drawing.Size(109, 20);
+            this.soLuongBaoInRTextBox.TabIndex = 10;
             // 
             // radLabel10
             // 
-            this.radLabel10.Location = new System.Drawing.Point(253, 383);
+            this.radLabel10.Location = new System.Drawing.Point(244, 384);
             this.radLabel10.Name = "radLabel10";
             this.radLabel10.Size = new System.Drawing.Size(134, 18);
             this.radLabel10.TabIndex = 14;
@@ -274,14 +286,15 @@
             // 
             // donViTinhTheoSoLuongRTextBox
             // 
-            this.donViTinhTheoSoLuongRTextBox.Location = new System.Drawing.Point(248, 408);
+            this.donViTinhTheoSoLuongRTextBox.Location = new System.Drawing.Point(244, 409);
             this.donViTinhTheoSoLuongRTextBox.Name = "donViTinhTheoSoLuongRTextBox";
             this.donViTinhTheoSoLuongRTextBox.Size = new System.Drawing.Size(230, 20);
-            this.donViTinhTheoSoLuongRTextBox.TabIndex = 10;
+            this.donViTinhTheoSoLuongRTextBox.TabIndex = 12;
+            this.donViTinhTheoSoLuongRTextBox.TextChanged += new System.EventHandler(this.donViTinhTheoSoLuongRTextBox_TextChanged);
             // 
             // radLabel11
             // 
-            this.radLabel11.Location = new System.Drawing.Point(503, 71);
+            this.radLabel11.Location = new System.Drawing.Point(500, 97);
             this.radLabel11.Name = "radLabel11";
             this.radLabel11.Size = new System.Drawing.Size(134, 18);
             this.radLabel11.TabIndex = 16;
@@ -289,22 +302,22 @@
             // 
             // soToChayBuHaoCoBanRTextBox
             // 
-            this.soToChayBuHaoCoBanRTextBox.Location = new System.Drawing.Point(503, 95);
+            this.soToChayBuHaoCoBanRTextBox.Location = new System.Drawing.Point(500, 123);
             this.soToChayBuHaoCoBanRTextBox.Name = "soToChayBuHaoCoBanRTextBox";
             this.soToChayBuHaoCoBanRTextBox.Size = new System.Drawing.Size(230, 20);
-            this.soToChayBuHaoCoBanRTextBox.TabIndex = 11;
+            this.soToChayBuHaoCoBanRTextBox.TabIndex = 13;
             // 
             // thongTinLienHeRTextCtrl
             // 
-            this.thongTinLienHeRTextCtrl.Location = new System.Drawing.Point(503, 174);
+            this.thongTinLienHeRTextCtrl.Location = new System.Drawing.Point(500, 200);
             this.thongTinLienHeRTextCtrl.Multiline = true;
             this.thongTinLienHeRTextCtrl.Name = "thongTinLienHeRTextCtrl";
             this.thongTinLienHeRTextCtrl.Size = new System.Drawing.Size(230, 54);
-            this.thongTinLienHeRTextCtrl.TabIndex = 13;
+            this.thongTinLienHeRTextCtrl.TabIndex = 21;
             // 
             // radLabel12
             // 
-            this.radLabel12.Location = new System.Drawing.Point(506, 150);
+            this.radLabel12.Location = new System.Drawing.Point(503, 176);
             this.radLabel12.Name = "radLabel12";
             this.radLabel12.Size = new System.Drawing.Size(91, 18);
             this.radLabel12.TabIndex = 17;
@@ -312,15 +325,15 @@
             // 
             // ghiChuRTextCtrl
             // 
-            this.ghiChuRTextCtrl.Location = new System.Drawing.Point(503, 258);
+            this.ghiChuRTextCtrl.Location = new System.Drawing.Point(500, 284);
             this.ghiChuRTextCtrl.Multiline = true;
             this.ghiChuRTextCtrl.Name = "ghiChuRTextCtrl";
             this.ghiChuRTextCtrl.Size = new System.Drawing.Size(230, 94);
-            this.ghiChuRTextCtrl.TabIndex = 14;
+            this.ghiChuRTextCtrl.TabIndex = 22;
             // 
             // radLabel13
             // 
-            this.radLabel13.Location = new System.Drawing.Point(503, 234);
+            this.radLabel13.Location = new System.Drawing.Point(500, 260);
             this.radLabel13.Name = "radLabel13";
             this.radLabel13.Size = new System.Drawing.Size(44, 18);
             this.radLabel13.TabIndex = 18;
@@ -328,7 +341,7 @@
             // 
             // radLabel14
             // 
-            this.radLabel14.Location = new System.Drawing.Point(503, 358);
+            this.radLabel14.Location = new System.Drawing.Point(500, 384);
             this.radLabel14.Name = "radLabel14";
             this.radLabel14.Size = new System.Drawing.Size(80, 18);
             this.radLabel14.TabIndex = 18;
@@ -336,15 +349,15 @@
             // 
             // thuTuSapXepRTextBox
             // 
-            this.thuTuSapXepRTextBox.Location = new System.Drawing.Point(503, 382);
+            this.thuTuSapXepRTextBox.Location = new System.Drawing.Point(500, 408);
             this.thuTuSapXepRTextBox.Name = "thuTuSapXepRTextBox";
             this.thuTuSapXepRTextBox.Size = new System.Drawing.Size(80, 20);
-            this.thuTuSapXepRTextBox.TabIndex = 15;
+            this.thuTuSapXepRTextBox.TabIndex = 23;
             // 
             // huyButton
             // 
             this.huyButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.huyButton.Location = new System.Drawing.Point(253, 443);
+            this.huyButton.Location = new System.Drawing.Point(253, 452);
             this.huyButton.Name = "huyButton";
             this.huyButton.Size = new System.Drawing.Size(110, 24);
             this.huyButton.TabIndex = 51;
@@ -352,17 +365,69 @@
             // 
             // khongSuDungRCheck
             // 
-            this.khongSuDungRCheck.Location = new System.Drawing.Point(614, 382);
+            this.khongSuDungRCheck.Location = new System.Drawing.Point(611, 408);
             this.khongSuDungRCheck.Name = "khongSuDungRCheck";
             this.khongSuDungRCheck.Size = new System.Drawing.Size(119, 18);
-            this.khongSuDungRCheck.TabIndex = 16;
+            this.khongSuDungRCheck.TabIndex = 24;
             this.khongSuDungRCheck.Text = "Không sử dụng nữa";
+            // 
+            // radLabel15
+            // 
+            this.radLabel15.Location = new System.Drawing.Point(248, 232);
+            this.radLabel15.Name = "radLabel15";
+            this.radLabel15.Size = new System.Drawing.Size(74, 18);
+            this.radLabel15.TabIndex = 7;
+            this.radLabel15.Text = "Tờ chạy Rộng";
+            // 
+            // toChayRongRTextBox
+            // 
+            this.toChayRongRTextBox.Location = new System.Drawing.Point(248, 256);
+            this.toChayRongRTextBox.Name = "toChayRongRTextBox";
+            this.toChayRongRTextBox.Size = new System.Drawing.Size(76, 20);
+            this.toChayRongRTextBox.TabIndex = 7;
+            // 
+            // radLabel16
+            // 
+            this.radLabel16.Location = new System.Drawing.Point(337, 232);
+            this.radLabel16.Name = "radLabel16";
+            this.radLabel16.Size = new System.Drawing.Size(64, 18);
+            this.radLabel16.TabIndex = 9;
+            this.radLabel16.Text = "Tờ chạy Dài";
+            // 
+            // toChayDaiRTextBox
+            // 
+            this.toChayDaiRTextBox.Location = new System.Drawing.Point(337, 256);
+            this.toChayDaiRTextBox.Name = "toChayDaiRTextBox";
+            this.toChayDaiRTextBox.Size = new System.Drawing.Size(76, 20);
+            this.toChayDaiRTextBox.TabIndex = 8;
+            // 
+            // donVi_DonGiaVuotRLabel
+            // 
+            this.donVi_DonGiaVuotRLabel.Location = new System.Drawing.Point(364, 358);
+            this.donVi_DonGiaVuotRLabel.Name = "donVi_DonGiaVuotRLabel";
+            this.donVi_DonGiaVuotRLabel.Size = new System.Drawing.Size(43, 18);
+            this.donVi_DonGiaVuotRLabel.TabIndex = 11;
+            this.donVi_DonGiaVuotRLabel.Text = "đ / mặt";
+            // 
+            // radLabel18
+            // 
+            this.radLabel18.Location = new System.Drawing.Point(419, 256);
+            this.radLabel18.Name = "radLabel18";
+            this.radLabel18.Size = new System.Drawing.Size(48, 18);
+            this.radLabel18.TabIndex = 12;
+            this.radLabel18.Text = "cm x cm";
             // 
             // TaoGiaInOffsetGiaCongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 479);
+            this.ClientSize = new System.Drawing.Size(754, 499);
+            this.Controls.Add(this.radLabel18);
+            this.Controls.Add(this.donVi_DonGiaVuotRLabel);
+            this.Controls.Add(this.radLabel16);
+            this.Controls.Add(this.toChayDaiRTextBox);
+            this.Controls.Add(this.radLabel15);
+            this.Controls.Add(this.toChayRongRTextBox);
             this.Controls.Add(this.khongSuDungRCheck);
             this.Controls.Add(this.huyButton);
             this.Controls.Add(this.radLabel14);
@@ -436,6 +501,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.thuTuSapXepRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.huyButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khongSuDungRCheck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toChayRongRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toChayDaiRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donVi_DonGiaVuotRLabel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -477,5 +548,11 @@
         private Telerik.WinControls.UI.RadTextBox thuTuSapXepRTextBox;
         private Telerik.WinControls.UI.RadButton huyButton;
         private Telerik.WinControls.UI.RadCheckBox khongSuDungRCheck;
+        private Telerik.WinControls.UI.RadLabel radLabel15;
+        private Telerik.WinControls.UI.RadTextBox toChayRongRTextBox;
+        private Telerik.WinControls.UI.RadLabel radLabel16;
+        private Telerik.WinControls.UI.RadTextBox toChayDaiRTextBox;
+        private Telerik.WinControls.UI.RadLabel donVi_DonGiaVuotRLabel;
+        private Telerik.WinControls.UI.RadLabel radLabel18;
     }
 }

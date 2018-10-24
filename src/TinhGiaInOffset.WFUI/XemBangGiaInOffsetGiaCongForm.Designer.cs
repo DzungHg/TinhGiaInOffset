@@ -59,12 +59,14 @@
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             this.kieuInOffsetDropDown = new Telerik.WinControls.UI.RadDropDownList();
             this.soNhanBanTinhRTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
             this.soToChayTinhRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.resetTinhRButton = new Telerik.WinControls.UI.RadButton();
             this.tinhPhiRButton = new Telerik.WinControls.UI.RadButton();
             this.ketQuaTinhRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel12 = new Telerik.WinControls.UI.RadLabel();
+            this.khoChayTheoGiaRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dongFormButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietMayInTextCtrl)).BeginInit();
@@ -97,13 +99,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kieuInOffsetDropDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soNhanBanTinhRTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soToChayTinhRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resetTinhRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinhPhiRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ketQuaTinhRTextBox)).BeginInit();
-            this.ketQuaTinhRTextBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khoChayTheoGiaRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,7 +122,7 @@
             // 
             // radLabel4
             // 
-            this.radLabel4.Location = new System.Drawing.Point(208, 49);
+            this.radLabel4.Location = new System.Drawing.Point(208, 99);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(112, 18);
             this.radLabel4.TabIndex = 54;
@@ -128,11 +131,11 @@
             // chiTietMayInTextCtrl
             // 
             this.chiTietMayInTextCtrl.IsReadOnly = true;
-            this.chiTietMayInTextCtrl.Location = new System.Drawing.Point(208, 73);
+            this.chiTietMayInTextCtrl.Location = new System.Drawing.Point(208, 123);
             this.chiTietMayInTextCtrl.Multiline = true;
             this.chiTietMayInTextCtrl.Name = "chiTietMayInTextCtrl";
-            this.chiTietMayInTextCtrl.Size = new System.Drawing.Size(190, 260);
-            this.chiTietMayInTextCtrl.TabIndex = 53;
+            this.chiTietMayInTextCtrl.Size = new System.Drawing.Size(190, 210);
+            this.chiTietMayInTextCtrl.TabIndex = 2;
             // 
             // tieuDeFormLabel
             // 
@@ -178,7 +181,7 @@
             // 
             // radLabel10
             // 
-            this.radLabel10.Location = new System.Drawing.Point(3, 198);
+            this.radLabel10.Location = new System.Drawing.Point(0, 199);
             this.radLabel10.Name = "radLabel10";
             this.radLabel10.Size = new System.Drawing.Size(134, 18);
             this.radLabel10.TabIndex = 72;
@@ -312,6 +315,7 @@
             // 
             // radPageViewPage1
             // 
+            this.radPageViewPage1.Controls.Add(this.radLabel12);
             this.radPageViewPage1.Controls.Add(this.radLabel5);
             this.radPageViewPage1.Controls.Add(this.dienGiaiRTextCtrl);
             this.radPageViewPage1.Controls.Add(this.radLabel6);
@@ -353,10 +357,10 @@
             // 
             // tabTinhPhiInPage
             // 
+            this.tabTinhPhiInPage.Controls.Add(this.radLabel3);
             this.tabTinhPhiInPage.Controls.Add(this.radLabel13);
             this.tabTinhPhiInPage.Controls.Add(this.kieuInOffsetDropDown);
             this.tabTinhPhiInPage.Controls.Add(this.soNhanBanTinhRTextBox);
-            this.tabTinhPhiInPage.Controls.Add(this.radLabel12);
             this.tabTinhPhiInPage.Controls.Add(this.soToChayTinhRTextBox);
             this.tabTinhPhiInPage.Controls.Add(this.resetTinhRButton);
             this.tabTinhPhiInPage.Controls.Add(this.tinhPhiRButton);
@@ -393,14 +397,6 @@
             this.soNhanBanTinhRTextBox.TabIndex = 43;
             this.soNhanBanTinhRTextBox.Text = "1";
             // 
-            // radLabel12
-            // 
-            this.radLabel12.Location = new System.Drawing.Point(10, 53);
-            this.radLabel12.Name = "radLabel12";
-            this.radLabel12.Size = new System.Drawing.Size(59, 18);
-            this.radLabel12.TabIndex = 70;
-            this.radLabel12.Text = "Số tờ chạy";
-            // 
             // soToChayTinhRTextBox
             // 
             this.soToChayTinhRTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -430,7 +426,6 @@
             // 
             // ketQuaTinhRTextBox
             // 
-            this.ketQuaTinhRTextBox.Controls.Add(this.radLabel3);
             this.ketQuaTinhRTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ketQuaTinhRTextBox.Location = new System.Drawing.Point(8, 185);
             this.ketQuaTinhRTextBox.Name = "ketQuaTinhRTextBox";
@@ -441,17 +436,43 @@
             // 
             // radLabel3
             // 
-            this.radLabel3.Location = new System.Drawing.Point(114, 37);
+            this.radLabel3.Location = new System.Drawing.Point(10, 53);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(43, 18);
-            this.radLabel3.TabIndex = 68;
-            this.radLabel3.Text = "Số kẽm";
+            this.radLabel3.Size = new System.Drawing.Size(59, 18);
+            this.radLabel3.TabIndex = 73;
+            this.radLabel3.Text = "Số tờ chạy";
+            // 
+            // radLabel12
+            // 
+            this.radLabel12.Location = new System.Drawing.Point(3, 143);
+            this.radLabel12.Name = "radLabel12";
+            this.radLabel12.Size = new System.Drawing.Size(76, 18);
+            this.radLabel12.TabIndex = 63;
+            this.radLabel12.Text = "Số mặt bao in";
+            // 
+            // khoChayTheoGiaRTextBox
+            // 
+            this.khoChayTheoGiaRTextBox.Location = new System.Drawing.Point(262, 73);
+            this.khoChayTheoGiaRTextBox.Name = "khoChayTheoGiaRTextBox";
+            this.khoChayTheoGiaRTextBox.ReadOnly = true;
+            this.khoChayTheoGiaRTextBox.Size = new System.Drawing.Size(136, 20);
+            this.khoChayTheoGiaRTextBox.TabIndex = 1;
+            // 
+            // radLabel14
+            // 
+            this.radLabel14.Location = new System.Drawing.Point(208, 73);
+            this.radLabel14.Name = "radLabel14";
+            this.radLabel14.Size = new System.Drawing.Size(48, 18);
+            this.radLabel14.TabIndex = 60;
+            this.radLabel14.Text = "Cho khổ";
             // 
             // XemBangGiaInOffsetGiaCongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 455);
+            this.Controls.Add(this.radLabel14);
+            this.Controls.Add(this.khoChayTheoGiaRTextBox);
             this.Controls.Add(this.ChiTietPageView);
             this.Controls.Add(this.giaInOffsetGiaCongListCtrl);
             this.Controls.Add(this.thongTinLienHeRTextCtrl);
@@ -502,14 +523,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kieuInOffsetDropDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soNhanBanTinhRTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soToChayTinhRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resetTinhRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinhPhiRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ketQuaTinhRTextBox)).EndInit();
-            this.ketQuaTinhRTextBox.ResumeLayout(false);
-            this.ketQuaTinhRTextBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khoChayTheoGiaRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -549,11 +570,13 @@
         private Telerik.WinControls.UI.RadButton resetTinhRButton;
         private Telerik.WinControls.UI.RadButton tinhPhiRButton;
         private Telerik.WinControls.UI.RadTextBox ketQuaTinhRTextBox;
-        private Telerik.WinControls.UI.RadLabel radLabel3;
         private Telerik.WinControls.UI.RadTextBox soNhanBanTinhRTextBox;
-        private Telerik.WinControls.UI.RadLabel radLabel12;
         private Telerik.WinControls.UI.RadTextBox soToChayTinhRTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel13;
         private Telerik.WinControls.UI.RadDropDownList kieuInOffsetDropDown;
+        private Telerik.WinControls.UI.RadLabel radLabel12;
+        private Telerik.WinControls.UI.RadLabel radLabel3;
+        private Telerik.WinControls.UI.RadTextBox khoChayTheoGiaRTextBox;
+        private Telerik.WinControls.UI.RadLabel radLabel14;
     }
 }

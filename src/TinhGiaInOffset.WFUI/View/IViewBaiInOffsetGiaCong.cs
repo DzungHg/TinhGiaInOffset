@@ -9,10 +9,12 @@ namespace TinhGiaInOffset.WFUI.View
 {
     public interface IViewBaiInOffsetGiaCong
     {
+        int IdBaiIn { get; set; }
         string TenBaiIn { get; set; }
         string DienGiai { get; set; }
         int IdGiaInOffsetGiaCong { get; set; }        
         string TenGiaInOffsetGiaCong { get; set; }
+        string KhoToChayIn { get; set; }
         int SoLuotIn { get; set; }
         int SoBaiNhanBan { get; set; }
         int SoMatIn { get; set; }

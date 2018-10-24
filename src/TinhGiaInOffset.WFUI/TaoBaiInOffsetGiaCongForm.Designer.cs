@@ -35,7 +35,7 @@
             this.huyButton = new Telerik.WinControls.UI.RadButton();
             this.taoGiaButton = new Telerik.WinControls.UI.RadButton();
             this.soToChayLyThuyetRTextBox = new Telerik.WinControls.UI.RadTextBox();
-            this.khoGiayRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.khoToChayGiayRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.tenGiayRTextBox = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.giayDaGomLoiNhuanRCheck = new Telerik.WinControls.UI.RadCheckBox();
@@ -64,6 +64,8 @@
             this.ChiTietPageView = new Telerik.WinControls.UI.RadPageView();
             this.tabQuyCachInViewPage = new Telerik.WinControls.UI.RadPageViewPage();
             this.giayInTheoBaiPageViewPage = new Telerik.WinControls.UI.RadPageViewPage();
+            this.khoToChayInRTextBox = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giaOffsetGiaCongDropDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietBangGiaTextCtrl)).BeginInit();
@@ -71,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.huyButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taoGiaButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soToChayLyThuyetRTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khoGiayRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khoToChayGiayRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenGiayRTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giayDaGomLoiNhuanRCheck)).BeginInit();
@@ -101,6 +103,8 @@
             this.ChiTietPageView.SuspendLayout();
             this.tabQuyCachInViewPage.SuspendLayout();
             this.giayInTheoBaiPageViewPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.khoToChayInRTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,12 +167,12 @@
             this.soToChayLyThuyetRTextBox.Size = new System.Drawing.Size(135, 20);
             this.soToChayLyThuyetRTextBox.TabIndex = 24;
             // 
-            // khoGiayRTextBox
+            // khoToChayGiayRTextBox
             // 
-            this.khoGiayRTextBox.Location = new System.Drawing.Point(82, 39);
-            this.khoGiayRTextBox.Name = "khoGiayRTextBox";
-            this.khoGiayRTextBox.Size = new System.Drawing.Size(135, 20);
-            this.khoGiayRTextBox.TabIndex = 22;
+            this.khoToChayGiayRTextBox.Location = new System.Drawing.Point(82, 39);
+            this.khoToChayGiayRTextBox.Name = "khoToChayGiayRTextBox";
+            this.khoToChayGiayRTextBox.Size = new System.Drawing.Size(135, 20);
+            this.khoToChayGiayRTextBox.TabIndex = 22;
             // 
             // tenGiayRTextBox
             // 
@@ -241,7 +245,7 @@
             // 
             // soMatInRTextBox
             // 
-            this.soMatInRTextBox.Location = new System.Drawing.Point(97, 88);
+            this.soMatInRTextBox.Location = new System.Drawing.Point(98, 88);
             this.soMatInRTextBox.Name = "soMatInRTextBox";
             this.soMatInRTextBox.ReadOnly = true;
             this.soMatInRTextBox.Size = new System.Drawing.Size(135, 20);
@@ -249,7 +253,7 @@
             // 
             // radLabel5
             // 
-            this.radLabel5.Location = new System.Drawing.Point(14, 88);
+            this.radLabel5.Location = new System.Drawing.Point(15, 88);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(54, 18);
             this.radLabel5.TabIndex = 58;
@@ -272,7 +276,7 @@
             // 
             // soKemRTextBox
             // 
-            this.soKemRTextBox.Location = new System.Drawing.Point(97, 61);
+            this.soKemRTextBox.Location = new System.Drawing.Point(98, 61);
             this.soKemRTextBox.Name = "soKemRTextBox";
             this.soKemRTextBox.ReadOnly = true;
             this.soKemRTextBox.Size = new System.Drawing.Size(135, 20);
@@ -280,7 +284,7 @@
             // 
             // radLabel8
             // 
-            this.radLabel8.Location = new System.Drawing.Point(14, 37);
+            this.radLabel8.Location = new System.Drawing.Point(15, 37);
             this.radLabel8.Name = "radLabel8";
             this.radLabel8.Size = new System.Drawing.Size(40, 18);
             this.radLabel8.TabIndex = 14;
@@ -289,7 +293,7 @@
             // kieuInOffsetDropDown
             // 
             this.kieuInOffsetDropDown.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.kieuInOffsetDropDown.Location = new System.Drawing.Point(97, 37);
+            this.kieuInOffsetDropDown.Location = new System.Drawing.Point(98, 37);
             this.kieuInOffsetDropDown.Name = "kieuInOffsetDropDown";
             this.kieuInOffsetDropDown.Size = new System.Drawing.Size(135, 20);
             this.kieuInOffsetDropDown.TabIndex = 12;
@@ -297,7 +301,7 @@
             // 
             // radLabel11
             // 
-            this.radLabel11.Location = new System.Drawing.Point(14, 63);
+            this.radLabel11.Location = new System.Drawing.Point(15, 63);
             this.radLabel11.Name = "radLabel11";
             this.radLabel11.Size = new System.Drawing.Size(43, 18);
             this.radLabel11.TabIndex = 12;
@@ -383,6 +387,8 @@
             // 
             // tabQuyCachInViewPage
             // 
+            this.tabQuyCachInViewPage.Controls.Add(this.khoToChayInRTextBox);
+            this.tabQuyCachInViewPage.Controls.Add(this.radLabel10);
             this.tabQuyCachInViewPage.Controls.Add(this.soKemRTextBox);
             this.tabQuyCachInViewPage.Controls.Add(this.radLabel8);
             this.tabQuyCachInViewPage.Controls.Add(this.soMatInRTextBox);
@@ -400,7 +406,7 @@
             this.giayInTheoBaiPageViewPage.Controls.Add(this.giayDaGomLoiNhuanRCheck);
             this.giayInTheoBaiPageViewPage.Controls.Add(this.radLabel1);
             this.giayInTheoBaiPageViewPage.Controls.Add(this.radLabel6);
-            this.giayInTheoBaiPageViewPage.Controls.Add(this.khoGiayRTextBox);
+            this.giayInTheoBaiPageViewPage.Controls.Add(this.khoToChayGiayRTextBox);
             this.giayInTheoBaiPageViewPage.Controls.Add(this.soToChayBuHaoRTextBox);
             this.giayInTheoBaiPageViewPage.Controls.Add(this.soToChayLyThuyetRTextBox);
             this.giayInTheoBaiPageViewPage.Controls.Add(this.radLabel9);
@@ -413,6 +419,22 @@
             this.giayInTheoBaiPageViewPage.Name = "giayInTheoBaiPageViewPage";
             this.giayInTheoBaiPageViewPage.Size = new System.Drawing.Size(252, 198);
             this.giayInTheoBaiPageViewPage.Text = "Giấy theo bài";
+            // 
+            // khoToChayInRTextBox
+            // 
+            this.khoToChayInRTextBox.Location = new System.Drawing.Point(97, 13);
+            this.khoToChayInRTextBox.Name = "khoToChayInRTextBox";
+            this.khoToChayInRTextBox.ReadOnly = true;
+            this.khoToChayInRTextBox.Size = new System.Drawing.Size(135, 20);
+            this.khoToChayInRTextBox.TabIndex = 11;
+            // 
+            // radLabel10
+            // 
+            this.radLabel10.Location = new System.Drawing.Point(14, 13);
+            this.radLabel10.Name = "radLabel10";
+            this.radLabel10.Size = new System.Drawing.Size(65, 18);
+            this.radLabel10.TabIndex = 60;
+            this.radLabel10.Text = "Khổ tờ chạy";
             // 
             // TaoBaiInOffsetGiaCongForm
             // 
@@ -450,7 +472,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.huyButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taoGiaButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soToChayLyThuyetRTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khoGiayRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khoToChayGiayRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tenGiayRTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.giayDaGomLoiNhuanRCheck)).EndInit();
@@ -482,6 +504,8 @@
             this.tabQuyCachInViewPage.PerformLayout();
             this.giayInTheoBaiPageViewPage.ResumeLayout(false);
             this.giayInTheoBaiPageViewPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.khoToChayInRTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -497,7 +521,7 @@
         private Telerik.WinControls.UI.RadButton huyButton;
         private Telerik.WinControls.UI.RadButton taoGiaButton;
         private Telerik.WinControls.UI.RadTextBox soToChayLyThuyetRTextBox;
-        private Telerik.WinControls.UI.RadTextBox khoGiayRTextBox;
+        private Telerik.WinControls.UI.RadTextBox khoToChayGiayRTextBox;
         private Telerik.WinControls.UI.RadTextBox tenGiayRTextBox;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadLabel radLabel3;
@@ -526,5 +550,7 @@
         private Telerik.WinControls.UI.RadPageView ChiTietPageView;
         private Telerik.WinControls.UI.RadPageViewPage tabQuyCachInViewPage;
         private Telerik.WinControls.UI.RadPageViewPage giayInTheoBaiPageViewPage;
+        private Telerik.WinControls.UI.RadTextBox khoToChayInRTextBox;
+        private Telerik.WinControls.UI.RadLabel radLabel10;
     }
 }

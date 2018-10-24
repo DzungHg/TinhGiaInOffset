@@ -240,6 +240,14 @@ namespace TinhGiaInOffset.WFUI
             }
         }
 
+        public string KhoChayTheoGia
+        {
+            set
+            {
+                khoChayTheoGiaRTextBox.Text = value;               
+            }
+        }
+
 
 
 

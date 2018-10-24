@@ -33,7 +33,8 @@ namespace TinhGiaInOffset.WFUI.Presentation
             //
             var tenNhaIn = nhaInOffset.DocTheoId(model.IdNhaIn).TenNhaIn;
             var line = "------------" + '\r' + '\n';
-            View.ChiTietMayIn = $"({tenNhaIn})" + '\r' + '\n' + line + mayInOffset.DocTheoId(model.IdMayIn).ChiTietMayIn;            
+            View.ChiTietMayIn = $"({tenNhaIn})" + '\r' + '\n' + line + mayInOffset.DocTheoId(model.IdMayIn).ChiTietMayIn;
+            View.KhoChayTheoGia = $"{model.ToChayRong} x {model.ToChayDai}cm";            
             View.DienGiai = model.DienGiai;
             View.DoiMayIn = model.DoiMayIn;
             View.DonGiaBai = model.DonGiaBai;

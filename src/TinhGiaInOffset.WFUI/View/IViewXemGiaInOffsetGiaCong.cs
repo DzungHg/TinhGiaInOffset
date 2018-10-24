@@ -12,7 +12,7 @@ namespace TinhGiaInOffset.WFUI.View
      
         int IdGiaInOffsetChon { get; set; }
         string DienGiai { get; set; }
-      
+        string KhoChayTheoGia { set; }
        
         string ChiTietMayIn { set; }
         string DoiMayIn {  set; }

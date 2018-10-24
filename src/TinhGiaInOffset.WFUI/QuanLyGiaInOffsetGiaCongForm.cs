@@ -105,6 +105,7 @@ namespace TinhGiaInOffset.WFUI
         {
             var frm = new TaoGiaInOffsetGiaCongForm();
             frm.TinhTrangForm = Common.Enum.TinhTrangForm.Moi;
+            frm.IdGiaIn = 0;
             frm.MaximizeBox = false;
             frm.MinimizeBox = false;
             frm.StartPosition = FormStartPosition.CenterParent;
@@ -125,7 +126,7 @@ namespace TinhGiaInOffset.WFUI
 
             var frm = new TaoGiaInOffsetGiaCongForm();
             frm.TinhTrangForm = Common.Enum.TinhTrangForm.Sua;
-            frm.giaInSua = model;
+            frm.IdGiaIn = model.Id;
             frm.MaximizeBox = false;
             frm.MinimizeBox = false;
             frm.StartPosition = FormStartPosition.CenterParent;
