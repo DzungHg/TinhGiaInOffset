@@ -42,7 +42,8 @@ namespace TinhGiaInOffset.WFUI.Presentation
 
             View.TenGia = model.TenGia;
             View.DienGiai = model.DienGiai;
-
+            View.IdMayIn = model.IdMayIn;
+            View.IdNhaIn = model.IdNhaIn;
             View.DoiMayIn = model.DoiMayIn;
             View.ToChayRong = model.ToChayRong;
             View.ToChayDai = model.ToChayDai;
@@ -63,7 +64,7 @@ namespace TinhGiaInOffset.WFUI.Presentation
         }
         public void TaoMoiGiaInOffsetGiaCong()
         {
-            var model = new GiaInOffsetGiaCongModel(View.TenGia, View.DienGiai, View.IdGiaIn, View.IdMayIn,
+            var model = new GiaInOffsetGiaCongModel(View.TenGia, View.DienGiai, View.IdNhaIn, View.IdMayIn,
                 View.DoiMayIn, View.ToChayRong, View.ToChayDai, View.DonGiaBai, View.SoToChayBuHaoCoBan, View.SoLuongBaoIn,
                 View.DonGiaVuot, View.DonViTinhSoLuong, View.GiaDaBaoKem, View.ThongTinLienHe, View.GhiChu, 
                 View.KhongSuDung, View.ThuTuSapXep);
@@ -75,7 +76,7 @@ namespace TinhGiaInOffset.WFUI.Presentation
         {
             if (View.IdGiaIn > 0)
             {
-                var model = new GiaInOffsetGiaCongModel(View.TenGia, View.DienGiai, View.IdGiaIn, View.IdMayIn,
+                var model = new GiaInOffsetGiaCongModel(View.TenGia, View.DienGiai, View.IdNhaIn, View.IdMayIn,
                View.DoiMayIn, View.ToChayRong, View.ToChayDai, View.DonGiaBai, View.SoToChayBuHaoCoBan, View.SoLuongBaoIn,
                View.DonGiaVuot, View.DonViTinhSoLuong, View.GiaDaBaoKem, View.ThongTinLienHe, View.GhiChu,
                View.KhongSuDung, View.ThuTuSapXep);

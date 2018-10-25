@@ -39,6 +39,23 @@ namespace TinhGiaInOffset.WFUI
             mayInOffsetRGridView.DataSource = null;
             mayInOffsetRGridView.DataSource = quanLyGiaInPres.MayInOffsetS();
         }
+        private void ReLoadBangGia()
+        {
+            if (tatCaNhaInRCheck.Checked)
+            {
+                giaInOffsetSrc = quanLyGiaInPres.GiaInOffsetS();
+            }
+            else
+            {
+                if (nhaInOffsetDropDown.SelectedItem != null)
+                {
+                    var model = (NhaInOffsetModel)nhaInOffsetDropDown.SelectedItem.DataBoundItem;
+                    giaInOffsetSrc = quanLyGiaInPres.GiaInOffsetSTheoNhaIn(model.Id);
+                }
+            }
+            giaInOffsetRGridView.DataSource = null;
+            giaInOffsetRGridView.DataSource = giaInOffsetSrc;
+        }
         private void taoGiaRButton_Click(object sender, EventArgs e)
         {
             switch (PageView1.SelectedPage.Name)
@@ -74,21 +91,9 @@ namespace TinhGiaInOffset.WFUI
             //Tắt mở
             nhaInOffsetDropDown.Enabled = !tatCaNhaInRCheck.Checked;
             // đấu lại dữ liệu
-           
-            if (tatCaNhaInRCheck.Checked)
-            {
-                giaInOffsetSrc = quanLyGiaInPres.GiaInOffsetS();
-            }
-            else
-            {
-                if (nhaInOffsetDropDown.SelectedItem != null)
-                {
-                    var model = (NhaInOffsetModel) nhaInOffsetDropDown.SelectedItem.DataBoundItem;
-                    giaInOffsetSrc = quanLyGiaInPres.GiaInOffsetSTheoNhaIn(model.Id);
-                }
-            }
-            giaInOffsetRGridView.DataSource = null;
-            giaInOffsetRGridView.DataSource = giaInOffsetSrc;
+            ReLoadBangGia();
+
+
     }
 
         private void QuanLyGiaInOffsetGiaCongForm_Resize(object sender, EventArgs e)
@@ -112,7 +117,7 @@ namespace TinhGiaInOffset.WFUI
             frm.ShowDialog();
             if (frm.DialogResult == DialogResult.OK)
             {
-                DauNoiDuLieu();
+                ReLoadBangGia();
             }
         }
         private void SuaBangGia()
@@ -133,7 +138,7 @@ namespace TinhGiaInOffset.WFUI
             frm.ShowDialog();
             if (frm.DialogResult == DialogResult.OK)
             {
-                DauNoiDuLieu();
+                ReLoadBangGia();
             }
         }
         private void TaoMayInOffset()

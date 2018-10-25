@@ -13,7 +13,7 @@ namespace TinhGiaInOffset.Logic
         GiaInOffsetGiaCongDAO dataDAO = new GiaInOffsetGiaCongDAO();
         public List<GiaInOffsetGiaCongBDO> DocTatCa()
         {
-            return dataDAO.DocTatCa().ToList();
+            return dataDAO.DocTatCa().OrderBy(x => x.ThuTuSapXep).ToList();
         }
         public List<GiaInOffsetGiaCongBDO> DocTatCa_ConDung_CoTenNhaIn()
         {

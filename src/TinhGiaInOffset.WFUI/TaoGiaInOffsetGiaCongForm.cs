@@ -446,6 +446,8 @@ namespace TinhGiaInOffset.WFUI
                 //Nút
                 taoGiaButton.Text = "Lưu";
                 tieuDeFormLabel.Text = $"SỬA GIÁ ID [{this.IdGiaIn}]";
+                //Chọn máy in trên combo box
+
 
             }
             tieuDeFormLabel.Left = (ClientSize.Width - tieuDeFormLabel.Width) / 2;
